@@ -1,19 +1,30 @@
-import './styles.scss'
-import backgroundAbout from '../../assets/background-sobre.png'
 
+
+import './styles.scss'
+
+import { ReactComponent as Ball } from '../../assets/ball.svg'
+import { ReactComponent as Next } from '../../assets/next.svg'
+import { ReactComponent as Prev } from '../../assets/prev.svg'
+import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
+import { Header } from '../Header'
 
 export const About = ({nextSection, prevSection}) =>{
     return(
         <div className='about'>
-            <div className='background'>
-                <img src={backgroundAbout} alt="" />
-            </div>
+           <Header/>
+           
             <div className='content'>
+                <span className='about-text'>Sobre</span>
                 <div className="controls">
+                    <div className="first-line"></div>
                     <div className='control'>
-                        <button onClick={prevSection}>anterior</button>
-                        <div className='ball'></div>
-                        <button onClick={nextSection}>proximo</button>
+                       
+                        <div className='ball-container'>
+                            <button  onClick={prevSection}><Prev/></button>
+                            <Ball className='ball'/>
+                            <button onClick={nextSection}><Next /></button>
+                        </div>
+               
                     </div>
                     <div className="line"></div>
                 </div>

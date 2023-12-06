@@ -1,5 +1,15 @@
 .projects{
     min-width: 100vw;
+    position: relative;
     min-height: 100vh;
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.background-video {
+    position: absolute;
+    filter: brightness(0.2);
+
 }
