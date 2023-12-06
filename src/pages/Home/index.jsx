@@ -4,6 +4,7 @@ import Logo from '../../assets/LogoSuburbanos.png'
 import { Projects } from '../../components/Projects'
 import { useState } from 'react'
 import { FinalPage } from '../../components/FinalPage'
+import { Header } from '../../components/Header'
 
 export const Home = () => {
 
@@ -29,6 +30,7 @@ export const Home = () => {
 
     return (
         <div className='home' style={{ transform: `translateX(-${section * 100}%)` }}>
+            <Header section={section}/>
             <div className='main'>
                 <div className='main-btn__wrapper'>
                     <img className='main-btn' src={Logo} alt="" onClick={nextSection} />
