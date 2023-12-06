@@ -7,7 +7,7 @@ import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+import  {Header}  from '../../components/Header/index.jsx'
 export const Projects = ({ nextSection, prevSection }) => {
 
     const projects = [
@@ -43,6 +43,7 @@ export const Projects = ({ nextSection, prevSection }) => {
 
     return (
         <div className='projects'>
+            <Header />
             <video className='background-video' loop autoPlay src='https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4' />
             <div className='content'>
                 <span className='about-text'>Projetos</span>
@@ -60,7 +61,8 @@ export const Projects = ({ nextSection, prevSection }) => {
                     <div className="line"></div>
                 </div>
             </div>
-            <Swiper className="list-projects" pagination={{ clickable: true }} direction={'horizontal'} spaceBetween={'60'} slidesPerView={'auto'} style={{top: '19.5%'}}>
+            <div className='custom-swapper' >
+            <Swiper className="list-projects" pagination={{ clickable: true }} direction={'horizontal'} spaceBetween={'50'} slidesPerView={'auto'}>
                 {projects.map((project) => (
                     <SwiperSlide className='project'>
                         <img src={project.img} alt='' className='img-main'/>
@@ -68,13 +70,15 @@ export const Projects = ({ nextSection, prevSection }) => {
                             <p>{project.style} | {project.type}</p>
                             <img src={project.imgStream} alt="" />
                         </div>
-                        <div>
+                        <div className='project-text'>
                             <p>{project.text}</p>
                         </div>
-                        <button>Ver Project</button>
+                        <button>Ver Projeto</button>
                     </SwiperSlide>
                 ))}
             </Swiper>
+            </div>
+          
         </div>
     )
 }

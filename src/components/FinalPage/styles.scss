@@ -45,6 +45,7 @@
     display: flex;
     z-index: 1;
     video, img{
+      cursor: pointer;
       pointer-events: all;
       opacity: 0;
       width: 58%;
@@ -76,7 +77,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
   }
 }
 

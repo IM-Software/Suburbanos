@@ -4,10 +4,12 @@ import './styles.scss'
 
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
+import  {Header}  from '../../components/Header/index.jsx'
 
 export const FinalPage = ({ prevSection }) => {
     return (
         <div className='final-page'>
+            <Header />
             <div className='content'>
                 <div className="controls">
                     <div className="first-line"></div>

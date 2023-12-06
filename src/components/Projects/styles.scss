@@ -3,34 +3,56 @@
     position: relative;
     max-height: 100vh;
     height: 100vh;
-    background-color: black;
+    background-color: #000000;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .list-projects {
         display: flex;
         margin-left: 30%;
-        width: 70%;
-        max-height: 100vh;
-        height: 100vh;
+        height: 600px;
         cursor: pointer;
         z-index: 1;
 
         .project {
-            width: 363px;
-            max-width: 363px;
+            width: 300px;
             display: flex;
-            z-index: 1000;
             flex-direction: column;
             font-family: Lato;
             gap: 24px;
 
+            .project-text {
+               height: 200px;
+               margin-right: 10px;
+               p {
+                font-size: 14px;
+                height: 200px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-weight: 500;
+                line-height: 32px;
+                letter-spacing: 0.16px;
+                color: #E5E5E5;
+                display: -webkit-box;
+                max-width: 100%;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                
+               }
+            }
+
             .img-main {
-                width: 100%;
-                height: 296px;
-                border-radius: 10px;
-                object-fit: cover;
-                object-position: center;
+                border-radius: 8px;
+                height: 250px !important;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 0.5s;
+                }
             }
 
             .stream {
@@ -38,7 +60,7 @@
                 min-height: 35px;
                 justify-content: left;
                 align-items: center;
-                width: 100%;
+                width: 50%;
 
                 p {
                     color: #E5E5E5;
@@ -48,6 +70,7 @@
                     font-weight: 600;
                     line-height: normal;
                     letter-spacing: 1.6px;
+                    text-wrap: nowrap;
                 }
                 img{
                     margin-left: 36px;
@@ -57,19 +80,6 @@
                     object-position: center;
                     object-fit: cover;
                 }
-            }
-
-            p {
-                max-width: 330px;
-                color: #E5E5E5;
-                leading-trim: both;
-                text-edge: cap;
-                font-size: 16px;
-                font-style: normal;
-                flex-direction: column;
-                font-weight: 500;
-                line-height: 32px;
-                letter-spacing: 0.16px;
             }
 
             button {
@@ -90,6 +100,11 @@
                 cursor: pointer;
                 border-radius: 8px;
                 background-color: var(--color-primary);
+
+                &:hover {
+                    filter: brightness(0.8);
+                    transition: 0.5s;
+                }
             }
         }
     }
@@ -101,4 +116,8 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+.custom-swapper {
+    margin-top: 95px;
 }
