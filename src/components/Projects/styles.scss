@@ -9,11 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .list-projects {
         display: flex;
         margin-left: 30%;
         height: 600px;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 10px;
         cursor: pointer;
         z-index: 1;
 
@@ -25,24 +29,24 @@
             gap: 24px;
 
             .project-text {
-               height: 200px;
-               margin-right: 10px;
-               p {
-                font-size: 14px;
                 height: 200px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                font-weight: 500;
-                line-height: 32px;
-                letter-spacing: 0.16px;
-                color: #E5E5E5;
-                display: -webkit-box;
-                max-width: 100%;
-                -webkit-line-clamp: 6;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                
-               }
+                margin-right: 10px;
+
+                p {
+                    font-size: 14px;
+                    height: 200px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-weight: 500;
+                    line-height: 32px;
+                    letter-spacing: 0.16px;
+                    color: #E5E5E5;
+                    display: -webkit-box;
+                    max-width: 100%;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
             }
 
             .img-main {
@@ -50,7 +54,7 @@
                 height: 250px !important;
 
                 &:hover {
-                    transform: scale(1.1);
+                    transform: translate3d(0, -12px, 0) scale(1.1);
                     transition: 0.5s;
                 }
             }
@@ -72,7 +76,12 @@
                     letter-spacing: 1.6px;
                     text-wrap: nowrap;
                 }
-                img{
+                
+                .type{
+                    font-weight: 800;
+                }
+
+                img {
                     margin-left: 36px;
                     max-width: 75px;
                     max-height: 35px;
@@ -102,7 +111,9 @@
                 background-color: var(--color-primary);
 
                 &:hover {
-                    filter: brightness(0.8);
+                    font-weight: bolder;
+                    color: white;
+                    background-color: var(--color-secondary);
                     transition: 0.5s;
                 }
             }
@@ -119,5 +130,6 @@
 }
 
 .custom-swapper {
-    margin-top: 95px;
+    width: 100%;
+    margin-top: 47px;
 }
