@@ -5,8 +5,12 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import  {Header}  from '../../components/Header/index.jsx'
+import { useState } from 'react'
+import { ModalAbout } from '../ModalAbout/index.jsx'
 
 export const FinalPage = ({ prevSection }) => {
+    const [openAbout, setOpenAbout] = useState(false)
+
     return (
         <div className='final-page'>
             <Header />
@@ -41,7 +45,7 @@ export const FinalPage = ({ prevSection }) => {
                     </div>
                 </div>
                 <div className='images'>
-                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" />
+                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" onClick={() => setOpenAbout(true)}/>
                     <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" />
                     <video src="https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4"
                         onMouseEnter={(e) => {
@@ -53,6 +57,9 @@ export const FinalPage = ({ prevSection }) => {
                     ></video>
                 </div>
             </div>
+            {openAbout &&
+                <ModalAbout/>
+            }
         </div>
     )
 }

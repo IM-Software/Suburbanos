@@ -1,0 +1,41 @@
+.modal-about{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-three);
+    position: absolute;
+    z-index: 10;
+    animation: open 1s ease-out;
+    header {
+        display: flex;
+        padding: 32px 64px;
+        align-items: center;
+        background: none;
+        justify-content: space-between;
+        top: 0;
+        position: absolute;
+        width: 90%;
+        z-index: 10;
+      
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          object-position: top;
+        }
+    }
+    .main{
+        display: flex;
+        width: 100%;
+        height: 90vh;
+    }
+}
+
+
+@keyframes open {
+    from{
+        transform: translateY(100vh);
+    }
+    to{
+        transform: translateY(0vh);
+    }
+}
