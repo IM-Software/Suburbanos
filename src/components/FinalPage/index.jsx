@@ -7,9 +7,11 @@ import { ReactComponent as Prev } from '../../assets/prev.svg'
 import  {Header}  from '../../components/Header/index.jsx'
 import { useState } from 'react'
 import { ModalAbout } from '../ModalAbout/index.jsx'
+import { ContactModal } from '../ContactModal/index.jsx'
 
 export const FinalPage = ({ prevSection }) => {
     const [openAbout, setOpenAbout] = useState(false)
+    const [openContact, setOpenContact] = useState(false)
 
     return (
         <div className='final-page'>
@@ -46,7 +48,7 @@ export const FinalPage = ({ prevSection }) => {
                 </div>
                 <div className='images'>
                     <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" onClick={() => setOpenAbout(true)}/>
-                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" />
+                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" srcset="" onClick={() => setOpenContact(true)}/>
                     <video src="https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4"
                         onMouseEnter={(e) => {
                             setTimeout(() => {
@@ -59,6 +61,9 @@ export const FinalPage = ({ prevSection }) => {
             </div>
             {openAbout &&
                 <ModalAbout/>
+            }
+            {openContact &&
+                <ContactModal/>
             }
         </div>
     )

@@ -1,41 +1,241 @@
-.modal-about{
+.modal-about {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
     width: 100vw;
-    height: 100vh;
-    background-color: var(--color-three);
+    height: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
+    background-color: var(--color-three);
     animation: open 1s ease-out;
-    header {
-        display: flex;
-        padding: 32px 64px;
-        align-items: center;
-        background: none;
-        justify-content: space-between;
-        top: 0;
-        position: absolute;
-        width: 90%;
-        z-index: 10;
-      
-        img {
-          width: 80px;
-          height: 80px;
-          object-fit: cover;
-          object-position: top;
-        }
-    }
-    .main{
+
+    .text-primary {
         display: flex;
         width: 100%;
-        height: 90vh;
+        padding-top: 200px;
+
+        .balls{
+            position: absolute;
+            margin-top: -2%;
+            margin-left: -20%;
+            width: 100% !important;
+            height: 150% !important;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 120vh;
+            z-index: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 5;
+                object-position: center;
+                border-radius: 10px;
+            }
+        }
+
+        .text {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin-left: -3%;
+            margin-top: 10%;
+            z-index: 1;
+            color: white;
+            gap: 43px;
+
+            h2 {
+                font-size: 208px;
+                color: var(--color-primary);
+                font-family: League Gothic;
+                text-shadow: -9px 2px var(--color-secondary);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 174px;
+                text-transform: uppercase;
+            }
+
+            p {
+                width: 480px;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 200;
+                line-height: 49px;
+            }
+        }
+    }
+
+    .text-secondary {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        z-index: 0;
+        color: white;
+
+        .balls{
+            margin-top: 15%;
+            margin-right: 10%;
+            position: absolute;
+            transform: rotate(95deg);
+            width: 90% !important;
+            height: 160% !important;
+            z-index: 0;
+        }
+
+        .text {
+            width: 100%;
+            display: flex;
+            align-items: end;
+            flex-direction: column;
+            gap: 43px;
+            z-index: 1;
+
+            h3 {
+                color: var(--Primria, #FFD100);
+                font-family: League Gothic;
+                font-size: 156px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 134px;
+                text-transform: uppercase;
+            }
+
+            p {
+                max-width: 480px;
+                margin-right: 100px;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 200;
+                line-height: 49px;
+            }
+        }
+
+        .image {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            margin-top: 250px;
+            z-index: 1;
+
+            .path {
+                margin-left: 34%;
+                margin-top: -10px;
+                position: absolute;
+            }
+
+            img {
+                width: 72%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .photos {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        z-index: 1;
+        margin-top: 300px;
+
+        h3 {
+            width: 100%;
+            margin-left: 100px;
+            font-family: League Gothic;
+            font-size: 156px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 134px;
+            color: var(--color-primary);
+        }
+
+        .cards {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 81px;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                width: 458px;
+                gap: 20px;
+
+                img {
+                    width: 100%;
+                    height: 580px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                    object-position: center;
+                    box-shadow: -11px 9px 0px 3px var(--color-secondary);
+                    -webkit-box-shadow: -11px 9px 0px 3px var(--color-secondary);
+                    -moz-box-shadow: -11px 9px 0px 3px var(--color-secondary);
+                }
+
+                .infos {
+                    margin-left: 5px;
+
+                    h4 {
+                        color: var(--color-primary);
+                        font-family: League Gothic;
+                        font-size: 43.538px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        letter-spacing: 2.177px;
+                    }
+
+                    p {
+                        max-width: 420px;
+                        font-family: Lato;
+                        color: white;
+                        font-family: Lato;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 39.184px;
+                        letter-spacing: 0.174px;
+                    }
+
+                    span {
+                        font-weight: 300;
+                    }
+
+                    .profession {
+                        color: var(--color-secondary);
+                        font-size: 27.864px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
     }
 }
 
 
 @keyframes open {
-    from{
+    from {
         transform: translateY(100vh);
     }
-    to{
+
+    to {
         transform: translateY(0vh);
     }
 }

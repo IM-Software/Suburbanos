@@ -7,6 +7,7 @@ import { ReactComponent as Arrow } from '../../assets/rightarrow.svg'
 import { ReactComponent as Balls } from '../../assets/reticula.svg'
 import { CastCarousel } from '../CastCarousel'
 import { useState } from 'react'
+import { FooterModals } from '../FooterModals'
 
 export const ModalProject = ({ project }) => {
     const [citationIndex, setCitationIndex] = useState(0)
@@ -223,6 +224,7 @@ export const ModalProject = ({ project }) => {
                         </div>
                     </div>
                 </div>
+                <FooterModals/>
             </div>
         </div>
     )
