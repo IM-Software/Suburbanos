@@ -7,7 +7,12 @@
     position: absolute;
     z-index: 5;
     background-color: var(--color-three);
-    animation: open 1s ease-out;
+    transform: translateY(100vh);
+    transition: 1s ease-out;
+
+    &.active {
+        transform: translateY(0vh);
+    }
 
     .text-primary {
         display: flex;
@@ -226,16 +231,5 @@
                 }
             }
         }
-    }
-}
-
-
-@keyframes open {
-    from {
-        transform: translateY(100vh);
-    }
-
-    to {
-        transform: translateY(0vh);
     }
 }

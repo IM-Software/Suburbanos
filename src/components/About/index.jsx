@@ -5,15 +5,13 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
-import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import ImageUp from '../../assets/produtora.png'
 import ImageBelow from '../../assets/sobreimagem.png'
-import  {Header}  from '../../components/Header/index.jsx'
 
 export const About = ({ nextSection, prevSection }) => {
+
     return (
         <div className='about'>
-         <Header/>
             <div className='content'>
                 <span className='about-text'>Sobre</span>
                 <div className="controls">

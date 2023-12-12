@@ -1,21 +1,33 @@
-
-
 import './styles.scss'
 
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
-import  {Header}  from '../../components/Header/index.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ModalAbout } from '../ModalAbout/index.jsx'
 import { ContactModal } from '../ContactModal/index.jsx'
+import { ModalProjectFinal } from '../ModalProjectFinal/index.jsx'
 
-export const FinalPage = ({ prevSection }) => {
+export const FinalPage = ({ prevSection, changeHeaderFunction }) => {
     const [openAbout, setOpenAbout] = useState(false)
     const [openContact, setOpenContact] = useState(false)
+    const [openProject, setOpenProject] = useState(false)
+
+    const closeModals = () =>{
+        setOpenAbout(false)
+        setOpenContact(false)
+        setOpenProject(false)
+    }
+
+    useEffect(() =>{
+        if(openAbout || openContact || openProject){
+            changeHeaderFunction(closeModals)
+        }else{
+            changeHeaderFunction(null)
+        }
+    }, [openAbout, openContact, openProject])
 
     return (
         <div className='final-page'>
-            <Header />
             <div className='content'>
                 <div className="controls">
                     <div className="first-line"></div>
@@ -56,15 +68,13 @@ export const FinalPage = ({ prevSection }) => {
                             }, 500)
                         }}
                         onMouseLeave={(e) => e.target.pause()}
+                        onClick={() => setOpenProject(true)}
                     ></video>
                 </div>
             </div>
-            {openAbout &&
-                <ModalAbout/>
-            }
-            {openContact &&
-                <ContactModal/>
-            }
+            <ModalAbout openAbout={openAbout}/>
+            <ContactModal openContact={openContact}/>
+            <ModalProjectFinal openProject={openProject}/>
         </div>
     )
 }

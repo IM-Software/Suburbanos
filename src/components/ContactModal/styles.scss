@@ -1,4 +1,4 @@
-.contact {
+.contact-modal {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -7,9 +7,16 @@
     position: absolute;
     z-index: 5;
     background-color: var(--color-three);
-    animation: open 1s ease-out;
+    transform: translateY(100vh);
+    transition: 1s ease-out;
 
-    .content {
+    &.active {
+        transform: translateY(0vh);
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         padding-top: 200px;
         margin-left: 64px;
@@ -39,15 +46,21 @@
             font-weight: 300;
             line-height: 164px
         }
-    }
-}
 
-@keyframes open {
-    from {
-        transform: translateY(100vh);
-    }
+        .flex{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
 
-    to {
-        transform: translateY(0vh);
+        a{
+            color: var(--color-primary);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        a:visited{
+            color: var(--color-primary);
+        }
     }
 }

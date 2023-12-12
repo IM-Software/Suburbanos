@@ -5,14 +5,24 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
-import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import  { Header }  from '../../components/Header/index.jsx'
 import { ModalProject } from '../ModalProject/index.jsx'
-import { useState } from 'react'
+import { useState} from 'react'
 
-export const Projects = ({ nextSection, prevSection }) => {
+export const Projects = ({ nextSection, prevSection, changeHeaderFunction }) => {
     const [activeProject, setActiveProject] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
+
+    const closeModal = () =>{
+        setOpenModal(false)
+        changeHeaderFunction(null)
+    }
+
+    const toggleModal = (project) =>{
+        setOpenModal(true)
+        setActiveProject(project)
+        changeHeaderFunction(closeModal)
+    }  
 
     const projects = [
         {
@@ -79,7 +89,6 @@ export const Projects = ({ nextSection, prevSection }) => {
 
     return (
         <div className='projects'>
-            <Header />
             <video className='background-video' loop autoPlay src='https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4' />
             <div className='content'>
                 <span className='about-text'>Projetos</span>
@@ -110,12 +119,12 @@ export const Projects = ({ nextSection, prevSection }) => {
                         <div className='project-text'>
                             <p>{project.text}</p>
                         </div>
-                        <button onClick={() => setActiveProject(project)}>Ver Projeto</button>
+                        <button onClick={() => toggleModal(project)}>Ver Projeto</button>
                     </SwiperSlide>
                 ))}
             </Swiper>
             </div>
-            <ModalProject project={activeProject}/>
+            <ModalProject project={activeProject} openModal={openModal}/>
         </div>
     )
 }
