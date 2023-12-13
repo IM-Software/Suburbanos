@@ -8,8 +8,9 @@ import { ReactComponent as PlayButton } from '../../assets/play.svg'
 import { CitationsCarousel } from '../CitationsCarousel'
 import { FooterModals } from '../FooterModals'
 
-export const ModalProjectFinal = ({openProject}) => {
+export const ModalProjectFinal = ({openProject, setOpenProject, navigation}) => {
     const swiperRef = useRef(null)
+    const modalRef = useRef(null)
     const [activeSlide, setActiveSlide] = useState(0)
 
     const stories = [
@@ -37,8 +38,17 @@ export const ModalProjectFinal = ({openProject}) => {
         swiperInstance.slideTo(index)
     }
 
+    useEffect(() =>{
+        if (modalRef.current) {
+            modalRef.current.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            })
+        }
+    },[openProject])
+
     return (
-        <div className={`project-final ${openProject ? 'active' : ''}`}>
+        <div className={`project-final ${openProject ? 'active' : ''}`} ref={modalRef}>
             <div className="main">
                 <Swiper className='stories'
                     ref={swiperRef}
@@ -115,7 +125,7 @@ export const ModalProjectFinal = ({openProject}) => {
                 </div>
             </div>
             <CitationsCarousel/>
-            <FooterModals/>
+            <FooterModals navigation={navigation} toggleModal={setOpenProject}/>
         </div>
     )
 }

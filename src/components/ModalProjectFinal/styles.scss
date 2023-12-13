@@ -7,11 +7,12 @@
     position: absolute;
     z-index: 5;
     background-color: var(--color-three);
-    transform: translateY(100vh);
+    transform: translateY(0vh);
     transition: 1s ease-out;
+    scroll-behavior: smooth;
 
     &.active {
-        transform: translateY(0vh);
+        transform: translateY(-100vh);
     }
 
     .main {

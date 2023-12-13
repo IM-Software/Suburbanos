@@ -31,28 +31,54 @@
     
         .up {
             display: flex;
+            margin-top: 100px;
             justify-content: flex-end;
-            img{
+            .img-container{
                 width: 90%;
-                height: 300px;
-                object-fit: cover;
+                min-height: 300px;
+                position: relative;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 300px;
+                    margin-bottom: -100%;
+                    opacity: 0;
+                    object-fit: cover;
+                    transition: 2s ease-in-out;
+
+                    &.animation{
+                        margin-bottom: 0px;
+                        opacity: 1;
+                    }
+                }
             }
         }
     
         .low {
             display: flex;
+            overflow: hidden;
+            min-height: 350px;
             position: relative;
+            top: -50px;
     
             img {
                 object-fit: cover;
                 height: 300px;
                 position: absolute;
                 z-index: 1;
-                top: -50px;
+                margin-top: -50%;
+                opacity: 0;
+                animation-delay: 1s;
+                transition: 2s ease-in-out;
+
+                &.animation{
+                    margin-top: 0%;
+                    opacity: 1;
+                }
             }
     
             .text{
-                margin-top: 10px;
+                margin-top: 60px;
                 margin-left: 150px;
                 justify-content: center;
                 z-index: 10;
@@ -65,16 +91,38 @@
                     font-weight: 400;
                     text-wrap: nowrap;
                     line-height: normal;
+                    margin-top: -20%;
+                    opacity: 0;
+                    transition: 1s ease-out;
+
+                    &.animation{
+                        opacity: 1;
+                        margin-top: 0%;
+                    }
+                }
+
+                .text-container{
+                    width: 100%;
+                    height: 100%;
+                    margin-left: 30px;
+                    position: relative;
+                    overflow: hidden;
                 }
         
                 p {
-                    margin-left: 30px;
+                    max-width: 332px;
                     font-size: 12px;
                     font-family: Lato;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 32px;
                     letter-spacing: 1px;
+                    margin-left: -100%;
+                    transition: 1s ease-out;
+
+                    &.animation{
+                        margin-left: 0%;
+                    }
                 }
             }
         }

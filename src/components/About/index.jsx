@@ -7,8 +7,18 @@ import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import ImageUp from '../../assets/produtora.png'
 import ImageBelow from '../../assets/sobreimagem.png'
+import { useEffect, useState } from 'react'
 
-export const About = ({ nextSection, prevSection }) => {
+export const About = ({ section, nextSection, prevSection }) => {
+    const [animation, setAnimation] = useState(false)
+
+    useEffect(() => {
+        if (section === 1) {
+            setTimeout(function () {
+                setAnimation(true)
+            }, 1000)
+        }
+    }, [section])
 
     return (
         <div className='about'>
@@ -30,13 +40,17 @@ export const About = ({ nextSection, prevSection }) => {
             </div>
             <div className='container'>
                 <div className="up">
-                    <img src={ImageUp} alt="" />
+                    <div className="img-container">
+                        <img src={ImageUp} alt="" className={`${animation ? 'animation' : ''}`} />
+                    </div>
                 </div>
                 <div className='low'>
-                    <img src={ImageBelow} alt="" />
+                    <img src={ImageBelow} alt="" className={`${animation ? 'animation' : ''}`} />
                     <div className="text">
-                        <h2>A Produtora</h2>
-                        <p>Rodrigo Sant'Anna foi criado na favela carioca Morro dos Macacos, em Vila Isabel, Zona Norte do Rio de Janeiro. Após se formar pela Casa das Artes de Laranjeiras, aos 24 anos, Rodrigo estreou, ao lado da atriz Thalita Carauta, o espetáculo Os Suburbanos, em que tanto dirigiu, escreveu e atuou. O espetáculo que atingiu o sucesso de crítica e público ficou cinco anos em cartaz.</p>
+                        <h2 className={`${animation ? 'animation' : ''}`} >A Produtora</h2>
+                        <div className="text-container">
+                            <p className={`${animation ? 'animation' : ''}`}>Rodrigo Sant'Anna foi criado na favela carioca Morro dos Macacos, em Vila Isabel, Zona Norte do Rio de Janeiro. Após se formar pela Casa das Artes de Laranjeiras, aos 24 anos, Rodrigo estreou, ao lado da atriz Thalita Carauta, o espetáculo Os Suburbanos, em que tanto dirigiu, escreveu e atuou. O espetáculo que atingiu o sucesso de crítica e público ficou cinco anos em cartaz.</p>
+                        </div>
                     </div>
                 </div>
             </div>
