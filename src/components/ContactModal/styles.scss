@@ -7,11 +7,12 @@
     position: absolute;
     z-index: 5;
     background-color: var(--color-three);
-    transform: translateY(100vh);
+    transform: translateY(0vh);
     transition: 1s ease-out;
+    scroll-behavior: smooth;
 
     &.active {
-        transform: translateY(0vh);
+        transform: translateY(-100vh);
     }
 
     .contact-container {
@@ -23,12 +24,25 @@
         color: var(--color-primary);
         gap: 72px;
 
+        .balls{
+            rotate: 290deg;
+            margin-top: 45%;
+            margin-left: -20%;
+            position: absolute;
+            z-index: 0;
+        }
+
+        div{
+            z-index: 2;
+        }
+
         h2 {
             font-family: League Gothic;
             font-size: 128px;
             font-style: normal;
             font-weight: 400;
             line-height: 164px;
+            z-index: 2;
         }
 
         .secondary {
@@ -37,6 +51,7 @@
             font-style: italic;
             font-weight: 600;
             line-height: 164px;
+            z-index: 2;
         }
 
         .three {
@@ -61,6 +76,42 @@
 
         a:visited{
             color: var(--color-primary);
+        }
+    }
+}
+
+@media(max-width: 1700px){
+    .contact-modal{
+        .contact-container{
+            .secondary{
+                font-size: 72px;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 1380px){
+    .contact-modal{
+        .contact-container{
+            h2{
+                font-size: 100px;
+                line-height: 130px;
+            }
+            .secondary{
+                font-size: 56px;
+                line-height: 112px;
+            }
+            .three {
+                font-size: 72px;
+                line-height: 144px
+            }
+            .flex{
+                svg{
+                    width: 70px;
+                    height: 70px;
+                }
+            }
         }
     }
 }

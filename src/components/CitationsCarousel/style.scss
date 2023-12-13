@@ -114,3 +114,34 @@
         }
     }
 }
+
+@media(max-width: 1500px){
+    .citation-container{
+        .citation{
+            .photo{
+                .background-photo {
+                    width: 400px;
+                    height: 400px;
+                }
+                img{
+                    width: 400px;
+                    height: 400px;
+                    margin-bottom: 10px;
+                }
+                .image{
+                    min-width: 400px;
+                    min-height: 400px;
+                }
+                .text{
+                    p{
+                        font-size: 16px !important;
+                        line-height: 32px !important;
+                    }
+                    .name{
+                        font-size: 32px !important;
+                    }
+                }
+            }
+        }
+    }
+}

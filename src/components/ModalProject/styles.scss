@@ -251,6 +251,11 @@
                 z-index: 1;
                 width: 35%;
             }
+            .balls{
+                margin-top: 5%;
+                rotate: 166deg;
+                position: absolute;
+            }
         }
     }
 
@@ -448,8 +453,19 @@
                     background-color: var(--color-secondary);
                 }
 
-                img {
+                .img-container{
                     z-index: 2;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    img{
+                        transition: 0.5s ease-out;
+                    }
+                }
+                &:hover{
+                    img{
+                        scale: 1.1;
+                    }
                 }
             }
         }
@@ -484,8 +500,19 @@
                     background-color: var(--color-secondary);
                 }
 
-                img {
+                .img-container{
                     z-index: 2;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    img{
+                        transition: 0.5s ease-out;
+                    }
+                }
+                &:hover{
+                    img{
+                        scale: 1.1;
+                    }
                 }
             }
         }

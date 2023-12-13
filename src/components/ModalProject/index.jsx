@@ -1,14 +1,14 @@
 import './styles.scss'
 
 import { ReactComponent as PlayButton } from '../../assets/play.svg'
-import { ReactComponent as Balls } from '../../assets/reticula.svg'
 import { CastCarousel } from '../CastCarousel'
 import { FooterModals } from '../FooterModals'
 import { CitationsCarousel } from '../CitationsCarousel'
 import { useEffect } from 'react'
 import { useRef } from 'react'
+import Balls from '../../assets/reticula.png'
 
-export const ModalProject = ({ project, openModal }) => {
+export const ModalProject = ({ project, openModal, closeModal, navigation }) => {
     const gallery = [
         { type: 'img', url: 'https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg' },
         { type: 'video', url: 'https://www.youtube.com/watch?v=3RFDYoTHAiI', imgBackground: 'https://www.tribunaribeirao.com.br/site/wp-content/uploads/2022/06/imagem-45-scaled.jpg' },
@@ -22,11 +22,14 @@ export const ModalProject = ({ project, openModal }) => {
 
     const modalRef = useRef(null)
 
-    useEffect(() =>{
+    useEffect(() => {
         if (modalRef.current) {
-            modalRef.current.scrollTop = 0
+            modalRef.current.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            })
         }
-    },[openModal])
+    }, [openModal])
 
     return (
         <div className={`modal-project ${openModal ? 'active' : ''}`} ref={modalRef}>
@@ -154,10 +157,10 @@ export const ModalProject = ({ project, openModal }) => {
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        <Balls className='balls'/>
+                        <img src={Balls} alt="" className='balls'/>
                     </div>
                 </div>
-                <CitationsCarousel/>
+                <CitationsCarousel />
                 <div className='outher-projects'>
                     <div className='projectOne'>
                         <div className="name">
@@ -165,7 +168,9 @@ export const ModalProject = ({ project, openModal }) => {
                         </div>
                         <div className="image">
                             <div className='background'></div>
-                            <img src="https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" alt="" />
+                            <div className="img-container">
+                                <img src="https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className='projectTwo'>
@@ -174,11 +179,13 @@ export const ModalProject = ({ project, openModal }) => {
                         </div>
                         <div className="image">
                             <div className='background'></div>
-                            <img src="https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg" alt="" />
+                            <div className="img-container">
+                                <img src="https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <FooterModals/>
+                <FooterModals toggleModal={closeModal} navigation={navigation}/>
             </div>
         </div>
     )

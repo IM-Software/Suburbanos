@@ -9,7 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { ModalProject } from '../ModalProject/index.jsx'
 import { useState} from 'react'
 
-export const Projects = ({ nextSection, prevSection, changeHeaderFunction }) => {
+
+export const Projects = ({ nextSection, prevSection, changeHeaderFunction, navigation }) => {
     const [activeProject, setActiveProject] = useState(null)
     const [openModal, setOpenModal] = useState(false)
 
@@ -124,7 +125,7 @@ export const Projects = ({ nextSection, prevSection, changeHeaderFunction }) => 
                 ))}
             </Swiper>
             </div>
-            <ModalProject project={activeProject} openModal={openModal}/>
+            <ModalProject project={activeProject} openModal={openModal} closeModal={closeModal} navigation={navigation}/>
         </div>
     )
 }

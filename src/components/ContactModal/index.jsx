@@ -2,11 +2,25 @@ import './styles.scss'
 
 import ClubLogo from '../../assets/avatar-principal 1.png'
 import { FooterModals } from '../FooterModals'
+import { useEffect, useRef } from 'react'
+import Balls from '../../assets/reticula.png'
 
-export const ContactModal = ({openContact}) => {
+export const ContactModal = ({openContact, setOpenContact, navigation}) => {
+    const modalRef = useRef(null)
+
+    useEffect(() =>{
+        if (modalRef.current) {
+            modalRef.current.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            })
+        }
+    },[openContact])
+
     return (
-        <div className={`contact-modal ${openContact ? 'active' : ''}`}>
+        <div className={`contact-modal ${openContact ? 'active' : ''}`} ref={modalRef}>
             <div className='contact-container'>
+                <img src={Balls} alt="" className='balls' />
                 <div>
                     <h2>SÓ NÃO MANDA ÁUDIO TÁ...</h2>
                     <p className='secondary'>CONTATO@OSSUBURBANOS.COM.BR</p>
@@ -42,7 +56,7 @@ export const ContactModal = ({openContact}) => {
                     <p className="three">Política de privacidade</p>
                 </div>
             </div>
-            <FooterModals/>
+            <FooterModals navigation={navigation} toggleModal={setOpenContact}/>
         </div>
     )
 }
