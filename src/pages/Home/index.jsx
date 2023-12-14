@@ -13,27 +13,50 @@ import { useEffect } from 'react'
 import { ModalAbout } from '../../components/ModalAbout'
 import { ContactModal } from '../../components/ContactModal/index.jsx'
 import { ModalProjectFinal } from '../../components/ModalProjectFinal/index.jsx'
+import { ModalVideo } from '../../components/ModalVideo/index.jsx'
+import { ModalProject } from '../../components/ModalProject/index.jsx'
 
 export const Home = () => {
     const [headerFunction, setHeaderFunction] = useState(null)
 
     const [openAbout, setOpenAbout] = useState(false)
     const [openContact, setOpenContact] = useState(false)
-    const [openProject, setOpenProject] = useState(false)
+    const [openProjectFinal, setOpenProject] = useState(false)
+    const [openModalProject, setOpenModalProject] = useState(false)
+    const [activeProject, setActiveProject] = useState(null)
+    const [videoUrl, setVideoUrl] = useState(null)
 
     const closeModals = () => {
         setOpenAbout(false)
         setOpenContact(false)
         setOpenProject(false)
+        setOpenModalProject(false)
+    }
+
+    const closeVideo = () =>{
+        setVideoUrl(null)
     }
 
     useEffect(() => {
-        if (openAbout || openContact || openProject) {
+        if (openAbout || openContact || openProjectFinal || openModalProject) {
             changeHeaderFunction(closeModals)
-        } else {
+        }
+
+        if(videoUrl){
+            changeHeaderFunction(closeVideo)
+        }
+
+        if(!videoUrl && !openAbout && !openContact && !openProjectFinal && !openModalProject){
             changeHeaderFunction(null)
         }
-    }, [openAbout, openContact, openProject])
+
+    }, [openAbout, openContact, openProjectFinal, videoUrl, openModalProject])
+
+    useEffect(() =>{
+        if(activeProject){
+            setOpenModalProject(true)
+        }
+    },[activeProject])
 
     const [section, setSection] = useState(0)
 
@@ -58,7 +81,6 @@ export const Home = () => {
                     setSection(0)
                     break;
                 case 'producer':
-    
                     setSection(1)
                     break
                 case 'projects':
@@ -81,7 +103,7 @@ export const Home = () => {
 
 
     const componentList = [<About {...{ section, prevSection, nextSection }} />,
-    <Projects  {...{ prevSection, nextSection, changeHeaderFunction, navigation }} />,
+    <Projects  {...{ prevSection, nextSection, setActiveProject }} />,
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 
@@ -97,6 +119,7 @@ export const Home = () => {
                         <span>ME CLICA!</span>
                     </div>
                 </div>
+                <div className="line-background"></div>
                 <div className='main-line'></div>
                 <div className='main-image'>
                     <img src={ImageTop1} alt="" className='img-top-1' />
@@ -116,7 +139,9 @@ export const Home = () => {
             <div className="modals" style={{ transform: `translateX(${section * 100}%)` }}>
                 <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
                 <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
-                <ModalProjectFinal openProject={openProject} setOpenProject={setOpenProject} navigation={navigation} />
+                <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl}/>
+                <ModalVideo showVideo={videoUrl} videoUrl={videoUrl}/>
+                <ModalProject project={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl}/>
             </div>
         </div>
     )

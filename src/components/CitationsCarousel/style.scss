@@ -145,3 +145,18 @@
         }
     }
 }
+
+@media(max-width: 1280px){
+    .citation-container{
+        .citation{
+            .photo{
+                margin-left: -5px;
+                .text{
+                    p{
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

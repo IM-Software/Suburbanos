@@ -22,7 +22,7 @@
             margin-top: 22px;
             position: absolute;
             cursor: pointer;
-            z-index: 7;
+            z-index: 10;
             justify-content: center;
             display: flex;
             flex-direction: column;
@@ -74,6 +74,15 @@
             animation: 1100ms move ease-in-out;
         }
 
+        .line-background{
+            width: 50%;
+            height: 100%;
+            z-index: 7;
+            margin-left: -50%;
+            background-color: var(--bg-initial);
+            position: absolute;
+        }
+
         &-line {
             z-index: 6;
             height: 3px;
@@ -81,6 +90,9 @@
             filter: drop-shadow(0px 14px 3px rgba(0, 0, 0, 0.25));
             background-color: var(--color-primary);
             margin-left: 50%;
+            animation: 1s lineEffect ease-in forwards;
+            animation-delay: 1s;
+            opacity: 0;
         }
 
         &-image{
@@ -155,6 +167,37 @@
         z-index: 6;
     }
 }
+
+@media(max-width: 1366px){
+    .home{
+        .main{
+            &-image{
+                .img-top-1{
+                    margin-top: -80%;
+                }
+                .img-top-container{
+                    .img-top{
+                        margin-top: 13.5%;
+                        width: 64%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes lineEffect {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
 
 @keyframes moveRight {
     from {

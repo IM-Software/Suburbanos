@@ -52,6 +52,11 @@
             font-weight: 600;
             line-height: 164px;
             z-index: 2;
+            transition: 0.5s ease-out;
+
+            &:hover{
+                color: var(--color-secondary);
+            }
         }
 
         .three {
@@ -59,13 +64,32 @@
             font-size: 96px;
             font-style: italic;
             font-weight: 300;
-            line-height: 164px
+            line-height: 164px;
+            transition: 0.5s ease-out;
+
+            &:hover{
+                color: var(--color-secondary);
+            }
         }
 
         .flex{
             display: flex;
             align-items: center;
             gap: 24px;
+
+            svg{
+                transition: 0.5s ease-in;
+                path{
+                    transition: 0.5s ease-in;
+                }
+            }
+            
+            svg:hover{
+                scale: 1.1;
+                path {
+                    fill: var(--color-secondary);
+                }
+            }
         }
 
         a{

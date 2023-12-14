@@ -6,12 +6,12 @@
     height: 100%;
     position: absolute;
     z-index: 5;
-    transform: translateY(100vh);
+    transform: translateY(0vh);
     background-color: var(--color-primary);
     transition: 1s ease-out;
 
     &.active {
-        transform: translateY(0vh);
+        transform: translateY(-100vh);
     }
 
     .img-main {
@@ -35,6 +35,7 @@
         height: 80vh;
         margin-top: -50px;
         z-index: 1;
+        cursor: pointer;
 
         .image {
             width: 100%;
@@ -188,8 +189,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
+
+            &:hover{
+                .playButton{
+                    scale: 1.1;
+                }
+            }
 
             .playButton {
+                transition: 0.5s ease-in;
                 position: absolute;
             }
         }
@@ -265,123 +274,6 @@
         flex-direction: column;
         z-index: 2;
         background-color: var(--color-three);
-    }
-
-    .citation-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 100px;
-        margin-top: 200px;
-        margin-right: 100px;
-        gap: 90px;
-
-        .citation {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            width: 100%;
-            height: 500px;
-
-            .photo {
-                display: flex;
-                position: absolute;
-                align-items: center;
-                justify-content: left;
-                margin-left: 10%;
-                width: 100%;
-                height: 500px;
-                z-index: 1;
-
-                .background-photo {
-                    width: 500px;
-                    height: 500px;
-                    border-radius: 100%;
-                    position: absolute;
-                    background-color: var(--color-secondary);
-                }
-
-                .image{
-                    min-width: 500px;
-                    min-height: 500px;
-                    z-index: 1;
-                }
-
-                img {
-                    width: 500px;
-                    height: 500px;
-                    margin-left: -5px;
-                    margin-bottom: 15px;
-                    z-index: 1;
-                    border-radius: 100%;
-                    object-fit: cover;
-                    animation: fade-in 0.5s ease-in;
-                }
-
-                .text {
-                    display: flex;
-                    justify-content: center;
-                    align-items: left;
-                    flex-direction: column;
-                    color: #FFF;
-                    margin-left: 40px;
-                    z-index: 5;
-                    font-family: Lato;
-
-                    p {
-                        max-width: 40%;
-                        font-size: 19px;
-                        font-style: normal;
-                        font-weight: normal;
-                        line-height: 38px;
-                        letter-spacing: 2px;
-                    }
-                    .name{
-                        margin-top: 20px;
-                        font-size: 32px;
-                        font-weight: 700;
-                    }
-                }
-            }
-
-            .line {
-                position: absolute;
-                height: 400px;
-                z-index: 3;
-                width: 98% !important;
-            }
-
-            .background {
-                position: absolute;
-                z-index: 0;
-                width: 100% !important;
-                height: 450px !important;
-            }
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            gap: 100px;
-
-            .arrow-left {
-                width: 40px;
-                height: 40px;
-                rotate: 180deg;
-                cursor: pointer;
-                filter: brightness(0) invert(1);
-            }
-
-            .arrow {
-                width: 41px;
-                height: 41px;
-                cursor: pointer;
-                filter: brightness(0) invert(1);
-            }
-        }
     }
 
     .outher-projects {
@@ -526,5 +418,15 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@media(max-width: 1200px){
+    .modal-project{
+        .outher-projects {
+            h3 {
+                font-size: 100px;
+            }
+        }
     }
 }
