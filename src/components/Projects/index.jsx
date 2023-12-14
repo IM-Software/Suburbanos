@@ -6,24 +6,8 @@ import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { ModalProject } from '../ModalProject/index.jsx'
-import { useState} from 'react'
 
-
-export const Projects = ({ nextSection, prevSection, changeHeaderFunction, navigation }) => {
-    const [activeProject, setActiveProject] = useState(null)
-    const [openModal, setOpenModal] = useState(false)
-
-    const closeModal = () =>{
-        setOpenModal(false)
-        changeHeaderFunction(null)
-    }
-
-    const toggleModal = (project) =>{
-        setOpenModal(true)
-        setActiveProject(project)
-        changeHeaderFunction(closeModal)
-    }  
+export const Projects = ({ nextSection, prevSection, setActiveProject }) => {
 
     const projects = [
         {
@@ -120,12 +104,11 @@ export const Projects = ({ nextSection, prevSection, changeHeaderFunction, navig
                         <div className='project-text'>
                             <p>{project.text}</p>
                         </div>
-                        <button onClick={() => toggleModal(project)}>Ver Projeto</button>
+                        <button onClick={() => setActiveProject(project)}>Ver Projeto</button>
                     </SwiperSlide>
                 ))}
             </Swiper>
             </div>
-            <ModalProject project={activeProject} openModal={openModal} closeModal={closeModal} navigation={navigation}/>
         </div>
     )
 }

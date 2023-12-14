@@ -171,9 +171,22 @@
             cursor: pointer;
             background: transparent;
 
+            svg{
+                path {
+                    transition: 0.5s ease-in-out;
+                }
+            }
+
             &:hover {
                 transform: scale(1.5);
                 transition: transform 0.5s ease-in-out;
+
+                svg{
+                    path {
+                        stroke: var(--color-secondary);
+                        fill: var(--color-secondary);
+                    }
+                }
             }
 
             &:first-child {

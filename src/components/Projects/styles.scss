@@ -28,6 +28,13 @@
             font-family: Lato;
             gap: 24px;
 
+            &:hover {
+                .img-main{
+                    transform: translate3d(0, -12px, 0) scale(1.1);
+                    transition: 0.5s;
+                }
+            }
+
             .project-text {
                 height: 200px;
                 margin-right: 10px;
@@ -52,11 +59,6 @@
             .img-main {
                 border-radius: 8px;
                 height: 250px !important;
-
-                &:hover {
-                    transform: translate3d(0, -12px, 0) scale(1.1);
-                    transition: 0.5s;
-                }
             }
 
             .stream {
@@ -101,7 +103,7 @@
                 gap: 7.412px;
                 text-transform: uppercase;
                 color: #000;
-                font-size: 14.824px;
+                font-size: 15px;
                 font-style: normal;
                 font-weight: 300;
                 line-height: normal;
@@ -132,4 +134,19 @@
 .custom-swapper {
     width: 100%;
     margin-top: 47px;
+}
+
+@media(max-height: 800px){
+    .projects{
+        .list-projects{
+            .project{
+                gap: 10px;
+                button {
+                    width: 130px;
+                    padding: 9px 18px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }

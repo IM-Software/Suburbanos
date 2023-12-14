@@ -8,8 +8,10 @@ import Balls from '../../assets/reticula.png'
 export const FooterModals = ({navigation, toggleModal}) => {
 
     const navigationTo = (navTo) =>{
-        navigation(navTo)
-        toggleModal(false)
+        toggleModal()
+        setTimeout(function () {
+            navigation(navTo)
+        }, 500)
     }
 
 

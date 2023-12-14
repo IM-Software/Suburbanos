@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { useRef } from 'react'
 import Balls from '../../assets/reticula.png'
 
-export const ModalProject = ({ project, openModal, closeModal, navigation }) => {
+export const ModalProject = ({ project, openModal, closeModal, navigation, setVideoUrl }) => {
     const gallery = [
         { type: 'img', url: 'https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg' },
         { type: 'video', url: 'https://www.youtube.com/watch?v=3RFDYoTHAiI', imgBackground: 'https://www.tribunaribeirao.com.br/site/wp-content/uploads/2022/06/imagem-45-scaled.jpg' },
@@ -34,7 +34,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
     return (
         <div className={`modal-project ${openModal ? 'active' : ''}`} ref={modalRef}>
             <img src={project?.modal.imgMain} alt="" className='img-main' />
-            <div className='video'>
+            <div className='video' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                 <div className="image">
                     <img src={project?.modal.videoBackground} alt="" />
                 </div>
@@ -90,7 +90,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[0].type === 'img' ? (
                             <img src={gallery[0].url} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one'>
+                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[0].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -98,7 +98,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[1].type === 'img' ? (
                             <img src={gallery[1].url} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two'>
+                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[1].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -108,7 +108,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[2].type === 'img' ? (
                             <img src={gallery[2].url} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one'>
+                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[2].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -116,7 +116,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[3].type === 'img' ? (
                             <img src={gallery[3].url} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two'>
+                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[3].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -126,7 +126,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[4].type === 'img' ? (
                             <img src={gallery[4].url} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one'>
+                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[4].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -134,7 +134,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[5].type === 'img' ? (
                             <img src={gallery[5].url} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two'>
+                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[5].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -144,7 +144,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[6].type === 'img' ? (
                             <img src={gallery[6].url} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one'>
+                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[6].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
@@ -152,7 +152,7 @@ export const ModalProject = ({ project, openModal, closeModal, navigation }) => 
                         {gallery[7].type === 'img' ? (
                             <img src={gallery[7].url} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two'>
+                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                                 <img src={gallery[7].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
