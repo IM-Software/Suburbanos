@@ -4,6 +4,7 @@ import { ReactComponent as FooterRectangle } from '../../assets/footer-retangulo
 import ImgText from '../../assets/footer-img.png'
 import FooterBackground from '../../assets/footer-background.png'
 import Balls from '../../assets/reticula.png'
+import ImgHover from '../../assets/footer-hover.png'
 
 export const FooterModals = ({navigation, toggleModal}) => {
 
@@ -26,11 +27,26 @@ export const FooterModals = ({navigation, toggleModal}) => {
             </div>
             <div className='text'>
                 <div className="nav">
-                    <p onClick={() => navigationTo('producer')}>Sobre</p>
-                    <p onClick={() => navigationTo('about')}>Quem Somos</p>
-                    <p>Termos e Condições</p>
-                    <p>Política de privacidade</p>
-                    <p onClick={() => navigationTo('contact')}>Contato</p>
+                    <div className='item'>
+                        <img src={ImgHover} alt="" />
+                        <p onClick={() => navigationTo('producer')}>Sobre</p>
+                    </div>
+                    <div className='item'>
+                        <img src={ImgHover} alt="" />
+                        <p onClick={() => navigationTo('about')}>Quem Somos</p>
+                    </div>
+                    <div className='item'>
+                        <img src={ImgHover} alt="" />
+                        <p>Termos e Condições</p>
+                    </div>
+                    <div className='item'>
+                        <img src={ImgHover} alt="" />
+                        <p>Política de privacidade</p>
+                    </div>
+                    <div className='item'>
+                        <img src={ImgHover} alt="" />
+                        <p onClick={() => navigationTo('contact')}>Contato</p>
+                    </div>
                     <div className='social'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M21.1429 0H2.85714C1.28 0 0 1.28 0 2.85714V21.1429C0 22.72 1.28 24 2.85714 24H21.1429C22.72 24 24 22.72 24 21.1429V2.85714C24 1.28 22.72 0 21.1429 0ZM18.8571 8.57143H17.7143C16.4914 8.57143 16 8.85714 16 9.71429V11.4286H18.8571L18.2857 14.2857H16V22.8571H13.1429V14.2857H10.8571V11.4286H13.1429V9.71429C13.1429 7.42857 14.2857 5.71429 16.5714 5.71429C18.2286 5.71429 18.8571 6.28571 18.8571 6.28571V8.57143Z" fill="white" />

@@ -7,70 +7,7 @@ import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const Projects = ({ nextSection, prevSection, setActiveProject }) => {
-
-    const projects = [
-        {
-            name: 'A Sogra Que Te Pariu',
-            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
-            style: 'Sitcom',
-            type: 'Série',
-            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
-            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, pela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
-            modal: {
-                imgMain: 'https://m.media-amazon.com/images/S/pv-target-images/50b9cc3c2a21ad87ef61cea17d70478b923a7f48d543911a34a24ce1847d87e5.jpg',
-                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-            }
-        },
-        {
-            name: 'A Sogra Que Te Pariu',
-            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
-            style: 'Sitcom',
-            type: 'Série',
-            streamImg: 'https://logodownload.org/wp-content/uploads/2017/03/multishow-logo.png',
-            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
-            modal: {
-                imgMain: 'https://m.media-amazon.com/images/S/pv-target-images/50b9cc3c2a21ad87ef61cea17d70478b923a7f48d543911a34a24ce1847d87e5.jpg',
-                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-            }
-        },
-        {
-            name: 'A Sogra Que Te Pariu',
-            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
-            style: 'Sitcom',
-            type: 'Série',
-            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
-            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, pela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
-            modal: {
-                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-            }
-        },
-        {
-            name: 'A Sogra Que Te Pariu',
-            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
-            style: 'Sitcom',
-            type: 'Série',
-            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
-            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
-            modal: {
-                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-            }
-        },
-        {
-            name: 'A Sogra Que Te Pariu',
-            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
-            style: 'Sitcom',
-            type: 'Série',
-            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
-            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
-            modal: {
-                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
-            }
-        }
-    ]
+export const Projects = ({ projects, nextSection, prevSection, setActiveProject }) => {
 
     return (
         <div className='projects'>
@@ -93,9 +30,12 @@ export const Projects = ({ nextSection, prevSection, setActiveProject }) => {
             </div>
             <div className='custom-swapper' >
             <Swiper className="list-projects" pagination={{ clickable: true }} direction={'horizontal'} spaceBetween={'50'} slidesPerView={'auto'}>
-                {projects.map((project) => (
+                {projects.map((project, index) => (
                     <SwiperSlide className='project'>
-                        <img src={project.img} alt='' className='img-main'/>
+                        <div className="image">
+                            <img src={project.signature} alt="" className='signature'/>
+                            <img src={project.img} alt='' className='img-main'/>
+                        </div>
                         <div className='stream'>
                             <p>{project.style} | </p>
                             <p className='type'>{project.type}</p>
@@ -104,7 +44,7 @@ export const Projects = ({ nextSection, prevSection, setActiveProject }) => {
                         <div className='project-text'>
                             <p>{project.text}</p>
                         </div>
-                        <button onClick={() => setActiveProject(project)}>Ver Projeto</button>
+                        <button onClick={() => setActiveProject(index)}>Ver Projeto</button>
                     </SwiperSlide>
                 ))}
             </Swiper>

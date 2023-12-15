@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { useRef } from 'react'
 import Balls from '../../assets/reticula.png'
 
-export const ModalProject = ({ project, openModal, closeModal, navigation, setVideoUrl }) => {
+export const ModalProject = ({ projectActiveIndex, openModal, closeModal, navigation, setVideoUrl, projects, setActiveProject }) => {
     const gallery = [
         { type: 'img', url: 'https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg' },
         { type: 'video', url: 'https://www.youtube.com/watch?v=3RFDYoTHAiI', imgBackground: 'https://www.tribunaribeirao.com.br/site/wp-content/uploads/2022/06/imagem-45-scaled.jpg' },
@@ -29,24 +29,28 @@ export const ModalProject = ({ project, openModal, closeModal, navigation, setVi
                 behavior: 'smooth',
             })
         }
-    }, [openModal])
+    }, [openModal, projectActiveIndex])
+
 
     return (
         <div className={`modal-project ${openModal ? 'active' : ''}`} ref={modalRef}>
-            <img src={project?.modal.imgMain} alt="" className='img-main' />
+            <div className="main">
+                <img src={projects[projectActiveIndex]?.modal.imgMain} alt="" className='img-main' />
+                <img src={projects[projectActiveIndex]?.signature} alt="" className='signature' />
+            </div>
             <div className='video' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                 <div className="image">
-                    <img src={project?.modal.videoBackground} alt="" />
+                    <img src={projects[projectActiveIndex]?.modal.videoBackground} alt="" />
                 </div>
                 <PlayButton className='playButton' />
             </div>
             <div className='infos'>
-                <h2>{project?.name}</h2>
+                <h2>{projects[projectActiveIndex]?.name}</h2>
                 <div className='stream'>
-                    <img src={project?.streamImg} alt="" />
-                    <p>{project?.style}</p>
+                    <img src={projects[projectActiveIndex]?.streamImg} alt="" />
+                    <p>{projects[projectActiveIndex]?.style}</p>
                     <div className="line"></div>
-                    <p className='type'>{project?.type}</p>
+                    <p className='type'>{projects[projectActiveIndex]?.type}</p>
                 </div>
                 <div className="texts">
                     <div className="text">
@@ -157,35 +161,39 @@ export const ModalProject = ({ project, openModal, closeModal, navigation, setVi
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        <img src={Balls} alt="" className='balls'/>
+                        <img src={Balls} alt="" className='balls' />
                     </div>
                 </div>
                 <CitationsCarousel />
                 <div className='outher-projects'>
-                    <div className='projectOne'>
-                        <div className="name">
-                            <h3>A Sogra Que Te Pariu</h3>
-                        </div>
-                        <div className="image">
-                            <div className='background'></div>
-                            <div className="img-container">
-                                <img src="https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" alt="" />
+                    {projects[projectActiveIndex - 1] &&
+                        <div className='projectOne'>
+                            <div className="name">
+                                <h3>{projects[projectActiveIndex - 1].name}</h3>
+                            </div>
+                            <div className="image" onClick={() => setActiveProject(projectActiveIndex - 1)}>
+                                <div className='background'></div>
+                                <div className="img-container">
+                                    <img src="https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" alt="" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='projectTwo'>
-                        <div className="name">
-                            <h3>Os Suburbanos</h3>
-                        </div>
-                        <div className="image">
-                            <div className='background'></div>
-                            <div className="img-container">
-                                <img src="https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg" alt="" />
+                    }
+                    {projects[projectActiveIndex + 1] &&
+                        <div className='projectTwo'>
+                            <div className="name">
+                                <h3>{projects[projectActiveIndex + 1]?.name}</h3>
+                            </div>
+                            <div className="image" onClick={() => setActiveProject(projectActiveIndex + 1)}>
+                                <div className='background'></div>
+                                <div className="img-container">
+                                    <img src="https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg" alt="" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
-                <FooterModals toggleModal={closeModal} navigation={navigation}/>
+                <FooterModals toggleModal={closeModal} navigation={navigation} />
             </div>
         </div>
     )

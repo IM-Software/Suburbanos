@@ -39,6 +39,7 @@ export const Header = ({ section, headerFunction, navigation }) => {
         </div>
       </div>
       <div className={`menu ${open ? 'open' : ''}`}>
+        <div className='background'></div>
         <div className='itens'>
           <p onClick={() => navigationTo('home')}>Home</p>
           <p onClick={() => navigationTo('producer')}>A Produtora</p>

@@ -26,11 +26,83 @@ export const Home = () => {
     const [activeProject, setActiveProject] = useState(null)
     const [videoUrl, setVideoUrl] = useState(null)
 
+    const projects = [
+        {
+            name: 'Os Suburbanos',
+            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
+            signature: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e76c0b28492973.55c37f38397bd.png',
+            style: 'Sitcom',
+            type: 'Série',
+            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
+            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, pela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
+            modal: {
+                imgMain: 'https://telaviva.com.br/wp-content/uploads/2022/06/os-suburbanos.jpg',
+                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+            }
+        },
+        {
+            name: 'To De Graça',
+            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
+            signature: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e76c0b28492973.55c37f38397bd.png',
+            style: 'Sitcom',
+            type: 'Série',
+            streamImg: 'https://logodownload.org/wp-content/uploads/2017/03/multishow-logo.png',
+            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
+            modal: {
+                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+                videoBackground: 'https://telaviva.com.br/wp-content/uploads/2022/06/os-suburbanos.jpg',
+            }
+        },
+        {
+            name: 'A Sogra Que Te Pariu',
+            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
+            signature: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e76c0b28492973.55c37f38397bd.png',
+            style: 'Sitcom',
+            type: 'Série',
+            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
+            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, pela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
+            modal: {
+                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+            }
+        },
+        {
+            name: 'Os Suburbanos',
+            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
+            signature: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e76c0b28492973.55c37f38397bd.png',
+            style: 'Sitcom',
+            type: 'Série',
+            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
+            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
+            modal: {
+                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+            }
+        },
+        {
+            name: 'A Sogra Que Te Pariu',
+            img: 'https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg',
+            signature: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e76c0b28492973.55c37f38397bd.png',
+            style: 'Sitcom',
+            type: 'Série',
+            streamImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png',
+            text: 'Dona Isadir, uma senhora que, logo no início da pandemia, se encontra em uma situação inusitada: trocar seu modesto apartamento no bairro do Cachambi, Zona Norte do Rio de Janeiro, dadssad add adas dads dsad aadasdasdasdadsadada asd adpela mansão de seu filho Carlos, localizada na emergente Barra da Tijuca, Zona Oeste da cidade.',
+            modal: {
+                imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+                videoBackground: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
+            }
+        }
+    ]
+
+
     const closeModals = () => {
         setOpenAbout(false)
         setOpenContact(false)
         setOpenProject(false)
         setOpenModalProject(false)
+        setTimeout(function () {
+            setActiveProject(null)
+        }, 1000)
     }
 
     const closeVideo = () =>{
@@ -53,7 +125,7 @@ export const Home = () => {
     }, [openAbout, openContact, openProjectFinal, videoUrl, openModalProject])
 
     useEffect(() =>{
-        if(activeProject){
+        if(activeProject !== null){
             setOpenModalProject(true)
         }
     },[activeProject])
@@ -103,7 +175,7 @@ export const Home = () => {
 
 
     const componentList = [<About {...{ section, prevSection, nextSection }} />,
-    <Projects  {...{ prevSection, nextSection, setActiveProject }} />,
+    <Projects  {...{ projects, prevSection, nextSection, setActiveProject }} />,
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 
@@ -141,7 +213,7 @@ export const Home = () => {
                 <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
                 <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl}/>
                 <ModalVideo showVideo={videoUrl} videoUrl={videoUrl}/>
-                <ModalProject project={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl}/>
+                <ModalProject projectActiveIndex={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl} projects={projects} setActiveProject={setActiveProject}/>
             </div>
         </div>
     )

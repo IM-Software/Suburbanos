@@ -13,25 +13,24 @@
 
     .list-projects {
         display: flex;
-        margin-left: 30%;
-        height: 600px;
-        padding-top: 50px;
+        margin-left: 33%;
+        height: 700px;
+        padding-top: 60px;
         padding-left: 50px;
         padding-right: 10px;
         cursor: pointer;
         z-index: 1;
 
         .project {
-            width: 300px;
+            width: 363px;
             display: flex;
             flex-direction: column;
             font-family: Lato;
             gap: 24px;
 
             &:hover {
-                .img-main{
-                    transform: translate3d(0, -12px, 0) scale(1.1);
-                    transition: 0.5s;
+                .img-main {
+                    transform: translate3d(0, -14px, 0) scale(1.1);
                 }
             }
 
@@ -40,8 +39,8 @@
                 margin-right: 10px;
 
                 p {
-                    font-size: 14px;
-                    height: 200px;
+                    font-size: 16px;
+                    height: 220px;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     font-weight: 500;
@@ -49,16 +48,35 @@
                     letter-spacing: 0.16px;
                     color: #E5E5E5;
                     display: -webkit-box;
-                    max-width: 100%;
+                    max-width: 95%;
                     -webkit-line-clamp: 6;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                 }
             }
 
-            .img-main {
-                border-radius: 8px;
-                height: 250px !important;
+            .image {
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                width: 363px;
+                height: 296px;  
+
+                .signature {
+                    width: 250px;
+                    height: 90px;
+                    margin-bottom: 20px;
+                    z-index: 1;
+                    position: absolute;
+                }
+
+                .img-main {
+                    border-radius: 8px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    transition: 0.5s ease-in;
+                }
             }
 
             .stream {
@@ -78,8 +96,8 @@
                     letter-spacing: 1.6px;
                     text-wrap: nowrap;
                 }
-                
-                .type{
+
+                .type {
                     font-weight: 800;
                 }
 
@@ -95,6 +113,7 @@
 
             button {
                 width: 150px;
+                margin-top: 20px;
                 display: flex;
                 padding: 9px 18px;
                 flex-direction: column;
@@ -111,12 +130,12 @@
                 cursor: pointer;
                 border-radius: 8px;
                 background-color: var(--color-primary);
+                transition: 0.5s ease-in;
 
                 &:hover {
                     font-weight: bolder;
                     color: white;
                     background-color: var(--color-secondary);
-                    transition: 0.5s;
                 }
             }
         }
@@ -136,15 +155,65 @@
     margin-top: 47px;
 }
 
-@media(max-height: 800px){
-    .projects{
-        .list-projects{
-            .project{
+@media(max-height: 800px) {
+    .projects {
+        .list-projects {
+            height: 600px;
+            padding-top: 50px;
+
+            .project {
+                width: 300px;
                 gap: 10px;
+
+                &:hover {
+                    .img-main {
+                        transform: translate3d(0, -10px, 0) scale(1.1);
+                    }
+                }
+
                 button {
                     width: 130px;
+                    margin-top: 20px;
                     padding: 9px 18px;
                     font-size: 12px;
+                }
+
+                .project-text {
+                    width: 100%;
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                .image {
+                    width: 300px;
+                    height: 250px;
+
+                    .signature {
+                        width: 200px;
+                        height: 90px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-height: 750px) {
+    .projects {
+        .list-projects {
+            .project {
+                button {
+                    margin-top: 0px;
+                    font-size: 12px;
+                }
+
+                .project-text {
+                    p {
+                        font-size: 12px;
+                        line-height: 29px;
+                    }
                 }
             }
         }
