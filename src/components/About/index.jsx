@@ -8,6 +8,7 @@ import { ReactComponent as Prev } from '../../assets/prev.svg'
 import ImageUp from '../../assets/produtora.png'
 import ImageBelow from '../../assets/sobreimagem.png'
 import { useEffect, useState } from 'react'
+import ImageBackground from '../../assets/background-sobre.png'
 
 export const About = ({ section, nextSection, prevSection }) => {
     const [animation, setAnimation] = useState(false)
@@ -22,6 +23,7 @@ export const About = ({ section, nextSection, prevSection }) => {
 
     return (
         <div className='about'>
+            <img src={ImageBackground} alt=""  className='background-img'/>
             <div className='content'>
                 <span className='about-text'>Sobre</span>
                 <div className="controls">

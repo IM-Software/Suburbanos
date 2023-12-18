@@ -194,7 +194,9 @@ export const Home = () => {
                 <div className="line-background"></div>
                 <div className='main-line'></div>
                 <div className='main-image'>
-                    <img src={ImageTop1} alt="" className='img-top-1' />
+                    <div className="img-top-1-container">
+                        <img src={ImageTop1} alt="" className='img-top-1' />
+                    </div>
                     <div className="img-top-container">
                         <img src={ImageTop} alt="" className='img-top' />
                     </div>
