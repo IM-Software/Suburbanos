@@ -4,9 +4,6 @@
     max-height: 100vh;
     min-height: 100vh;
     background-color: black;
-    background-image: url('../../assets/background-sobre.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +15,13 @@
         position: absolute;
         background-color: black;
         opacity: 0.5;
+    }
+
+    .background-img{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
     }
     
     .container {
