@@ -27,16 +27,19 @@
 
         .stories{
             display: flex;
-            flex-direction: column;
             align-items: center;
-            width: 100vw;
             height: 100%;
+            width: 100%;
+            justify-content: left;
+            padding-left: 75%;
             padding-top: 50px;
 
-            .swiper-wrapper{
+            .stories-container{
                 display: flex;
+                height: 100%;
+                justify-content: left;
                 align-items: center;
-                transition: 0.7s ease-out;
+                gap: 30px;
             }
 
             .story {
@@ -92,14 +95,21 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            padding-bottom: 30px;
-            .bar{
-                width: 70px;
-                height: 1px;
-                background-color: black;
+            padding-bottom: 20px;
 
-                &.active{
-                    height: 5px;
+            .bar-container{
+                display: flex;
+                align-items: end;
+                height: 20px;
+                cursor: pointer;
+                .bar{
+                    width: 70px;
+                    height: 1px;
+                    transition: 0.3s ease-in;
+                    background-color: black;
+                    &.active{
+                        height: 5px;
+                    }
                 }
             }
         }
