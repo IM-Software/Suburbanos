@@ -5,32 +5,10 @@ import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 
-export const CastCarousel = () => {
+export const CastCarousel = ({temps}) => {
     const [seasonActive, setSeasonActive] = useState(0)
-    
-    const seasons = [
-        [
-            { name: 'Rodrigo Sant’Anna', character: 'Dona Isadir' },
-            { name: 'Lorem Impsum', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-        ],
-        [
-            { name: 'Lorem Impsum', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-            { name: 'Lorem', character: 'Lorem' },
-        ]
-    ]
+
+    console.log(temps)
 
     return (
         <div className='cast'>
@@ -38,18 +16,18 @@ export const CastCarousel = () => {
                 <h2>Elenco</h2>
                 <div className='line'></div>
                 <div className='seasons'>
-                    {seasons.map((season,index) =>(
+                    {temps.map((season,index) =>(
                         <button onClick={() => setSeasonActive(index)} className={`${seasonActive === index ? 'active' : ''}`}>{index + 1}a Temporada</button>
                     ))}
                 </div>
             </div>
             <Swiper className='images' pagination={{ clickable: true }} direction={'horizontal'} slidesPerView={'auto'}>
-                {seasons[seasonActive].map((actor) => (
+                {temps[seasonActive].map((actor) => (
                     <SwiperSlide className="actor">
                         <div className='photo'>
                             <div className='border-top'></div>
                             <BorderLow className='border-low' />
-                            <img src="https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg" alt="Foto Ator" />
+                            <img src={actor.photo} alt="Foto Ator" />
                         </div>
                         <div className='name'>
                             <h2>{actor.name}</h2>

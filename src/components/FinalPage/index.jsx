@@ -3,6 +3,9 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { useState } from 'react'
+import aboutImg from '../../assets/temp/quemsomos-img.png'
+import contactImg from '../../assets/temp/contatoimg.png'
+import deuRuimVideo from '../../assets/temp/deuruimvideo.mp4'
 
 export const FinalPage = ({ prevSection, navigation }) => {
     const [hoverAbout, setHoverAbout] = useState(false)
@@ -42,9 +45,9 @@ export const FinalPage = ({ prevSection, navigation }) => {
                     </div>
                 </div>
                 <div className='images'>
-                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" onMouseEnter={() => setHoverAbout(true)} onMouseLeave={() => setHoverAbout(false)} onClick={() => navigation('about')} id='img-about'/>
-                    <img src="https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" alt="" onMouseEnter={() => setHoverContact(true)} onMouseLeave={() => setHoverContact(false)} onClick={() => navigation('contact')}/>
-                    <video src="https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4"
+                    <img src={aboutImg} alt="" onMouseEnter={() => setHoverAbout(true)} onMouseLeave={() => setHoverAbout(false)} onClick={() => navigation('about')} id='img-about'/>
+                    <img src={contactImg} alt="" onMouseEnter={() => setHoverContact(true)} onMouseLeave={() => setHoverContact(false)} onClick={() => navigation('contact')}/>
+                    <video src={deuRuimVideo}
                         onMouseEnter={(e) => {
                             setTimeout(() => {
                                 e.target.play()
