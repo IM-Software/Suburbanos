@@ -9,16 +9,6 @@ import { useRef } from 'react'
 import Balls from '../../assets/reticula.png'
 
 export const ModalProject = ({ projectActiveIndex, openModal, closeModal, navigation, setVideoUrl, projects, setActiveProject }) => {
-    const gallery = [
-        { type: 'img', url: 'https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg' },
-        { type: 'video', url: 'https://www.youtube.com/watch?v=3RFDYoTHAiI', imgBackground: 'https://www.tribunaribeirao.com.br/site/wp-content/uploads/2022/06/imagem-45-scaled.jpg' },
-        { type: 'img', url: 'https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg' },
-        { type: 'img', url: 'https://telaviva.com.br/wp-content/uploads/2022/06/os-suburbanos.jpg' },
-        { type: 'img', url: 'https://br.web.img3.acsta.net/videothumbnails/16/01/14/13/29/591971.jpg' },
-        { type: 'img', url: 'https://f.i.uol.com.br/fotografia/2022/10/05/1665016089633e21194a154_1665016089_3x2_md.jpg' },
-        { type: 'img', url: 'https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2022/10/priscila-enquadramento-capa-2.jpg' },
-        { type: 'img', url: 'https://s2-g1.glbimg.com/Fbx46S8zDQBCX2KYxoHyPUnPEhQ=/0x0:980x551/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/n/g/BK6kJESNyaf5XuLvLefw/os-suburbanos.jpg' },
-    ]
 
     const modalRef = useRef(null)
 
@@ -37,6 +27,7 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
             <div className="main">
                 <img src={projects[projectActiveIndex]?.modal.imgMain} alt="" className='img-main' />
                 <img src={projects[projectActiveIndex]?.signature} alt="" className='signature' />
+                <div className="shadow"></div>
             </div>
             <div className='video' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
                 <div className="image">
@@ -87,107 +78,107 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                     </div>
                 </div>
             </div>
-            <CastCarousel />
+            {projectActiveIndex !== null && <CastCarousel temps={projects[projectActiveIndex]?.temps} />}
             <div className="second-part">
                 <div className='gallery'>
                     <div className='imgs-35-65'>
-                        {gallery[0].type === 'img' ? (
-                            <img src={gallery[0].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.modal.gallery[0].type === 'img' ? (
+                            <img src={projects[projectActiveIndex].modal.gallery[0].url} alt="" className='one' />
                         ) : (
                             <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[0].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[0].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {gallery[1].type === 'img' ? (
-                            <img src={gallery[1].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.modal.gallery[1].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[1].url} alt="" className='two' />
                         ) : (
                             <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[1].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[1].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                     </div>
                     <div className='imgs-50-50'>
-                        {gallery[2].type === 'img' ? (
-                            <img src={gallery[2].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.modal.gallery[2].type === 'img' ? (
+                            <img src={projects[projectActiveIndex].modal.gallery[2].url} alt="" className='one' />
                         ) : (
                             <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[2].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[2].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {gallery[3].type === 'img' ? (
-                            <img src={gallery[3].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.modal.gallery[3].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[3].url} alt="" className='two' />
                         ) : (
                             <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[3].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[3].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                     </div>
                     <div className='imgs-50-50'>
-                        {gallery[4].type === 'img' ? (
-                            <img src={gallery[4].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.modal.gallery[4].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[4].url} alt="" className='one' />
                         ) : (
                             <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[4].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[4].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {gallery[5].type === 'img' ? (
-                            <img src={gallery[5].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.modal.gallery[5].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[5].url} alt="" className='two' />
                         ) : (
                             <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[5].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[5].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                     </div>
                     <div className='imgs-65-35'>
-                        {gallery[6].type === 'img' ? (
-                            <img src={gallery[6].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.modal.gallery[6].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[6].url} alt="" className='one' />
                         ) : (
                             <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[6].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[6].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {gallery[7].type === 'img' ? (
-                            <img src={gallery[7].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.modal.gallery[7].type === 'img' ? (
+                            <img src={projects[projectActiveIndex]?.modal.gallery[7].url} alt="" className='two' />
                         ) : (
                             <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={gallery[7].imgBackground} alt="" className='videoBackground' />
+                                <img src={projects[projectActiveIndex]?.modal.gallery[7].imgBackground} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                         <img src={Balls} alt="" className='balls' />
                     </div>
                 </div>
-                <CitationsCarousel />
+                {projectActiveIndex !== null && <CitationsCarousel citations={projects[projectActiveIndex].citations}/>}
                 <div className='outher-projects'>
-                    {projects[projectActiveIndex - 1] &&
+                    {projects[0] &&
                         <div className='projectOne'>
                             <div className="name">
-                                <h3>{projects[projectActiveIndex - 1].name}</h3>
+                                <h3>{projects[0].name}</h3>
                             </div>
-                            <div className="image" onClick={() => setActiveProject(projectActiveIndex - 1)}>
+                            <div className="image" onClick={() => setActiveProject(0)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                    <img src="https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" alt="" />
+                                <img src={projects[0]?.thumb} alt="" />
                                 </div>
                             </div>
                         </div>
                     }
-                    {projects[projectActiveIndex + 1] &&
+                    {projects[2] &&
                         <div className='projectTwo'>
                             <div className="name">
-                                <h3>{projects[projectActiveIndex + 1]?.name}</h3>
+                                <h3>{projects[2]?.name}</h3>
                             </div>
-                            <div className="image" onClick={() => setActiveProject(projectActiveIndex + 1)}>
+                            <div className="image" onClick={() => setActiveProject(2)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                    <img src="https://uploads.metropoles.com/wp-content/uploads/2022/10/05152141/649A9996.jpg" alt="" />
+                                    <img src={projects[2]?.thumb} alt="" />
                                 </div>
                             </div>
                         </div>

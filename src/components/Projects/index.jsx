@@ -34,10 +34,11 @@ export const Projects = ({ projects, nextSection, prevSection, setActiveProject 
                     <SwiperSlide className='project'>
                         <div className="image">
                             <img src={project.signature} alt="" className='signature'/>
-                            <img src={project.img} alt='' className='img-main'/>
+                            <div style={{background: `linear-gradient(360deg, #000 0.26%, rgba(0, 0, 0, 0.00) 39.58%), url(${project.img})`}} alt='' className='img-main'/>
                         </div>
                         <div className='stream'>
-                            <p>{project.style} | </p>
+                            <p>{project.style}</p>
+                            <div className="line-stream"></div>
                             <p className='type'>{project.type}</p>
                             <img src={project.streamImg} alt="" />
                         </div>
