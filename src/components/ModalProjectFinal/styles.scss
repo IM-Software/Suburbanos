@@ -25,96 +25,119 @@
         padding-bottom: 50px;
         background-color: var(--color-primary);
 
-        .stories{
+        .carrossel{
             display: flex;
+            justify-content: center;
             align-items: center;
-            height: 100%;
             width: 100%;
-            justify-content: left;
-            padding-left: 75%;
-            padding-top: 50px;
-
-            .stories-container{
-                display: flex;
-                height: 100%;
-                justify-content: left;
-                align-items: center;
-                gap: 30px;
-            }
-
-            .story {
-                display: flex;
-                width: 430px !important;
-                height: 83%;
-                border-radius: 10px;
-                overflow: hidden;
-                transition: 0.7s ease-out;
-                cursor: pointer;
-                opacity: 0.8;
-                box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.15);
-
-                &.active{
-                    width: 476px !important;
-                    height: 92%;
-                    opacity: 1;
-                }
-    
-                .story-header {
-                    display: flex;
-                    width: 100%;
-                    margin-top: 35px;
-                    margin-left: 27px;
-                    position: absolute;
-                    align-items: center;
-                    gap: 24px;
-    
-                    p {
-                        color: #FFF;
-                        font-family: Lato;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                    }
-    
-                    img {
-                        width: 50px;
-                        height: 50px;
-                    }
-                }
-    
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
+            height: 100%;
         }
-        .bars{
+
+        .nav{
+            width: 100%;
             display: flex;
-            align-items: center;
-            gap: 20px;
-            padding-bottom: 20px;
+            justify-content: center;
+            margin-top: -60px;
+            gap: 16px;
+            z-index: 1;
 
             .bar-container{
+                height: 20px;
                 display: flex;
                 align-items: end;
-                height: 20px;
                 cursor: pointer;
+                
                 .bar{
                     width: 70px;
                     height: 1px;
-                    transition: 0.3s ease-in;
                     background-color: black;
+                    transition: 0.3s ease-out;
+    
                     &.active{
-                        height: 5px;
+                        height: 4px;
                     }
                 }
             }
         }
+
+        .slick-list{
+            margin-top: -20px;
+            margin-left: -30px;
+        }
+        .slick-track{
+            display: flex;
+            align-items: center;
+        }
+        
+        .slick-slide{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 476px;
+            height: 812px;
+            &:focus{
+                outline: none !important;
+            }
+        }
+
+        .slick-active{
+            .story{
+                width: 476px !important;
+                height: 812px;
+                opacity: 1;
+            }
+        }
+
+        .story {
+            display: flex;
+            width: 429px !important;
+            height: 732px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.7s ease-out;
+            cursor: pointer;
+            margin-left: 30px;
+            opacity: 0.8;
+            box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.15);
+
+            &:focus{
+                outline: none !important;
+            }
+
+            .story-header {
+                display: flex;
+                width: 100%;
+                margin-top: 35px;
+                margin-left: 27px;
+                position: absolute;
+                align-items: center;
+                gap: 24px;
+
+                p {
+                    color: #FFF;
+                    font-family: Lato;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
     }
-    .gallery{
+
+    .gallery {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -132,8 +155,9 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            &:hover{
-                .playButton{
+
+            &:hover {
+                .playButton {
                     scale: 1.1;
                 }
             }
@@ -143,7 +167,7 @@
                 position: absolute;
             }
 
-            img{
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -151,71 +175,82 @@
             }
         }
 
-        .videos-top{
+        .videos-top {
             display: flex;
             width: 100%;
             height: 777px;
             gap: 28px;
 
-            .left{
+            .left {
                 margin-left: 2%;
                 width: 35%;
             }
-            .right{
+
+            .right {
                 width: 65%;
                 margin-right: 2%;
             }
         }
-        .videos-middle-one{
+
+        .videos-middle-one {
             display: flex;
             width: 100%;
             height: 488px;
             gap: 33px;
-            .left{
+
+            .left {
                 margin-left: 5%;
                 width: 50%;
             }
-            .right{
+
+            .right {
                 margin-right: 6%;
                 width: 50%;
             }
         }
-        .videos-middle-two{
+
+        .videos-middle-two {
             display: flex;
             width: 100%;
             height: 500px;
             gap: 31px;
-            .left{
+
+            .left {
                 margin-left: 2%;
                 width: 50%;
             }
-            .right{
+
+            .right {
                 margin-right: 6%;
                 width: 50%;
             }
         }
-        .videos-bottom-one{
+
+        .videos-bottom-one {
             display: flex;
             width: 100%;
             height: 745px;
             gap: 31px;
-            .left{
+
+            .left {
                 margin-left: 4%;
                 width: 64%;
             }
-            .right{
+
+            .right {
                 margin-right: 5%;
                 width: 36%;
             }
         }
 
-        .videos-low{
+        .videos-low {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 994px;
-            .left{
+
+            .left {
                 width: 92%;
             }
         }
