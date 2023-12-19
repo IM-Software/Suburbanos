@@ -1,6 +1,6 @@
 import './styles.scss'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
+import Slider from "react-slick"
 import Logo from '../../assets/story-header-img.png'
 import { useRef, useState } from 'react'
 import { useEffect } from 'react'
@@ -9,10 +9,8 @@ import { CitationsCarousel } from '../CitationsCarousel'
 import { FooterModals } from '../FooterModals'
 
 export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, setVideoUrl }) => {
-    const carouselRef = useRef(null)
     const modalRef = useRef(null)
-    const [activeSlide, setActiveSlide] = useState(0)
-    const [containerWidth, setContainerWidth] = useState(0)
+    const [activeSlide, setACtiveSlide] = useState(0)
 
     const stories = [
         { img: "https://s2-globofilmes.glbimg.com/74bCVN8sMCJ-AyyVzZjPCYIIyew=/0x0:2248x1500/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_755cbb8e98bc4df6b024f1581a117b52/internal_photos/bs/2022/K/r/JUsYZyQAum4ax55HXBng/22-2086-1.jpg" },
@@ -24,9 +22,6 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
         { img: "https://telaviva.com.br/wp-content/uploads/2023/03/a-sogra-que-te-pariu.jpg" },
     ]
 
-    const handleSlideClick = (index) => {
-        setActiveSlide(index)
-    }
 
     useEffect(() => {
         if (modalRef.current) {
@@ -39,47 +34,47 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
 
     useEffect(() => {
         const middleIndex = Math.floor(stories.length / 2)
-        setActiveSlide(middleIndex)
+        if (sliderRef.current) {
+            setACtiveSlide(middleIndex)
+            sliderRef.current.slickGoTo(middleIndex)
+        }
     }, [stories.length])
 
-    useEffect(() => {
-        const updateContainerWidth = () => {
-            if (carouselRef.current) {
-                setContainerWidth(carouselRef.current.offsetWidth);
-            }
-        };
 
-        updateContainerWidth();
+    const settings = {
+        centerMode: true,
+        slidesToShow: 1,
+        variableWidth: true,
+        infinite: false,
+        speed: 500,
+    }
 
-        window.addEventListener('resize', updateContainerWidth)
+    const sliderRef = useRef(null)
 
-        return () => {
-            window.removeEventListener('resize', updateContainerWidth)
-        }
-    }, [])
-
-    const translateValue = -activeSlide * (containerWidth / stories.length)
+    const handleDotClick = (index) => {
+      if (sliderRef.current) {
+        setACtiveSlide(index)
+        sliderRef.current.slickGoTo(index)
+      }
+    }
 
     return (
         <div className={`project-final ${openProject ? 'active' : ''}`} ref={modalRef}>
             <div className="main">
-                <div className='stories'
-                >
-                    <div className="stories-container" ref={carouselRef} style={{ transition: '1s ease-in', transitionDuration: '200ms', transform: `translate3d(${translateValue}px, 0px, 0px) ` }}>
-                        {stories.map((story, index) => (
-                            <div className={`story ${activeSlide === index ? 'active' : ''}`} onClick={() => handleSlideClick(index)}>
-                                <div className='story-header'>
-                                    <img src={Logo} alt="Logo" />
-                                    <p>Os Suburbanos Bloopers</p>
-                                </div>
-                                <img src={story.img} alt="" />
+                <Slider {...settings} className='carrossel' ref={sliderRef}>
+                    {stories.map((story, index) => (
+                        <div className={`story`}  onClick={() => handleDotClick(index)}>
+                            <div className='story-header'>
+                                <img src={Logo} alt="Logo" />
+                                <p>Os Suburbanos Bloopers</p>
                             </div>
-                        ))}
-                    </div>
-                </div>
-                <div className='bars'>
-                {stories.map((story, index) =>(
-                        <div className="bar-container" onClick={() => handleSlideClick(index)}>
+                            <img src={story.img} alt="" />
+                        </div>
+                    ))}
+                </Slider>
+                <div className='nav'>
+                    {stories.map((story, index) => (
+                        <div className="bar-container" onClick={() => handleDotClick(index)}>
                             <div className={`bar ${activeSlide === index ? 'active' : ''}`}></div>
                         </div>
                     ))}
