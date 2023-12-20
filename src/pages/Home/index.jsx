@@ -93,7 +93,7 @@ export const Home = () => {
                     {type: 'img', url: sogragallery8 },
                 ]
             },
-            temps: [
+            carousel: [
                 [
                     { photo: rodrigoImg, name: "Rodrigo Sant’Anna", character: 'Dona Isadir' },
                     { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
@@ -105,6 +105,7 @@ export const Home = () => {
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'De Troca' },
                 ]
             ],
+            carouselTitle: "Elenco",
             citations: [
                 { photo: citation1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'João José da Silva' },
                 { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },
@@ -133,9 +134,17 @@ export const Home = () => {
                     {type: 'img', url: sogragallery8 },
                 ]
             },
-            temps: [
-                { photo: "", name: "", character: '' }
+            carousel: [
+                [
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                ],
+                [
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                ]
             ],
+            carouselTitle: "Elenco",
             citations: [
                 { photo: citation1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'João José da Silva' },
                 { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },  
@@ -164,7 +173,7 @@ export const Home = () => {
                     {type: 'img', url: suburbanosgallery8 },
                 ]
             },
-            temps: [
+            carousel: [
                 [
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' },
                     { photo: alineImg, name: "aline WIRLEY", character: 'Cantora e atriz' },
@@ -182,6 +191,7 @@ export const Home = () => {
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' }
                 ]
             ],
+            carouselTitle: "Convidados",
             citations: [
                 { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },
                 { photo: citation1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'João José da Silva' },
@@ -209,7 +219,7 @@ export const Home = () => {
                     {type: 'img', url: sogragallery8 },
                 ]
             },
-            temps: [
+            carousel: [
                 [
                     { photo: rodrigoImg, name: "Rodrigo Sant’Anna", character: 'Dona Isadir' },
                     { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
@@ -221,6 +231,7 @@ export const Home = () => {
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'De Troca' },
                 ]
             ],
+            carouselTitle: "Elenco",
             citations: [
                 { photo: citation1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'João José da Silva' },
                 { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },

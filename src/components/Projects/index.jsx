@@ -6,6 +6,7 @@ import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Path from '../../assets/path-parte1.png'
 
 export const Projects = ({ projects, nextSection, prevSection, setActiveProject }) => {
 
@@ -49,6 +50,9 @@ export const Projects = ({ projects, nextSection, prevSection, setActiveProject 
                     </SwiperSlide>
                 ))}
             </Swiper>
+            </div>
+            <div className='path'>
+                <img src={Path} alt="" />
             </div>
         </div>
     )

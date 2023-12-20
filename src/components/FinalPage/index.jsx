@@ -6,6 +6,7 @@ import { useState } from 'react'
 import aboutImg from '../../assets/temp/quemsomos-img.png'
 import contactImg from '../../assets/temp/contatoimg.png'
 import deuRuimVideo from '../../assets/temp/deuruimvideo.mp4'
+import Path from '../../assets/path-parte2.png'
 
 export const FinalPage = ({ prevSection, navigation }) => {
     const [hoverAbout, setHoverAbout] = useState(false)
@@ -61,6 +62,9 @@ export const FinalPage = ({ prevSection, navigation }) => {
                         onClick={() => navigation('projectFinal')}
                     ></video>
                 </div>
+            </div>
+            <div className='path'>
+                <img src={Path} alt="" />
             </div>
         </div>
     )

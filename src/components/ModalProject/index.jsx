@@ -78,7 +78,7 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                     </div>
                 </div>
             </div>
-            {projectActiveIndex !== null && <CastCarousel temps={projects[projectActiveIndex]?.temps} />}
+            {projectActiveIndex !== null && <CastCarousel carousel={projects[projectActiveIndex]?.carousel} title={projects[projectActiveIndex]?.carouselTitle}/>}
             <div className="second-part">
                 <div className='gallery'>
                     <div className='imgs-35-65'>

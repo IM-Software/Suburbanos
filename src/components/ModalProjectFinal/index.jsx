@@ -28,7 +28,7 @@ import gallery9 from '../../assets/temp/deuruim/galeria-9.png'
 
 export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, setVideoUrl }) => {
     const modalRef = useRef(null)
-    const [activeSlide, setACtiveSlide] = useState(0)
+    const [activeSlide, setActiveSlide] = useState(0)
 
     const stories = [
         { img: story1 },
@@ -59,7 +59,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
     useEffect(() => {
         const middleIndex = Math.floor(stories.length / 2)
         if (sliderRef.current) {
-            setACtiveSlide(middleIndex)
+            setActiveSlide(middleIndex)
             sliderRef.current.slickGoTo(middleIndex)
         }
     }, [stories.length])
@@ -77,7 +77,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
 
     const handleDotClick = (index) => {
       if (sliderRef.current) {
-        setACtiveSlide(index)
+        setActiveSlide(index)
         sliderRef.current.slickGoTo(index)
       }
     }
