@@ -50,9 +50,7 @@ export const FinalPage = ({ prevSection, navigation }) => {
                     <img src={contactImg} alt="" onMouseEnter={() => setHoverContact(true)} onMouseLeave={() => setHoverContact(false)} onClick={() => navigation('contact')}/>
                     <video src={deuRuimVideo}
                         onMouseEnter={(e) => {
-                            setTimeout(() => {
-                                e.target.play()
-                            }, 500)
+                            e.target.play()
                             setHoverProject(true)
                         }}
                         onMouseLeave={(e) => {
