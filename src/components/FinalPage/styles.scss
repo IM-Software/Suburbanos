@@ -61,6 +61,20 @@
       }
     }
   }
+
+  .path {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    align-items: end;
+    pointer-events: none;
+
+    img {
+      height: 120px;
+    }
+  }
 }
 
 .ball-with-text {
@@ -72,10 +86,10 @@
   justify-content: space-between;
   max-width: 60%;
 
-  .hover{
+  .hover {
     transform: translate3d(10px, -5px, 0) scale(1.1);
   }
-  
+
   span {
     color: white;
     pointer-events: none;
