@@ -29,6 +29,7 @@ import gallery9 from '../../assets/temp/deuruim/galeria-9.png'
 export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, setVideoUrl }) => {
     const modalRef = useRef(null)
     const [activeSlide, setActiveSlide] = useState(0)
+    const [barActive, setBarActive] = useState(0)
 
     const stories = [
         { img: story1 },
@@ -60,9 +61,14 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
         const middleIndex = Math.floor(stories.length / 2)
         if (sliderRef.current) {
             setActiveSlide(middleIndex)
+            setBarActive(middleIndex)
             sliderRef.current.slickGoTo(middleIndex)
         }
     }, [stories.length])
+
+    const handleSlideChange = (index) => {
+        setBarActive(index)
+    }
 
 
     const settings = {
@@ -71,6 +77,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
         variableWidth: true,
         infinite: false,
         speed: 500,
+        afterChange: handleSlideChange
     }
 
     const sliderRef = useRef(null)
@@ -78,6 +85,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
     const handleDotClick = (index) => {
       if (sliderRef.current) {
         setActiveSlide(index)
+        setBarActive(index)
         sliderRef.current.slickGoTo(index)
       }
     }
@@ -99,7 +107,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
                 <div className='nav'>
                     {stories.map((story, index) => (
                         <div className="bar-container" onClick={() => handleDotClick(index)}>
-                            <div className={`bar ${activeSlide === index ? 'active' : ''}`}></div>
+                            <div className={`bar ${barActive === index ? 'active' : ''}`}></div>
                         </div>
                     ))}
                 </div>
