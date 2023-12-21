@@ -61,6 +61,7 @@ import citationSuburbanos1 from '../../assets/temp/suburbanos/suburbanos-citacao
 
 export const Home = () => {
     const [headerFunction, setHeaderFunction] = useState(null)
+    const [headerbackground, setHeaderBackground] = useState(false)
 
     const [openAbout, setOpenAbout] = useState(false)
     const [openContact, setOpenContact] = useState(false)
@@ -255,19 +256,21 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        if (openAbout || openContact || openProjectFinal || openModalProject) {
-            changeHeaderFunction(closeModals)
-        }
-
         if (videoUrl) {
             changeHeaderFunction(closeVideo)
-        }
-
-        if (!videoUrl && !openAbout && !openContact && !openProjectFinal && !openModalProject) {
+        }else{
             changeHeaderFunction(null)
         }
 
-    }, [openAbout, openContact, openProjectFinal, videoUrl, openModalProject])
+    }, [videoUrl])
+
+    useEffect(() =>{
+        if(openAbout || openContact || openProjectFinal || openModalProject || videoUrl){
+            setHeaderBackground(true)
+        }else{
+            setHeaderBackground(false)
+        }
+    },[openAbout, openContact, openModalProject, openProjectFinal, videoUrl])
 
     useEffect(() => {
         if (activeProject !== null) {
@@ -292,6 +295,7 @@ export const Home = () => {
     }
 
     const navigation = (navTo) => {
+        closeModals()
         setTimeout(function () {
             switch (navTo) {
                 case 'home':
@@ -315,7 +319,7 @@ export const Home = () => {
                 default:
                     break
             }
-        }, 500)
+        }, 1000)
     }
 
 
@@ -326,7 +330,7 @@ export const Home = () => {
 
     return (
         <div className='home' style={{ transform: `translateX(-${section * 100}%)` }}>
-            <Header section={section} headerFunction={headerFunction} navigation={navigation} />
+            <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} />
             <div className='main'>
                 <div className='main-btn__wrapper'>
                     <div className="btn-container">

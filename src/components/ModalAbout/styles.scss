@@ -16,6 +16,7 @@
     }
 
     .text-primary {
+        padding-left: 50px;
         display: flex;
         width: 100%;
         padding-top: 200px;
@@ -274,6 +275,7 @@
 @media(max-width: 1450px){
     .modal-about{
         .text-primary{
+            padding-left: 0;
             .text{
                 justify-content: left;
                 align-items: center;
