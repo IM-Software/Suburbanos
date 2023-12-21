@@ -56,7 +56,7 @@ export const About = ({ section, nextSection, prevSection }) => {
                     </div>
                 </div>
             </div>
-            <div className='background'></div>
+            <div className={`background ${animation ? 'animation' : ''}`}></div>
         </div>
     )
 }

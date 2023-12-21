@@ -5,7 +5,7 @@ import Logo from '../../assets/LogoSuburbanos.png';
 import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { ReactComponent as MenuBtnClose } from '../../assets/menu-close.svg'
 
-export const Header = ({ section, headerFunction, navigation }) => {
+export const Header = ({ section, headerFunction, navigation, headerbackground }) => {
   const [open, setOpen] = useState(false)
   const [iconClose, setIconClose] = useState(false)
 
@@ -30,7 +30,7 @@ export const Header = ({ section, headerFunction, navigation }) => {
     <div className='header-container' style={{ transform: `translateX(${section * 100}vw)` }}>
       <div className='header' >
         <img className="header-logo" src={Logo} alt="" />
-        <div className={`btns ${iconClose ? 'active' : ''}`}>
+        <div className={`btns ${headerbackground || open ? 'active' : ''}`}>
           {!iconClose ? (
             <MenuBtn className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
           ) : (
