@@ -47,6 +47,11 @@
     height: 80px;
     object-fit: cover;
     object-position: top;
+    transition: 0.5s ease-out;
+
+    &.active{
+      filter: drop-shadow(0px 6px 3px black );
+    }
   }
 }
 

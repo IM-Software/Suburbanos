@@ -87,13 +87,15 @@
             &:hover{
                 .photo{
                     img{
-                        border: 5px solid var(--color-secondary);
+                        border-top: 5px solid var(--color-secondary);
+                        border-left: 5px solid var(--color-secondary);
+                        border-right: 5px solid var(--color-secondary);
                         scale: 1.1;
                     }
                     .border-low{
                         transform: rotate(30deg);
-                        scale: 0.95;
-                        margin-left: -44px;
+                        scale: 1.08;
+                        margin-left: -49px;
                     }
                 }
                 .name{
