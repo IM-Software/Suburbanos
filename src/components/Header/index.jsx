@@ -29,7 +29,7 @@ export const Header = ({ section, headerFunction, navigation, headerbackground }
   return (
     <div className='header-container' style={{ transform: `translateX(${section * 100}vw)` }}>
       <div className='header' >
-        <img className="header-logo" src={Logo} alt="" />
+        <img className={`header-logo ${headerbackground || open ? 'active' : ''}`} src={Logo} alt="" />
         <div className={`btns ${headerbackground || open ? 'active' : ''}`}>
           {!iconClose ? (
             <MenuBtn className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
