@@ -49,11 +49,13 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
 
 
     useEffect(() => {
-        if (modalRef.current) {
-            modalRef.current.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            })
+        if (modalRef.current && !openProject) {
+            setTimeout(function () {
+                modalRef.current.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                })
+            }, 1000)
         }
     }, [openProject])
 

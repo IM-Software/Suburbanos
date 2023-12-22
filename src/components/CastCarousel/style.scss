@@ -73,7 +73,7 @@
         margin-top: 50px;
         padding-top: 50px;
         overflow: visible;
-        padding-right: 150px;
+        padding-right: 200px;
         padding-left: 100px;
         cursor: pointer;
         margin-left: 20%;
@@ -91,8 +91,9 @@
                         scale: 1.1;
                     }
                     .border-low{
-                        transform: rotate(20deg);
-                        margin-left: -37px;
+                        transform: rotate(30deg);
+                        scale: 0.95;
+                        margin-left: -44px;
                     }
                 }
                 .name{

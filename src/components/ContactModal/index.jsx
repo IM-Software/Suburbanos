@@ -8,14 +8,17 @@ import Balls from '../../assets/reticula.png'
 export const ContactModal = ({openContact, setOpenContact, navigation}) => {
     const modalRef = useRef(null)
 
-    useEffect(() =>{
-        if (modalRef.current) {
-            modalRef.current.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            })
+    useEffect(() => {
+        if (modalRef.current && !openContact) {
+            setTimeout(function () {
+                modalRef.current.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                })
+            }, 1000)
         }
-    },[openContact])
+    }, [openContact])
+
 
     return (
         <div className={`contact-modal ${openContact ? 'active' : ''}`} ref={modalRef}>

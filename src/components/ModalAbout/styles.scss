@@ -16,7 +16,7 @@
     }
 
     .text-primary {
-        padding-left: 50px;
+        padding-left: 83px;
         display: flex;
         width: 100%;
         padding-top: 200px;
@@ -24,7 +24,7 @@
         .balls{
             position: absolute;
             margin-top: -2%;
-            margin-left: -20%;
+            margin-left: -23%;
             width: 100%;
             height: 150%;
             opacity: 0.5;
@@ -267,6 +267,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 1600px){
+    .modal-about{
+        .text-primary{
+            padding-left: 50px;
         }
     }
 }
