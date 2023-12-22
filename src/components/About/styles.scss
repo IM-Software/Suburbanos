@@ -181,6 +181,7 @@
             border: none;
             cursor: pointer;
             background: transparent;
+            transition: transform 0.5s ease-in-out;
 
             svg{
                 path {
@@ -190,7 +191,6 @@
 
             &:hover {
                 transform: scale(1.5);
-                transition: transform 0.5s ease-in-out;
 
                 svg{
                     path {

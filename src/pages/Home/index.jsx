@@ -100,7 +100,12 @@ export const Home = () => {
                     { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
                     { photo: solangeImg, name: "Solange teixeira", character: 'Fátima' },
                     { photo: pedroImg, name: "Pedro Ottoni", character: 'Jonas' },
-                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' }
+                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' },
+                    { photo: rodrigoImg, name: "Rodrigo Sant’Anna", character: 'Dona Isadir' },
+                    { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
+                    { photo: solangeImg, name: "Solange teixeira", character: 'Fátima' },
+                    { photo: pedroImg, name: "Pedro Ottoni", character: 'Jonas' },
+                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' },
                 ],
                 [
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'De Troca' },
@@ -115,7 +120,7 @@ export const Home = () => {
         {
             name: 'To De Graça',
             img: imgToDeGraca,
-            thumb: imgToDeGraca,
+            thumb: imgSuburbanos,
             signature: signatureToDeGraca,
             style: 'Sitcom',
             type: 'Série',
@@ -137,6 +142,12 @@ export const Home = () => {
             },
             carousel: [
                 [
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
+                    { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'Fulano' },
@@ -180,7 +191,12 @@ export const Home = () => {
                     { photo: alineImg, name: "aline WIRLEY", character: 'Cantora e atriz' },
                     { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor'},
                     { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo'},
-                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor'}
+                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor'},
+                    { photo: alcioneImg, name: "Alcione", character: 'Intérprete' },
+                    { photo: alineImg, name: "aline WIRLEY", character: 'Cantora e atriz' },
+                    { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor'},
+                    { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo'},
+                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor'},
                 ],
                 [
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' }
@@ -201,6 +217,7 @@ export const Home = () => {
         {
             name: 'A Sogra Que Te Pariu',
             img: imgSogra,
+            thumb: imgToDeGraca,
             signature: signatureSogra,
             style: 'Sitcom',
             type: 'Série',
@@ -226,7 +243,12 @@ export const Home = () => {
                     { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
                     { photo: solangeImg, name: "Solange teixeira", character: 'Fátima' },
                     { photo: pedroImg, name: "Pedro Ottoni", character: 'Jonas' },
-                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' }
+                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' },
+                    { photo: rodrigoImg, name: "Rodrigo Sant’Anna", character: 'Dona Isadir' },
+                    { photo: barbaraImg, name: "Bárbara sut", character: 'Márcia' },
+                    { photo: solangeImg, name: "Solange teixeira", character: 'Fátima' },
+                    { photo: pedroImg, name: "Pedro Ottoni", character: 'Jonas' },
+                    { photo: neyImg, name: "Ney Lima", character: 'Cezinha' },
                 ],
                 [
                     { photo: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "Exemplo", character: 'De Troca' },
@@ -324,7 +346,7 @@ export const Home = () => {
 
 
     const componentList = [<About {...{ section, prevSection, nextSection }} />,
-    <Projects  {...{ projects, prevSection, nextSection, setActiveProject }} />,
+    <Projects  {...{ section, projects, prevSection, nextSection, setActiveProject }} />,
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 

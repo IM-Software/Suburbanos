@@ -4,13 +4,27 @@ import { ReactComponent as PlayButton } from '../../assets/play.svg'
 import { CastCarousel } from '../CastCarousel'
 import { FooterModals } from '../FooterModals'
 import { CitationsCarousel } from '../CitationsCarousel'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import Balls from '../../assets/reticula.png'
 
 export const ModalProject = ({ projectActiveIndex, openModal, closeModal, navigation, setVideoUrl, projects, setActiveProject }) => {
-
+    const [nextProject, setNextProject] = useState(0)
+    const [prevProject, setPrevProject] = useState(0)
+    const [nextHover, setNextHover] = useState(false)
+    const [prevHover, setPrevHover] = useState(false)
     const modalRef = useRef(null)
+
+    useEffect(() => {
+        if (modalRef.current && !openModal) {
+            setTimeout(function () {
+                modalRef.current.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                })
+            }, 1000)
+        }
+    }, [openModal])
 
     useEffect(() => {
         if (modalRef.current) {
@@ -19,8 +33,22 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                 behavior: 'smooth',
             })
         }
-    }, [openModal, projectActiveIndex])
+    }, [projectActiveIndex])
 
+    useEffect(() =>{
+        if(projectActiveIndex + 1 === projects.length){
+            setNextProject(0)
+        }else{
+            setNextProject(projectActiveIndex + 1)
+        }
+
+        if(projectActiveIndex - 1 < 0){
+            setPrevProject(projects.length - 1)
+        }else{
+            setPrevProject(projectActiveIndex - 1)
+        }
+
+    },[projectActiveIndex, projects.length])
 
     return (
         <div className={`modal-project ${openModal ? 'active' : ''}`} ref={modalRef}>
@@ -78,7 +106,7 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                     </div>
                 </div>
             </div>
-            {projectActiveIndex !== null && <CastCarousel carousel={projects[projectActiveIndex]?.carousel} title={projects[projectActiveIndex]?.carouselTitle}/>}
+            {projectActiveIndex !== null && <CastCarousel carousel={projects[projectActiveIndex]?.carousel} title={projects[projectActiveIndex]?.carouselTitle} />}
             <div className="second-part">
                 <div className='gallery'>
                     <div className='imgs-35-65'>
@@ -155,30 +183,30 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                         <img src={Balls} alt="" className='balls' />
                     </div>
                 </div>
-                {projectActiveIndex !== null && <CitationsCarousel citations={projects[projectActiveIndex].citations}/>}
+                {projectActiveIndex !== null && <CitationsCarousel citations={projects[projectActiveIndex].citations} />}
                 <div className='outher-projects'>
-                    {projects[0] &&
+                    {projects[nextProject] &&
                         <div className='projectOne'>
                             <div className="name">
-                                <h3>{projects[0].name}</h3>
+                                <h3 className={`${nextHover ? 'hover' : ''}`}>{projects[nextProject].name}</h3>
                             </div>
-                            <div className="image" onClick={() => setActiveProject(0)}>
+                            <div className="image" onClick={() => setActiveProject(nextProject)} onMouseEnter={() => setNextHover(true)} onMouseLeave={() => setNextHover(false)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                <img src={projects[0]?.thumb} alt="" />
+                                    <img src={projects[nextProject]?.thumb} alt="" />
                                 </div>
                             </div>
                         </div>
                     }
-                    {projects[2] &&
+                    {projects[prevProject] &&
                         <div className='projectTwo'>
-                            <div className="name">
-                                <h3>{projects[2]?.name}</h3>
+                            <div className={`name ${prevHover ? 'hover' : ''}`}>
+                                <h3>{projects[prevProject]?.name}</h3>
                             </div>
-                            <div className="image" onClick={() => setActiveProject(2)}>
+                            <div className="image" onClick={() => setActiveProject(prevProject)} onMouseEnter={() => setPrevHover(true)} onMouseLeave={() => setPrevHover(false)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                    <img src={projects[2]?.thumb} alt="" />
+                                    <img src={projects[prevProject]?.thumb} alt="" />
                                 </div>
                             </div>
                         </div>

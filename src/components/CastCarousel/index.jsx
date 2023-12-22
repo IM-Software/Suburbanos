@@ -8,8 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export const CastCarousel = ({ carousel, title }) => {
     const [seasonActive, setSeasonActive] = useState(0)
 
-    console.log(carousel)
-
     return (
         <div className='cast'>
             <div className="controls">

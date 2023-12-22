@@ -22,14 +22,16 @@ export const ModalAbout = ({openAbout, setOpenAbout,  navigation}) => {
         { img: "https://i.pinimg.com/236x/bd/f4/d3/bdf4d3fe1f9a17136319df951fe9b3e0.jpg", name: "José do Nascimento Silva", profession: "Designer", textOne: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", textSecondary: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
     ]
 
-    useEffect(() =>{
-        if (modalRef.current) {
-            modalRef.current.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            })
+    useEffect(() => {
+        if (modalRef.current && !openAbout) {
+            setTimeout(function () {
+                modalRef.current.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                })
+            }, 1000)
         }
-    },[openAbout])
+    }, [openAbout])
 
     return (
         <div className={`modal-about ${openAbout ? 'active' : ''}`} ref={modalRef}>
