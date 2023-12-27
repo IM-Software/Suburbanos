@@ -5,9 +5,15 @@ import Logo from '../../assets/LogoSuburbanos.png';
 import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { ReactComponent as MenuBtnClose } from '../../assets/menu-close.svg'
 
+import { useWindowSize } from "@uidotdev/usehooks"
+
 export const Header = ({ section, headerFunction, navigation, headerbackground }) => {
   const [open, setOpen] = useState(false)
   const [iconClose, setIconClose] = useState(false)
+  const [styleNav, setStyleNav] = useState(null)
+
+
+  const { width } = useWindowSize()
 
   const clickButton = () => {
     setOpen(!open)
@@ -26,15 +32,23 @@ export const Header = ({ section, headerFunction, navigation, headerbackground }
     setOpen(false)
   }
 
+  useEffect(() => {
+    if (width < 768) {
+      setStyleNav({ transform: `translateY(${section * 101}vh)` })
+    } else {
+      setStyleNav({ transform: `translateX(-${section * 100}%)` })
+    }
+  }, [width, section])
+
   return (
-    <div className='header-container' style={{ transform: `translateX(${section * 100}vw)` }}>
+    <div className='header-container' style={styleNav}>
       <div className='header' >
         <img className={`header-logo ${headerbackground || open ? 'active' : ''}`} src={Logo} alt="" />
         <div className={`btns ${headerbackground || open ? 'active' : ''}`}>
           {!iconClose ? (
             <MenuBtn className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
           ) : (
-            <MenuBtnClose className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
+            <MenuBtnClose className='menu-btn close' onClick={headerFunction ? headerFunction : clickButton} />
           )}
         </div>
       </div>

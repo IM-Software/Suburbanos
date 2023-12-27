@@ -130,11 +130,11 @@
         background-color: var(--color-primary);
       }
 
-      .final{
-        width: 0; 
-        height: 0; 
+      .final {
+        width: 0;
+        height: 0;
         border-top: 17px solid transparent;
-        border-bottom: 17px solid transparent; 
+        border-bottom: 17px solid transparent;
         border-right: 17px solid var(--color-primary);
         margin-left: 24.2%;
         position: absolute;
@@ -153,6 +153,122 @@
 
     img {
       height: 130px;
+    }
+  }
+}
+
+@media(max-width: 756px) {
+  .final-page {
+    min-height: 101vh;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+
+    .container-line {
+      width: 100%;
+      align-items: start;
+      flex-direction: column;
+      height: 38vh;
+      overflow: hidden;
+
+      .line-one {
+        width: 3px;
+        min-height: 15%;
+        position: absolute;
+        margin-left: 33px;
+      }
+
+      .control {
+        margin-top: 30%;
+        margin-left: 18px;
+
+        .ball-container {
+          gap: 0px;
+          flex-direction: column;
+
+          .ball {
+            margin-left: 2px;
+            margin-top: 3px;
+          }
+
+          button {
+            margin-left: -1px;
+            rotate: 90deg;
+          }
+        }
+      }
+
+      .line-two {
+        width: 3px;
+        position: absolute;
+        height: 10%;
+        margin-left: 33px;
+        margin-top: 50%;
+      }
+    }
+
+    .container {
+      height: 21vh;
+      width: 100%;
+      align-items: normal;
+      overflow: hidden;
+
+      .line-container {
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        min-height: 23vh;
+
+        .ball {
+          margin-top: 14px;
+          margin-bottom: 0;
+          margin-left: 20px;
+        }
+
+        span {
+          margin-left: 100px;
+        }
+
+        .line {
+          width: 3px;
+          height: 57%;
+          margin-top: -15px;
+          margin-left: 33px;
+        }
+
+        .final {
+          border-top: 13px solid transparent;
+          border-bottom: 13px solid transparent;
+          border-right: 13px solid var(--color-primary);
+          margin-top: 31.5%;
+          margin-left: 28px;
+          rotate: 90deg;
+        }
+      }
+
+
+      img,
+      video {
+        width: 100%;
+        height: 21vh;
+        object-position: 25% 15%;
+        object-fit: cover;
+  
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .path {
+      justify-content: right;
+      align-items: start;
+
+      img {
+        margin-top: 3px;
+        height: 80px;
+        rotate: 180deg;
+      }
     }
   }
 }

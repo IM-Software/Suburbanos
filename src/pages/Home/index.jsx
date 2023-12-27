@@ -15,6 +15,9 @@ import { ContactModal } from '../../components/ContactModal/index.jsx'
 import { ModalProjectFinal } from '../../components/ModalProjectFinal/index.jsx'
 import { ModalVideo } from '../../components/ModalVideo/index.jsx'
 import { ModalProject } from '../../components/ModalProject/index.jsx'
+import ImageTopMobile from '../../assets/home-vector-mobile-1.png'
+import ImageCenterMobile from '../../assets/home-vector-mobile-2.png'
+import ImageLowMobile from '../../assets/home-vector-mobile-3.png'
 
 import imgSogra from '../../assets/temp/sogra/sogra.png'
 import thumbSogra from '../../assets/temp/sogra/sogra-thumb.png'
@@ -59,6 +62,8 @@ import suburbanosgallery7 from '../../assets/temp/suburbanos/galeria-7.png'
 import suburbanosgallery8 from '../../assets/temp/suburbanos/galeria-8.png'
 import citationSuburbanos1 from '../../assets/temp/suburbanos/suburbanos-citacao-1.png'
 
+import { useWindowSize } from "@uidotdev/usehooks"
+
 export const Home = () => {
     const [headerFunction, setHeaderFunction] = useState(null)
     const [headerbackground, setHeaderBackground] = useState(false)
@@ -69,6 +74,11 @@ export const Home = () => {
     const [openModalProject, setOpenModalProject] = useState(false)
     const [activeProject, setActiveProject] = useState(null)
     const [videoUrl, setVideoUrl] = useState(null)
+
+    const [styleNav, setStyleNav] = useState(null)
+    const [styleModals, setStyleModals] = useState(null)
+
+    const { width } = useWindowSize()
 
     const projects = [
         {
@@ -350,8 +360,25 @@ export const Home = () => {
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 
+    useEffect(() =>{
+        if(width < 768){
+            setStyleNav({ transform: `translateY(-${section * 101}vh)` })
+            if(section === 0){
+                setTimeout(function () {
+                    setStyleModals({ transform: `translateY(${section * 101}vh)` })
+                }, 1000)
+            }else{
+                setStyleModals({ transform: `translateY(${section * 101}vh)` })
+            }
+        }else{
+            setStyleNav({ transform: `translateX(-${section * 100}%)` })
+            setStyleModals({ transform: `translateX(-${section * 100}%)` })
+        }
+    },[width, section])
+
+
     return (
-        <div className='home' style={{ transform: `translateX(-${section * 100}%)` }}>
+        <div className='home' style={styleNav}>
             <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} />
             <div className='main'>
                 <div className='main-btn__wrapper'>
@@ -364,6 +391,11 @@ export const Home = () => {
                 </div>
                 <div className="line-background"></div>
                 <div className='main-line'></div>
+                <div className='main-image-mobile'>
+                    <img src={ImageTopMobile} alt="" className='img-top-1' />
+                    <img src={ImageCenterMobile} alt="" className='img-center' />
+                    <img src={ImageLowMobile} alt="" className='img-low' />
+                </div>
                 <div className='main-image'>
                     <div className="img-top-1-container">
                         <img src={ImageTop1} alt="" className='img-top-1' />
@@ -381,7 +413,7 @@ export const Home = () => {
             {componentList.map((component) => component)}
 
             {/*  */}
-            <div className="modals" style={{ transform: `translateX(${section * 100}%)` }}>
+            <div className="modals" style={styleModals}>
                 <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
                 <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
                 <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl} />
