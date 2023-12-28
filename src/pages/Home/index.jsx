@@ -80,6 +80,8 @@ export const Home = () => {
 
     const { width } = useWindowSize()
 
+    const [showSecondPart, setShowSecondPart] = useState(false)
+
     const projects = [
         {
             name: 'A Sogra Que Te Pariu',
@@ -93,15 +95,15 @@ export const Home = () => {
             modal: {
                 imgMain: modalSogra,
                 videoBackground: sograVideoBackground,
-                gallery:[ 
-                    {type: 'img', url: sogragallery1 },
-                    {type: 'video', imgBackground: sogragallery2 },
-                    {type: 'img', url: sogragallery3 },
-                    {type: 'img', url: sogragallery4 },
-                    {type: 'img', url: sogragallery5 },
-                    {type: 'img', url: sogragallery6 },
-                    {type: 'video', imgBackground: sogragallery7 },
-                    {type: 'img', url: sogragallery8 },
+                gallery: [
+                    { type: 'img', url: sogragallery1 },
+                    { type: 'video', imgBackground: sogragallery2 },
+                    { type: 'img', url: sogragallery3 },
+                    { type: 'img', url: sogragallery4 },
+                    { type: 'img', url: sogragallery5 },
+                    { type: 'img', url: sogragallery6 },
+                    { type: 'video', imgBackground: sogragallery7 },
+                    { type: 'img', url: sogragallery8 },
                 ]
             },
             carousel: [
@@ -139,15 +141,15 @@ export const Home = () => {
             modal: {
                 imgMain: 'https://pbs.twimg.com/media/FRYEtIsWYAU_OCy.jpg:large',
                 videoBackground: 'https://telaviva.com.br/wp-content/uploads/2022/06/os-suburbanos.jpg',
-                gallery:[ 
-                    {type: 'img', url: sogragallery1 },
-                    {type: 'video', imgBackground: sogragallery2 },
-                    {type: 'img', url: sogragallery3 },
-                    {type: 'img', url: sogragallery4 },
-                    {type: 'img', url: sogragallery5 },
-                    {type: 'img', url: sogragallery6 },
-                    {type: 'video', imgBackground: sogragallery7 },
-                    {type: 'img', url: sogragallery8 },
+                gallery: [
+                    { type: 'img', url: sogragallery1 },
+                    { type: 'video', imgBackground: sogragallery2 },
+                    { type: 'img', url: sogragallery3 },
+                    { type: 'img', url: sogragallery4 },
+                    { type: 'img', url: sogragallery5 },
+                    { type: 'img', url: sogragallery6 },
+                    { type: 'video', imgBackground: sogragallery7 },
+                    { type: 'img', url: sogragallery8 },
                 ]
             },
             carousel: [
@@ -169,7 +171,7 @@ export const Home = () => {
             carouselTitle: "Elenco",
             citations: [
                 { photo: citation1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'João José da Silva' },
-                { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },  
+                { photo: citationSuburbanos1, text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Martinho Da Vila' },
             ]
         },
         {
@@ -184,29 +186,29 @@ export const Home = () => {
             modal: {
                 imgMain: modalSuburbanos,
                 videoBackground: suburbanosVideoBackground,
-                gallery:[ 
-                    {type: 'img', url: suburbanosgallery1 },
-                    {type: 'img', url: suburbanosgallery2 },
-                    {type: 'video', imgBackground: suburbanosgallery3 },
-                    {type: 'img', url: suburbanosgallery4 },
-                    {type: 'img', url: suburbanosgallery5 },
-                    {type: 'img', url: suburbanosgallery6 },
-                    {type: 'img', url: suburbanosgallery7 },
-                    {type: 'img', url: suburbanosgallery8 },
+                gallery: [
+                    { type: 'img', url: suburbanosgallery1 },
+                    { type: 'img', url: suburbanosgallery2 },
+                    { type: 'video', imgBackground: suburbanosgallery3 },
+                    { type: 'img', url: suburbanosgallery4 },
+                    { type: 'img', url: suburbanosgallery5 },
+                    { type: 'img', url: suburbanosgallery6 },
+                    { type: 'img', url: suburbanosgallery7 },
+                    { type: 'img', url: suburbanosgallery8 },
                 ]
             },
             carousel: [
                 [
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' },
                     { photo: alineImg, name: "aline WIRLEY", character: 'Cantora e atriz' },
-                    { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor'},
-                    { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo'},
-                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor'},
+                    { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor' },
+                    { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo' },
+                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor' },
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' },
                     { photo: alineImg, name: "aline WIRLEY", character: 'Cantora e atriz' },
-                    { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor'},
-                    { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo'},
-                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor'},
+                    { photo: diogoImg, name: "Diogo Nogueira", character: 'Cantor e compositor' },
+                    { photo: gracyaneImg, name: "GRACYANNE", character: 'Modelo' },
+                    { photo: martinhoImg, name: "MARTINHO DA VILA", character: 'Cantor e compositor' },
                 ],
                 [
                     { photo: alcioneImg, name: "Alcione", character: 'Intérprete' }
@@ -236,15 +238,15 @@ export const Home = () => {
             modal: {
                 imgMain: modalSogra,
                 videoBackground: sograVideoBackground,
-                gallery:[ 
-                    {type: 'img', url: sogragallery1 },
-                    {type: 'video', imgBackground: sogragallery2 },
-                    {type: 'img', url: sogragallery3 },
-                    {type: 'img', url: sogragallery4 },
-                    {type: 'img', url: sogragallery5 },
-                    {type: 'img', url: sogragallery6 },
-                    {type: 'video', imgBackground: sogragallery7 },
-                    {type: 'img', url: sogragallery8 },
+                gallery: [
+                    { type: 'img', url: sogragallery1 },
+                    { type: 'video', imgBackground: sogragallery2 },
+                    { type: 'img', url: sogragallery3 },
+                    { type: 'img', url: sogragallery4 },
+                    { type: 'img', url: sogragallery5 },
+                    { type: 'img', url: sogragallery6 },
+                    { type: 'video', imgBackground: sogragallery7 },
+                    { type: 'img', url: sogragallery8 },
                 ]
             },
             carousel: [
@@ -290,19 +292,19 @@ export const Home = () => {
     useEffect(() => {
         if (videoUrl) {
             changeHeaderFunction(closeVideo)
-        }else{
+        } else {
             changeHeaderFunction(null)
         }
 
     }, [videoUrl])
 
-    useEffect(() =>{
-        if(openAbout || openContact || openProjectFinal || openModalProject || videoUrl){
+    useEffect(() => {
+        if (openAbout || openContact || openProjectFinal || openModalProject || videoUrl) {
             setHeaderBackground(true)
-        }else{
+        } else {
             setHeaderBackground(false)
         }
-    },[openAbout, openContact, openModalProject, openProjectFinal, videoUrl])
+    }, [openAbout, openContact, openModalProject, openProjectFinal, videoUrl])
 
     useEffect(() => {
         if (activeProject !== null) {
@@ -360,66 +362,90 @@ export const Home = () => {
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 
-    useEffect(() =>{
-        if(width < 768){
+    const [sectionPrev, setSectionPrev] = useState(0)
+
+    useEffect(() => {
+        if (width < 768) {
             setStyleNav({ transform: `translateY(-${section * 101}vh)` })
-            if(section === 0){
-                setTimeout(function () {
+
+            if (section === 0 || section === sectionPrev) {
+                setTimeout(() => {
                     setStyleModals({ transform: `translateY(${section * 101}vh)` })
                 }, 1000)
-            }else{
+            } else {
                 setStyleModals({ transform: `translateY(${section * 101}vh)` })
             }
-        }else{
+        } else {
             setStyleNav({ transform: `translateX(-${section * 100}%)` })
-            setStyleModals({ transform: `translateX(-${section * 100}%)` })
+            setStyleModals({ transform: `translateX(${section * 100}%)` })
         }
-    },[width, section])
+        setSectionPrev(section - 1)
+    }, [width, section])
+
+
+    useEffect(() => {
+        if (width < 768) {
+            setTimeout(() => {
+                setShowSecondPart(true)
+            }, 100)
+        } else {
+            setShowSecondPart(true)
+        }
+    }, [])
 
 
     return (
-        <div className='home' style={styleNav}>
+        <>
             <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} />
-            <div className='main'>
-                <div className='main-btn__wrapper'>
-                    <div className="btn-container">
-                        <img className='main-btn' src={Logo} alt="" onClick={nextSection} />
+            <div className='home' style={styleNav}>
+                <div className='main'>
+                    <div className='main-btn__wrapper'>
+                        <div className="btn-container">
+                            <img className='main-btn' src={Logo} alt="" onClick={nextSection} />
+                        </div>
+                        <div className="span-container">
+                            <span>ME CLICA!</span>
+                        </div>
                     </div>
-                    <div className="span-container">
-                        <span>ME CLICA!</span>
+                    <div className="line-background"></div>
+                    <div className='main-line'></div>
+                    <div className='main-image-mobile'>
+                        <img src={ImageTopMobile} alt="" className='img-top-1' />
+                        <img src={ImageCenterMobile} alt="" className='img-center' />
+                        <img src={ImageLowMobile} alt="" className='img-low' />
+                    </div>
+                    <div className='main-image'>
+                        <div className="img-top-1-container">
+                            <img src={ImageTop1} alt="" className='img-top-1' />
+                        </div>
+                        <div className="img-top-container">
+                            <img src={ImageTop} alt="" className='img-top' />
+                        </div>
+                        <div className='background'></div>
+                        <img src={ImageLeft} alt="" className='img-center' />
+                        <div className='img-low-container'>
+                            <img src={ImageLow} alt="" className='img-low' />
+                        </div>
                     </div>
                 </div>
-                <div className="line-background"></div>
-                <div className='main-line'></div>
-                <div className='main-image-mobile'>
-                    <img src={ImageTopMobile} alt="" className='img-top-1' />
-                    <img src={ImageCenterMobile} alt="" className='img-center' />
-                    <img src={ImageLowMobile} alt="" className='img-low' />
-                </div>
-                <div className='main-image'>
-                    <div className="img-top-1-container">
-                        <img src={ImageTop1} alt="" className='img-top-1' />
-                    </div>
-                    <div className="img-top-container">
-                        <img src={ImageTop} alt="" className='img-top' />
-                    </div>
-                    <div className='background'></div>
-                    <img src={ImageLeft} alt="" className='img-center' />
-                    <div className='img-low-container'>
-                        <img src={ImageLow} alt="" className='img-low' />
-                    </div>
-                </div>
-            </div>
-            {componentList.map((component) => component)}
+                {showSecondPart &&
+                    <>
+                        {componentList.map((component) => (
+                            <>
+                                {component}
+                            </>
+                        ))}
+                    </>}
 
-            {/*  */}
-            <div className="modals" style={styleModals}>
-                <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
-                <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
-                <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl} />
-                <ModalVideo showVideo={videoUrl} videoUrl={videoUrl} />
-                <ModalProject projectActiveIndex={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl} projects={projects} setActiveProject={setActiveProject} />
+                {/*  */}
+                <div className="modals" style={styleModals}>
+                    <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
+                    <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
+                    <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl} />
+                    <ModalVideo showVideo={videoUrl} videoUrl={videoUrl} />
+                    <ModalProject projectActiveIndex={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl} projects={projects} setActiveProject={setActiveProject} />
+                </div>
             </div>
-        </div>
+        </>
     )
 }

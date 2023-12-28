@@ -7,6 +7,11 @@
     margin-top: 250px;
     margin-right: 100px;
     gap: 90px;
+    
+
+    .mobile{
+        display: none;
+    }
 
     .citation {
         display: flex;
@@ -33,7 +38,7 @@
                 background-color: var(--color-secondary);
             }
 
-            .image{
+            .image {
                 min-width: 500px;
                 min-height: 500px;
                 z-index: 1;
@@ -68,7 +73,8 @@
                     line-height: 38px;
                     letter-spacing: 2px;
                 }
-                .name{
+
+                .name {
                     margin-top: 20px;
                     font-size: 32px;
                     font-weight: 700;
@@ -116,29 +122,33 @@
     }
 }
 
-@media(max-width: 1500px){
-    .citation-container{
-        .citation{
-            .photo{
+@media(max-width: 1500px) {
+    .citation-container {
+        .citation {
+            .photo {
                 .background-photo {
                     width: 400px;
                     height: 400px;
                 }
-                img{
+
+                img {
                     width: 400px;
                     height: 400px;
                     margin-bottom: 10px;
                 }
-                .image{
+
+                .image {
                     min-width: 400px;
                     min-height: 400px;
                 }
-                .text{
-                    p{
+
+                .text {
+                    p {
                         font-size: 16px !important;
                         line-height: 32px !important;
                     }
-                    .name{
+
+                    .name {
                         font-size: 32px !important;
                     }
                 }
@@ -147,15 +157,135 @@
     }
 }
 
-@media(max-width: 1280px){
-    .citation-container{
-        .citation{
-            .photo{
+@media(max-width: 1280px) {
+    .citation-container {
+        .citation {
+            .photo {
                 margin-left: -5px;
-                .text{
-                    p{
+
+                .text {
+                    p {
                         max-width: 50%;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1050px) {
+    .citation-container {
+        margin: 0px;
+        margin-top: 100px;
+
+        .controls{
+            margin-top: 100px;
+        }
+        .mobile{
+            display: flex !important;
+        }
+
+        .citation {
+            align-items: center;
+            justify-content: center;
+
+            .photo {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    margin-bottom: 10px;
+                    width: 361px;
+                    height: 361px;
+
+                    img {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .background-photo {
+                    width: 391px;
+                    height: 391px;
+                    margin-left: 20px;
+                    margin-top: -130px;
+                }
+
+                .text {
+                    width: 100%;
+                    margin-bottom: -50px;
+                    padding-left: 30%;
+                    align-items: start;
+                    justify-content: center;
+                    margin-left: 0;
+
+                    p {
+                        font-size: 14px;
+                        max-width: 400px;
+                        line-height: 28px;
+                    }
+
+                    .name {
+                        margin-top: 8px;
+                        font-size: 18px !important;
+                    }
+                }
+            }
+
+            .line {
+                display: none;
+                margin-top: 450px;
+                width: 80% !important;
+                height: 300px;
+                pointer-events: none;
+            }
+
+            .background {
+                display: none;
+                margin-top: 450px;
+
+                width: 90% !important;
+                height: 350px !important;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px){
+    .citation-container {
+        .citation {
+            .photo {
+                .text {
+                    padding-left: 25%;
+                    p {
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 430px) {
+    .citation-container {
+        .citation {
+            .photo {
+                .image {
+                    display: flex;
+                    margin-bottom: 10px;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 350px;
+                        height: 350px;
+                    }
+                }
+
+                .background-photo {
+                    width: 350px;
+                    height: 350px;
                 }
             }
         }

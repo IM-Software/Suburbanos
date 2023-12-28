@@ -151,3 +151,14 @@
         }
     }
 }
+
+@media(max-width: 756px){
+    .footer-modals{
+        display: none;
+        .img-right{
+            img{
+                height: 80%;
+            }
+        }
+    }
+}

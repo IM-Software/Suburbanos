@@ -57,9 +57,18 @@ table {
 html{
 	max-width: 100vw;
 	max-height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 html ::-webkit-scrollbar {
 	width: 0px;
+}
+
+@media(max-width: 765px){
+	html{
+		height: 100%;
+		overflow-y: visible;
+		max-height: none;
+	}
 }

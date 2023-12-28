@@ -32,27 +32,20 @@ export const Header = ({ section, headerFunction, navigation, headerbackground }
     setOpen(false)
   }
 
-  useEffect(() => {
-    if (width < 768) {
-      setStyleNav({ transform: `translateY(${section * 101}vh)` })
-    } else {
-      setStyleNav({ transform: `translateX(-${section * 100}%)` })
-    }
-  }, [width, section])
 
   return (
-    <div className='header-container' style={styleNav}>
-      <div className='header' >
-        <img className={`header-logo ${headerbackground || open ? 'active' : ''}`} src={Logo} alt="" />
-        <div className={`btns ${headerbackground || open ? 'active' : ''}`}>
+    <>
+      <header className='header' >
+        <img className={`header-logo ${open || headerbackground ? 'active' : ''} `} src={Logo} alt="" />
+        <div className={`btns ${open ? 'active' : ''} ${headerbackground ? 'background' : ''}`}>
           {!iconClose ? (
             <MenuBtn className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
           ) : (
             <MenuBtnClose className='menu-btn close' onClick={headerFunction ? headerFunction : clickButton} />
           )}
         </div>
-      </div>
-      <div className={`menu ${open ? 'open' : ''}`}>
+      </header>
+      <div className={`menu ${open ? 'open' : ''}`} style={styleNav}>
         <div className='background'></div>
         <div className='itens'>
           <p onClick={() => navigationTo('home')}>Home</p>
@@ -63,6 +56,6 @@ export const Header = ({ section, headerFunction, navigation, headerbackground }
           <p onClick={() => navigationTo('contact')}>Contato</p>
         </div>
       </div>
-    </div>
-  );
-};
+    </>
+  )
+}

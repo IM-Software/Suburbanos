@@ -2,6 +2,8 @@ import './style.scss'
 
 import { useState } from 'react'
 import { ReactComponent as CitationBackground } from '../../assets/citação-background.svg'
+import CitationBackgroundMobile from '../../assets/citacao-backgroundmobile.png'
+import CitationLineMobile from '../../assets/citacao-linha-mobile.png'
 import { ReactComponent as CitationLine } from '../../assets/citação-linha.svg'
 import { ReactComponent as Arrow } from '../../assets/rightarrow.svg'
 
@@ -48,7 +50,9 @@ export const CitationsCarousel = ({citations}) => {
                     </div>
                 </div>
                 <CitationLine className='line' />
+                <img src={CitationLineMobile} className='line mobile' alt="" />
                 <CitationBackground className='background' />
+                <img src={CitationBackgroundMobile} className='background mobile' alt="" />
             </div>
             <div className='controls'>
                 <Arrow className='arrow-left' onClick={prevCitation} />

@@ -9,11 +9,12 @@
   align-items: center;
   background: none;
   justify-content: space-between;
-  top: 0;
-  position: fixed;
   width: calc(100vw - 128px);
   pointer-events: none;
-  z-index: 11;
+  z-index: 100;
+  position: fixed;
+  transition: 1s ease-out;
+  background-attachment: fixed;
 
   .menu-btn {
     cursor: pointer;
@@ -62,7 +63,7 @@
   height: 100vh;
   position: absolute;
   z-index: 10;
-  transform: translateY(-100vh);
+  margin-top: -100vh;
   transition: 1s ease-out;
 
   .background {
@@ -74,7 +75,7 @@
   }
 
   &.open {
-    transform: translateY(0vh);
+    margin-top: 0vh;
   }
 }
 
@@ -126,7 +127,7 @@
     width: calc(100vw - 20px);
     margin-top: 10px;
     padding: 10px;
-
+    
     .btns {
       background-color: var(--color-three);
       min-width: 40px;
@@ -161,6 +162,13 @@
 
       &.active {
         filter: drop-shadow(0px 6px 3px black);
+      }
+    }
+  }
+  .menu {
+    .itens {
+      p {
+        font-size: 55px;
       }
     }
   }

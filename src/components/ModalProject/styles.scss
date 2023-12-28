@@ -351,7 +351,7 @@
                 margin-right: 22%;
                 transition: 0.5s ease-out;
 
-                &.hover{
+                &.hover {
                     margin-right: 37%;
                 }
             }
@@ -407,7 +407,7 @@
             height: 763px;
             pointer-events: none;
 
-            img:hover{
+            img:hover {
                 scale: 1.1;
             }
 
@@ -418,7 +418,7 @@
                 transition: 0.5s ease-out;
                 pointer-events: all;
 
-                &.hover{
+                &.hover {
                     margin-left: 47%;
                 }
             }
@@ -484,6 +484,169 @@
         .outher-projects {
             h3 {
                 font-size: 100px;
+            }
+        }
+    }
+}
+
+@media(max-width: 765px) {
+    .modal-project {
+        .main {
+            .signature {
+                width: 343px;
+            }
+        }
+
+        .video {
+            margin-top: -80px;
+            min-height: 193.046px;
+
+            .playButton {
+                width: 29.059px;
+                height: 29.059px;
+            }
+
+            .image {
+                margin: 0 16px;
+            }
+        }
+
+        .infos {
+            margin: 50px 16px;
+
+            h2 {
+                font-size: 44px;
+            }
+
+            .stream {
+                p {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+
+            .texts {
+                height: 100%;
+                flex-direction: column;
+
+                .text {
+                    width: 90%;
+                }
+
+                .people {
+                    width: 80%;
+                    max-height: none;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .names {
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+
+        .second-part {
+            .gallery {
+                height: auto;
+
+                .video-gallery {
+                    .playButton {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                .one {
+                    width: 100%;
+                }
+
+                .two {
+                    width: 100%;
+                }
+
+                .imgs-35-65,
+                .imgs-50-50,
+                .imgs-65-35 {
+                    height: auto;
+                    flex-direction: column;
+
+                    .balls {
+                        height: 50%;
+                    }
+                }
+            }
+
+            .outher-projects {
+                margin-left: 0px;
+                margin-top: 200px;
+                justify-content: center;
+                align-items: center;
+                .projectOne {
+                    margin-top: 0px;
+                    justify-content: start;
+                    margin-left: 0;
+                    width: 90%;
+                    height: 300px;
+
+                    .name{
+                        h3{
+                            padding: 0px 10px;
+                            line-height: 64px;
+                            font-size: 40px;
+                        }
+                    }
+
+                    .background{
+                        width: 90%;
+                        margin-left: -10px;
+                        margin-top: 10px;
+                        height: 300px;
+                    }
+
+                    .name {
+                        justify-content: start;
+                        margin-top: 0%;
+                    }
+
+                    .image {
+                        width: 100%;
+                    }
+                }
+
+                .projectTwo {
+                    margin-top: 0px;
+                    justify-content: start;
+                    margin-left: 0;
+                    width: 90%;
+                    height: 300px;
+
+                    .name{
+                        h3{
+                            padding: 0px 10px;
+                            line-height: 64px;
+                            font-size: 40px;
+                        }
+                    }
+
+                    .background{
+                        width: 90%;
+                        margin-left: -10px;
+                        margin-top: 10px;
+                        height: 300px;
+                    }
+
+                    .name {
+                        justify-content: start;
+                        margin-top: 0%;
+                    }
+
+                    .image {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

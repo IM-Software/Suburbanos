@@ -13,6 +13,8 @@
         justify-content: center;
         align-items: center;
         min-width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
         min-height: 100vh;
         z-index: 11;
         position: relative;
@@ -253,10 +255,15 @@
 
 @media(max-width: 756px) {
     .home {
+        display: flex;
+        max-width: 100vw;
         flex-direction: column;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: visible;
 
         .main {
+            max-height: 101vh;
+            min-height: 101vh;
             overflow: hidden;
 
             .line-background {
@@ -317,6 +324,10 @@
                 opacity: 0;
             }
         }
-        
+
+        .modals{
+            display: none;
+        }
     }
+
 }

@@ -159,6 +159,8 @@
 
 @media(max-width: 756px) {
   .final-page {
+    max-height: 101vh;
+    overflow: hidden;
     min-height: 101vh;
     justify-content: start;
     align-items: start;
@@ -168,18 +170,18 @@
       width: 100%;
       align-items: start;
       flex-direction: column;
-      height: 38vh;
+      min-height: 34vh;
       overflow: hidden;
 
       .line-one {
         width: 3px;
-        min-height: 15%;
+        min-height: 17vh;
         position: absolute;
         margin-left: 33px;
       }
 
       .control {
-        margin-top: 30%;
+        margin-top: 17.2vh;
         margin-left: 18px;
 
         .ball-container {
@@ -201,14 +203,14 @@
       .line-two {
         width: 3px;
         position: absolute;
-        height: 10%;
+        height: 6vh;
         margin-left: 33px;
-        margin-top: 50%;
+        margin-top: 28vh;
       }
     }
 
     .container {
-      height: 21vh;
+      min-height: 21vh;
       width: 100%;
       align-items: normal;
       overflow: hidden;
@@ -240,7 +242,7 @@
           border-top: 13px solid transparent;
           border-bottom: 13px solid transparent;
           border-right: 13px solid var(--color-primary);
-          margin-top: 31.5%;
+          margin-top: 33.5%;
           margin-left: 28px;
           rotate: 90deg;
         }

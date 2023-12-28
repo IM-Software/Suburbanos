@@ -267,11 +267,13 @@
         .list-projects {
             padding-right: 50px;
             margin-left: 10px;
+            pointer-events: none;
 
 
             .project {
                 width: 276px;
                 gap: 10px;
+                pointer-events: all;
 
                 button {
                     width: 120px;
