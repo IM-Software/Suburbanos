@@ -46,7 +46,7 @@ export const ContactModal = ({openContact, setOpenContact, navigation}) => {
                     <h2>Procurando o Clube do Pensamento?</h2>
                     <div className='flex'>
                         <img src={ClubLogo} alt="Logo Club" />
-                        <p className='three'>Quem procura acha aqui</p>
+                        <p className='three'>Quem procura acha aqui!</p>
                     </div>
                 </div>
                 <div>

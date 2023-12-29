@@ -233,7 +233,7 @@
 
         .line {
           width: 3px;
-          height: 57%;
+          height: 60%;
           margin-top: -15px;
           margin-left: 33px;
         }
@@ -242,7 +242,7 @@
           border-top: 13px solid transparent;
           border-bottom: 13px solid transparent;
           border-right: 13px solid var(--color-primary);
-          margin-top: 33.5%;
+          margin-top: 19.5vh;
           margin-left: 28px;
           rotate: 90deg;
         }
@@ -267,7 +267,7 @@
       align-items: start;
 
       img {
-        margin-top: 3px;
+        margin-top: 0px;
         height: 80px;
         rotate: 180deg;
       }

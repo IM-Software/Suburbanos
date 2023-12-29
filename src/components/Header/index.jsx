@@ -5,15 +5,11 @@ import Logo from '../../assets/LogoSuburbanos.png';
 import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { ReactComponent as MenuBtnClose } from '../../assets/menu-close.svg'
 
-import { useWindowSize } from "@uidotdev/usehooks"
-
-export const Header = ({ section, headerFunction, navigation, headerbackground }) => {
+export const Header = ({ section, headerFunction, navigation, headerbackground, showScroll }) => {
   const [open, setOpen] = useState(false)
   const [iconClose, setIconClose] = useState(false)
   const [styleNav, setStyleNav] = useState(null)
 
-
-  const { width } = useWindowSize()
 
   const clickButton = () => {
     setOpen(!open)
@@ -31,6 +27,10 @@ export const Header = ({ section, headerFunction, navigation, headerbackground }
     navigation(navTo)
     setOpen(false)
   }
+
+  useEffect(() =>{
+    showScroll(!open)
+  },[open])
 
 
   return (

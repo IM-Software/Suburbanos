@@ -314,6 +314,7 @@
 
         .background-img-mobile {
             display: block;
+            height: 101%;
         }
 
         .line-mobile{
@@ -383,9 +384,10 @@
     }
 
     .content {
+        height: 101%;
         .about-text{
             font-size: 32px;
-            margin-top: 68vh;
+            margin-top: 67.5vh;
             margin-left: 60px;
             margin-bottom: 0;
         }
@@ -396,7 +398,7 @@
             flex-direction: column;
 
             .first-line{
-                height: 75vh;
+                height: 79vh;
                 width: 3px;
             }
 

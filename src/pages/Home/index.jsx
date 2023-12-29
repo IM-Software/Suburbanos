@@ -76,7 +76,6 @@ export const Home = () => {
     const [videoUrl, setVideoUrl] = useState(null)
 
     const [styleNav, setStyleNav] = useState(null)
-    const [styleModals, setStyleModals] = useState(null)
 
     const { width } = useWindowSize()
 
@@ -301,7 +300,9 @@ export const Home = () => {
     useEffect(() => {
         if (openAbout || openContact || openProjectFinal || openModalProject || videoUrl) {
             setHeaderBackground(true)
+            showScroll(false)
         } else {
+            showScroll(true)
             setHeaderBackground(false)
         }
     }, [openAbout, openContact, openModalProject, openProjectFinal, videoUrl])
@@ -334,12 +335,18 @@ export const Home = () => {
             switch (navTo) {
                 case 'home':
                     setSection(0)
-                    break;
+                    const section = document.getElementById('home')
+                    section.scrollIntoView()
+                    break
                 case 'producer':
                     setSection(1)
+                    const sectionProducer = document.getElementById('producer')
+                    sectionProducer.scrollIntoView()
                     break
                 case 'projects':
                     setSection(2)
+                    const projects = document.getElementById('projects')
+                    projects.scrollIntoView()
                     break
                 case 'about':
                     setOpenAbout(true)
@@ -362,26 +369,23 @@ export const Home = () => {
     <FinalPage {...{ prevSection, nextSection, navigation }}
     />]
 
-    const [sectionPrev, setSectionPrev] = useState(0)
 
     useEffect(() => {
         if (width < 768) {
-            setStyleNav({ transform: `translateY(-${section * 101}vh)` })
-
-            if (section === 0 || section === sectionPrev) {
-                setTimeout(() => {
-                    setStyleModals({ transform: `translateY(${section * 101}vh)` })
-                }, 1000)
-            } else {
-                setStyleModals({ transform: `translateY(${section * 101}vh)` })
-            }
+            setStyleNav()
         } else {
             setStyleNav({ transform: `translateX(-${section * 100}%)` })
-            setStyleModals({ transform: `translateX(${section * 100}%)` })
         }
-        setSectionPrev(section - 1)
     }, [width, section])
 
+
+    const showScroll = (value) => {
+        if (value === false) {
+          document.documentElement.style.overflowY = 'hidden'
+        } else {
+          document.documentElement.style.overflowY = 'visible'
+        }
+    }
 
     useEffect(() => {
         if (width < 768) {
@@ -394,11 +398,19 @@ export const Home = () => {
     }, [])
 
 
+
     return (
         <>
-            <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} />
-            <div className='home' style={styleNav}>
-                <div className='main'>
+            <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} showScroll={showScroll}/>
+            <div className="modals">
+                <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
+                <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
+                <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl} />
+                <ModalVideo showVideo={videoUrl} videoUrl={videoUrl} />
+                <ModalProject projectActiveIndex={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl} projects={projects} setActiveProject={setActiveProject} />
+            </div>
+            <div className='home' style={styleNav}  >
+                <div className='main' id='home'>
                     <div className='main-btn__wrapper'>
                         <div className="btn-container">
                             <img className='main-btn' src={Logo} alt="" onClick={nextSection} />
@@ -438,13 +450,6 @@ export const Home = () => {
                     </>}
 
                 {/*  */}
-                <div className="modals" style={styleModals}>
-                    <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
-                    <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
-                    <ModalProjectFinal openProject={openProjectFinal} setOpenProject={setOpenProject} navigation={navigation} setVideoUrl={setVideoUrl} />
-                    <ModalVideo showVideo={videoUrl} videoUrl={videoUrl} />
-                    <ModalProject projectActiveIndex={activeProject} openModal={openModalProject} closeModal={closeModals} navigation={navigation} setVideoUrl={setVideoUrl} projects={projects} setActiveProject={setActiveProject} />
-                </div>
             </div>
         </>
     )

@@ -59,6 +59,8 @@ html{
 	max-height: 100vh;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	scroll-behavior: smooth;
+	background-color: var(--color-three);
 }
 
 html ::-webkit-scrollbar {

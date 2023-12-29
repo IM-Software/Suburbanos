@@ -177,14 +177,14 @@
             }
         }
     }
+}
 
-    .modals {
-        width: 100vw;
-        margin-top: 100vh;
-        height: 100%;
-        position: fixed;
-        z-index: 6;
-    }
+.modals {
+    width: 100vw;
+    margin-top: 100vh;
+    height: 100%;
+    position: fixed;
+    z-index: 12;
 }
 
 @keyframes lineEffect {
@@ -323,10 +323,6 @@
                 animation-delay: 1s;
                 opacity: 0;
             }
-        }
-
-        .modals{
-            display: none;
         }
     }
 

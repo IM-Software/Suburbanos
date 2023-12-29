@@ -24,7 +24,7 @@ export const About = ({ section, nextSection, prevSection }) => {
     }, [section])
 
     return (
-        <div className='about'>
+        <div className='about' id='producer'>
             <img src={ImageBackground} alt=""  className='background-img'/>
             <img src={ImageBackgroundMobile} alt="" className='background-img-mobile' />
             <div className='content'>

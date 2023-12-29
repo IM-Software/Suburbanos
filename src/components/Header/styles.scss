@@ -38,7 +38,7 @@
       }
     }
 
-    &.active {
+    &.background {
       background-color: var(--color-three);
     }
   }
@@ -61,8 +61,8 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: 13;
   margin-top: -100vh;
   transition: 1s ease-out;
 

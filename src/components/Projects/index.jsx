@@ -23,7 +23,7 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
 
 
     return (
-        <div className='projects'>
+        <div className='projects' id='projects'>
             <video className='background-video' loop autoPlay src='https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4' />
             <div className='content'>
                 <span className='about-text'>Projetos</span>

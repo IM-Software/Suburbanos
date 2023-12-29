@@ -21,7 +21,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         padding-bottom: 50px;
         background-color: var(--color-primary);
 
@@ -342,5 +342,91 @@
 
     to {
         transform: translateY(0vh);
+    }
+}
+
+@media(max-width: 900px){
+    .project-final{
+        .gallery{
+            padding-top: 45px;
+            .videos-top, .videos-middle-one, .videos-middle-two, .videos-low, .videos-bottom-one{
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+
+                .video{
+                    width: 90%;
+                    height: auto; 
+                    max-height: 900px;
+                    .playButton {
+                        width: 70px;
+                        height: 50%;
+                    }
+                }
+
+                .left{
+                    margin-left: 0;
+                }
+                .right{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 700px){
+    .project-final{
+        .main{
+            .nav{
+                width: 80%;
+                .bar-container{
+                    width: 100%;
+                    .bar{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 600px){
+    .project-final{
+        .main{
+            .slick-slider{
+                height: 70%;
+            }
+            .slick-list{
+                margin-top: -20px;
+                margin-left: 0px;
+            }
+            .slick-slide{
+                width: 264px !important;
+                height: 451.111px !important;
+            }
+    
+            .slick-active{
+                .story{
+                    width: 264px !important;
+                    height: 451.111px !important;
+                }
+            }
+            .story{
+                width: 238px !important;
+                height: 406px !important;
+                .story-header {
+                    margin-left: 15px;
+                    gap: 10px;
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .nav{
+                margin-top: 0;
+            }
+        }
     }
 }
