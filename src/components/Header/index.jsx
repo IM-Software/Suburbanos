@@ -32,7 +32,6 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
     showScroll(!open)
   },[open])
 
-
   return (
     <>
       <header className='header' >

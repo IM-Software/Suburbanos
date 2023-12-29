@@ -261,12 +261,20 @@
         min-height: 101vh;
 
         .triangle {
-            display: none;
+            align-items: end;
+            justify-content: center;
+            margin-top: 40vh;
+            img{
+                height: 450px;
+                margin-left: -50px;
+                rotate: 90deg;
+            }
         }
 
         .list-projects {
             padding-right: 50px;
             margin-left: 10px;
+            overflow: visible;
             pointer-events: none;
 
 
