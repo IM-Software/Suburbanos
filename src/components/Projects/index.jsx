@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Path from '../../assets/path-parte1.png'
 import Triangle from '../../assets/projetos-triangulo.png'
 import { useEffect, useState } from 'react'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 export const Projects = ({ section, projects, nextSection, prevSection, setActiveProject }) => {
     const [animation, setAnimation] = useState(false)
@@ -20,6 +21,14 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
             }, 1000)
         }
     }, [section])
+
+    useEffect(() =>{
+        if(width < 765){
+            setAnimation(true)
+        }
+    },[])
+
+    const { width } = useWindowSize()
 
 
     return (

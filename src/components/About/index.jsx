@@ -10,7 +10,8 @@ import ImageBelow from '../../assets/sobreimagem.png'
 import { useEffect, useState } from 'react'
 import ImageBackground from '../../assets/background-sobre.png'
 import ImageBackgroundMobile from '../../assets/sobre-background-mobile.png'
-import LineOneMobile from '../../assets/sobre-linha.png'
+
+import { useWindowSize } from "@uidotdev/usehooks"
 
 export const About = ({ section, nextSection, prevSection }) => {
     const [animation, setAnimation] = useState(false)
@@ -22,6 +23,14 @@ export const About = ({ section, nextSection, prevSection }) => {
             }, 1000)
         }
     }, [section])
+
+    useEffect(() =>{
+        if(width < 765){
+            setAnimation(true)
+        }
+    },[])
+
+    const { width } = useWindowSize()
 
     return (
         <div className='about' id='producer'>
