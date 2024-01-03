@@ -264,7 +264,8 @@
             align-items: end;
             justify-content: center;
             margin-top: 40vh;
-            img{
+
+            img {
                 height: 450px;
                 margin-left: -50px;
                 rotate: 90deg;
@@ -293,6 +294,7 @@
                     p {
                         font-size: 12px;
                     }
+
                     img {
                         max-width: 60px;
                         max-height: 35px;
@@ -323,6 +325,8 @@
         }
         .path {
             img {
+                transform: scaleX(-1);
+                rotate: 270deg;
                 height: 80px;
             }
         }
@@ -330,7 +334,7 @@
 
     .custom-swapper {
         margin-left: 200%;
-    
+
         &.animation {
             margin-left: 0%;
         }

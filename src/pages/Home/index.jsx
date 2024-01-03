@@ -381,9 +381,9 @@ export const Home = () => {
 
     const showScroll = (value) => {
         if (value === false) {
-          document.documentElement.style.overflowY = 'hidden'
+            document.documentElement.style.overflowY = 'hidden'
         } else {
-          document.documentElement.style.overflowY = 'visible'
+            document.documentElement.style.overflowY = 'visible'
         }
     }
 
@@ -399,9 +399,24 @@ export const Home = () => {
 
 
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollValue = window.scrollY
+            const screenHeight = window.innerHeight
+            const newScrollCount = Math.ceil((scrollValue + 400) / screenHeight)
+            setSection(newScrollCount - 1)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <>
-            <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} showScroll={showScroll}/>
+            <Header section={section} headerFunction={headerFunction} navigation={navigation} headerbackground={headerbackground} showScroll={showScroll} />
             <div className="modals">
                 <ModalAbout openAbout={openAbout} setOpenAbout={setOpenAbout} navigation={navigation} />
                 <ContactModal openContact={openContact} setOpenContact={setOpenContact} navigation={navigation} />
@@ -413,10 +428,10 @@ export const Home = () => {
                 <div className='main' id='home'>
                     <div className='main-btn__wrapper'>
                         <div className="btn-container">
-                            <img className='main-btn' src={Logo} alt="" onClick={nextSection} />
+                            <img className='main-btn' src={Logo} alt="" onClick={() => {width > 768 && nextSection()}} />
                         </div>
                         <div className="span-container">
-                            <span>ME CLICA!</span>
+                            <span>{width > 768 ? 'ME CLICA!' : 'ARRASTA AI!'}</span>
                         </div>
                     </div>
                     <div className="line-background"></div>

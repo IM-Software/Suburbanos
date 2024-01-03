@@ -34,7 +34,7 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
 
   return (
     <>
-      <header className='header' >
+      <header className={`header ${section > 0 ? 'animation' : ''}`} >
         <img className={`header-logo ${open || headerbackground ? 'active' : ''} `} src={Logo} alt="" />
         <div className={`btns ${open ? 'active' : ''} ${headerbackground ? 'background' : ''}`}>
           {!iconClose ? (

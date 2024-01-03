@@ -16,6 +16,20 @@
   position: fixed;
   transition: 1s ease-out;
   background-attachment: fixed;
+  opacity: 0;
+  
+  .btns{
+    pointer-events: none;
+  }
+
+
+  &.animation{
+    opacity: 1;
+
+    .btns{
+      pointer-events: all;
+    }
+  }
 
   .menu-btn {
     cursor: pointer;
@@ -30,7 +44,6 @@
     min-height: 40px;
     transition: 1s ease-in;
     border-radius: 10px;
-    pointer-events: all;
 
     svg {
       path {
@@ -40,6 +53,10 @@
     }
 
     &.background {
+      background-color: var(--color-three);
+    }
+
+    &.active{
       background-color: var(--color-three);
     }
   }

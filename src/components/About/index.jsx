@@ -24,13 +24,6 @@ export const About = ({ section, nextSection, prevSection }) => {
         }
     }, [section])
 
-    useEffect(() =>{
-        if(width < 765){
-            setAnimation(true)
-        }
-    },[])
-
-    const { width } = useWindowSize()
 
     return (
         <div className='about' id='producer'>
