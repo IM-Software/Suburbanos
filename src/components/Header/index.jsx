@@ -13,6 +13,7 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
 
   const clickButton = () => {
     setOpen(!open)
+    showScroll(false)
   }
 
   useEffect(() => {
@@ -26,11 +27,8 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
   const navigationTo = (navTo) => {
     navigation(navTo)
     setOpen(false)
+    showScroll(true)
   }
-
-  useEffect(() =>{
-    showScroll(!open)
-  },[open])
 
   return (
     <>

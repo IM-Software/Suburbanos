@@ -334,19 +334,34 @@ export const Home = () => {
         setTimeout(function () {
             switch (navTo) {
                 case 'home':
-                    setSection(0)
-                    const section = document.getElementById('home')
-                    section.scrollIntoView()
+                    if (window.innerWidth > 758) {
+                        setSection(0)
+                    } else {
+                        const section = document.getElementById('home')
+                        setTimeout(function () {
+                            section.scrollIntoView()
+                        }, 900)
+                    }
                     break
                 case 'producer':
-                    setSection(1)
-                    const sectionProducer = document.getElementById('producer')
-                    sectionProducer.scrollIntoView()
+                    if (window.innerWidth > 758) {
+                        setSection(1)
+                    } else {
+                        const sectionProducer = document.getElementById('producer')
+                        setTimeout(function () {
+                            sectionProducer.scrollIntoView()
+                        }, 900)
+                    }
                     break
                 case 'projects':
-                    setSection(2)
-                    const projects = document.getElementById('projects')
-                    projects.scrollIntoView()
+                    if (window.innerWidth > 758) {
+                        setSection(2)
+                    } else {
+                        setTimeout(function () {
+                            const projects = document.getElementById('projects')
+                            projects.scrollIntoView()
+                        }, 900)
+                    }
                     break
                 case 'about':
                     setOpenAbout(true)
@@ -428,7 +443,7 @@ export const Home = () => {
                 <div className='main' id='home'>
                     <div className='main-btn__wrapper'>
                         <div className="btn-container">
-                            <img className='main-btn' src={Logo} alt="" onClick={() => {width > 768 && nextSection()}} />
+                            <img className='main-btn' src={Logo} alt="" onClick={() => { width > 768 && nextSection() }} />
                         </div>
                         <div className="span-container">
                             <span>{width > 768 ? 'ME CLICA!' : 'ARRASTA AI!'}</span>
