@@ -66,7 +66,7 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
             setBarActive(middleIndex)
             sliderRef.current.slickGoTo(middleIndex)
         }
-    }, [stories.length, openProject])
+    }, [stories.length])
 
     const handleSlideChange = (index) => {
         setBarActive(index)
