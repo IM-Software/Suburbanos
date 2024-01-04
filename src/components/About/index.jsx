@@ -27,11 +27,16 @@ export const About = ({ section, nextSection, prevSection }) => {
 
     return (
         <div className='about' id='producer'>
-            <img src={ImageBackground} alt=""  className='background-img'/>
+            <img src={ImageBackground} alt="" className='background-img' />
             <img src={ImageBackgroundMobile} alt="" className='background-img-mobile' />
             <div className='content'>
                 <span className='about-text'>Sobre</span>
                 <div className="controls">
+                    <div className="first-line-mobile">
+                        <div className="right" />
+                        <div className="middle" />
+                        <div className="left" />
+                    </div>
                     <div className="first-line"></div>
                     <div className='control'>
                         <div className='ball-container'>
