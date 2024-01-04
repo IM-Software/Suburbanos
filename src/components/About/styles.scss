@@ -396,7 +396,7 @@
 
                 .first-line-mobile {
                     display: block;
-                    width: calc(50vw - 32px);
+                    width: calc(50vw - 31px);
                     justify-content: flex-end;
 
                     .right {
@@ -405,7 +405,7 @@
                         border-bottom: 3px solid var(--color-primary);
                         border-bottom-right-radius: 10px;
                         margin-left: 15%;
-                        margin-top: 5px;
+                        margin-top: 3px;
                         height: 150px;
                         display: flex;
                         flex-direction: column;
