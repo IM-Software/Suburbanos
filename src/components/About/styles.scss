@@ -399,6 +399,8 @@
                     display: block;
                     width: calc(50vw - 30px);
                     justify-content: flex-end;
+                    opacity: 0;
+                    animation: 1s line-mobile ease-in forwards 1s;
 
                     .right {
                         filter: drop-shadow(0px 14px 3px rgba(0, 0, 0, 0.25));
@@ -409,8 +411,6 @@
                         margin-top: -45vh;
                         height: 60vh;
                         display: flex;
-                        opacity: 0;
-                        animation: 1s line-mobile ease-in forwards 1s;
                         flex-direction: column;
                     }
 
