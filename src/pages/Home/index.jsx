@@ -379,6 +379,8 @@ export const Home = () => {
     }
 
 
+    
+
     const componentList = [<About {...{ section, prevSection, nextSection }} />,
     <Projects  {...{ section, projects, prevSection, nextSection, setActiveProject }} />,
     <FinalPage {...{ prevSection, nextSection, navigation }}
