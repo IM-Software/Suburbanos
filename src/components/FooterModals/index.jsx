@@ -1,8 +1,7 @@
 import './styles.scss'
 
 import { ReactComponent as FooterRectangle } from '../../assets/footer-retangulo.svg'
-import ImgText from '../../assets/footer-img.png'
-import FooterBackground from '../../assets/footer-background.png'
+
 import Balls from '../../assets/reticula.png'
 import ImgHover from '../../assets/footer-hover.png'
 

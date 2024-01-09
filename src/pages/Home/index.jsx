@@ -156,7 +156,7 @@ export const Home = () => {
     const componentList = [
         <About section={section} prevSection={prevSection} nextSection={nextSection} data={data.about}/>,
         <Projects section={section} projects={data.allProjects} prevSection={prevSection} nextSection={nextSection} setActiveProject={setActiveProject} />,
-        <FinalPage prevSection={prevSection} nextSection={nextSection} navigation={navigation} />
+        <FinalPage data={data.pageFinal} prevSection={prevSection} nextSection={nextSection} navigation={navigation} />
     ]
 
 

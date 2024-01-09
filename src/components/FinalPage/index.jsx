@@ -3,12 +3,9 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
 import { useState } from 'react'
-import aboutImg from '../../assets/temp/quemsomos-img.png'
-import contactImg from '../../assets/temp/contatoimg.png'
-import deuRuimVideo from '../../assets/temp/deuruimvideo.mp4'
 import Path from '../../assets/path-parte2.png'
 
-export const FinalPage = ({ prevSection, navigation }) => {
+export const FinalPage = ({data, prevSection, navigation }) => {
     const [hoverAbout, setHoverAbout] = useState(false)
     const [hoverContact, setHoverContact] = useState(false)
     const [hoverProject, setHoverProject] = useState(false)
@@ -33,7 +30,7 @@ export const FinalPage = ({ prevSection, navigation }) => {
                     <Ball className='ball' />
                     <div className='line'></div>
                 </div>
-                <img src={aboutImg} alt="Imagem quem somos" onMouseEnter={() => setHoverAbout(true)} onMouseLeave={() => setHoverAbout(false)} onClick={() => navigation('about')} />
+                <img src={data.imageOne} alt="Imagem quem somos" onMouseEnter={() => setHoverAbout(true)} onMouseLeave={() => setHoverAbout(false)} onClick={() => navigation('about')} />
             </div>
             <div className='container'>
                 <div className='line-container'>
@@ -41,7 +38,7 @@ export const FinalPage = ({ prevSection, navigation }) => {
                     <Ball className='ball' />
                     <div className='line'></div>
                 </div>
-                <img src={contactImg} alt="Imagem contato" onMouseEnter={() => setHoverContact(true)} onMouseLeave={() => setHoverContact(false)} onClick={() => navigation('contact')} />
+                <img src={data.imageTwo} alt="Imagem contato" onMouseEnter={() => setHoverContact(true)} onMouseLeave={() => setHoverContact(false)} onClick={() => navigation('contact')} />
             </div>
             <div className='container'>
                 <div className='line-container'>
@@ -50,7 +47,7 @@ export const FinalPage = ({ prevSection, navigation }) => {
                     <div className='line'></div>
                     <div className='final'></div>
                 </div>
-                <video src={deuRuimVideo}
+                <video src={data.videoProject}
                     onMouseEnter={(e) => {
                         e.target.play()
                         setHoverProject(true)
