@@ -8,13 +8,6 @@ import { ReactComponent as PlayButton } from '../../assets/play.svg'
 import { CitationsCarousel } from '../CitationsCarousel'
 import { FooterModals } from '../FooterModals'
 
-import story1 from '../../assets/temp/deuruim/story1.jpg'
-import story2 from '../../assets/temp/deuruim/story2.jpg'
-import story3 from '../../assets/temp/deuruim/story3.jpg'
-import story4 from '../../assets/temp/deuruim/story4.jpg'
-import story5 from '../../assets/temp/deuruim/story5.jpg'
-import story6 from '../../assets/temp/deuruim/story6.jpg'
-import story7 from '../../assets/temp/deuruim/story7.jpg'
 
 import gallery1 from '../../assets/temp/deuruim/galeria-1.png'
 import gallery2 from '../../assets/temp/deuruim/galeria-2.png'
@@ -26,20 +19,10 @@ import gallery7 from '../../assets/temp/deuruim/galeria-7.png'
 import gallery8 from '../../assets/temp/deuruim/galeria-8.png'
 import gallery9 from '../../assets/temp/deuruim/galeria-9.png'
 
-export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, setVideoUrl }) => {
+export const ModalProjectFinal = ({ data, openProject, setOpenProject, navigation, setVideoUrl, footer }) => {
     const modalRef = useRef(null)
     const [activeSlide, setActiveSlide] = useState(0)
     const [barActive, setBarActive] = useState(0)
-
-    const stories = [
-        { img: story1 },
-        { img: story2 },
-        { img: story3 },
-        { img: story4 },
-        { img: story5 },
-        { img: story6 },
-        { img: story7 },
-    ]
 
     const citations = [
         { photo: 'https://s2-g1.glbimg.com/Fbx46S8zDQBCX2KYxoHyPUnPEhQ=/0x0:980x551/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/n/g/BK6kJESNyaf5XuLvLefw/os-suburbanos.jpg', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem beatae vitae dicta sunt explicabo.', name: 'Rodrigo Sant’Anna' },
@@ -60,13 +43,13 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
     }, [openProject])
 
     useEffect(() => {
-        const middleIndex = Math.floor(stories.length / 2)
+        const middleIndex = Math.floor(data.images.length / 2)
         if (sliderRef.current) {
             setActiveSlide(middleIndex)
             setBarActive(middleIndex)
             sliderRef.current.slickGoTo(middleIndex)
         }
-    }, [stories.length])
+    }, [data.images.length])
 
     const handleSlideChange = (index) => {
         setBarActive(index)
@@ -96,18 +79,18 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
         <div className={`project-final ${openProject ? 'active' : ''}`} ref={modalRef}>
             <div className="main">
                 <Slider {...settings} className='carrossel' ref={sliderRef}>
-                    {stories.map((story, index) => (
+                    {data.images.map((story, index) => (
                         <div className={`story`}  onClick={() => handleDotClick(index)}>
                             <div className='story-header'>
-                                <img src={Logo} alt="Logo" />
-                                <p>Os Suburbanos Bloopers</p>
+                                <img src={data.storiesLogo} alt="Logo" />
+                                <p>{data.storiesTitle}</p>
                             </div>
-                            <img src={story.img} alt="" />
+                            <img src={story.image} alt="" />
                         </div>
                     ))}
                 </Slider>
                 <div className='nav'>
-                    {stories.map((story, index) => (
+                    {data.images.map((story, index) => (
                         <div className="bar-container" onClick={() => handleDotClick(index)}>
                             <div className={`bar ${barActive === index ? 'active' : ''}`}></div>
                         </div>
@@ -116,54 +99,54 @@ export const ModalProjectFinal = ({ openProject, setOpenProject, navigation, set
             </div>
             <div className="gallery">
                 <div className='videos-top'>
-                    <div className='video left' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video left' onClick={() => setVideoUrl(`${data.urlVideo1}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery1} alt="" />
+                        <img src={data.imageThumb1} alt="" />
                     </div>
-                    <div className='video right' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video right' onClick={() => setVideoUrl(`${data.urlVideo2}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery2} alt="" />
+                        <img src={data.imageThumb2} alt="" />
                     </div>
                 </div>
                 <div className='videos-middle-one' >
-                    <div className='video left' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video left' onClick={() => setVideoUrl(`${data.urlVideo3}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery3} alt="" />
+                        <img src={data.imageThumb3} alt="" />
                     </div>
-                    <div className='video right' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video right' onClick={() => setVideoUrl(`${data.urlVideo4}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery4} alt="" />
+                        <img src={data.imageThumb4} alt="" />
                     </div>
                 </div>
                 <div className='videos-middle-two'>
-                    <div className='video left' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video left' onClick={() => setVideoUrl(`${data.urlVideo5}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery5} alt="" />
+                        <img src={data.imageThumb5} alt="" />
                     </div>
-                    <div className='video right' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video right' onClick={() => setVideoUrl(`${data.urlVideo6}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery6} alt="" />
+                        <img src={data.imageThumb6} alt="" />
                     </div>
                 </div>
                 <div className='videos-bottom-one'>
-                    <div className='video left' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video left' onClick={() => setVideoUrl(`${data.urlVideo7}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery7} alt="" />
+                        <img src={data.imageThumb7} alt="" />
                     </div>
-                    <div className='video right' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video right' onClick={() => setVideoUrl(`${data.urlVideo8}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery8} alt="" />
+                        <img src={data.imageThumb8} alt="" />
                     </div>
                 </div>
                 <div className='videos-low'>
-                    <div className='video left' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+                    <div className='video left' onClick={() => setVideoUrl(`${data.urlVideo9}`)}>
                         <PlayButton className='playButton' />
-                        <img src={gallery9} alt="" />
+                        <img src={data.imageThumb9} alt="" />
                     </div>
                 </div>
             </div>
-            <CitationsCarousel citations={citations}/>
-            <FooterModals navigation={navigation} toggleModal={setOpenProject} />
+            <CitationsCarousel citations={data.depositions}/>
+            <FooterModals navigation={navigation} toggleModal={setOpenProject} data={footer}/>
         </div>
     )
 }

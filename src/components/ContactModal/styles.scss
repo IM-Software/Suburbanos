@@ -69,6 +69,29 @@
             }
         }
 
+        .download{
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        .club{
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .terms{
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+
+            a:visited{
+                text-decoration: none;
+            }
+        }
+
         .three {
             font-family: Lato;
             font-size: 96px;

@@ -46,17 +46,17 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
                     {projects.map((project, index) => (
                         <SwiperSlide className='project'>
                             <div className="image" onClick={() => setActiveProject(index)}>
-                                <img src={project.signature} alt="" className='signature' />
-                                <div style={{ background: `linear-gradient(360deg, #000 0.26%, rgba(0, 0, 0, 0.00) 39.58%), url(${project.img})` }} alt='' className='img-main' />
+                                <img src={project.logoSlider} alt="" className='signature' />
+                                <div style={{ background: `linear-gradient(360deg, #000 0.26%, rgba(0, 0, 0, 0.00) 39.58%), url(${project.imageSlider})`, backgroundSize: 'cover', backgroundPosition: 'center' }} alt='' className='img-main' />
                             </div>
                             <div className='stream'>
-                                <p>{project.style}</p>
+                                <p>{project.projectType}</p>
                                 <div className="line-stream"></div>
-                                <p className='type'>{project.type}</p>
-                                <img src={project.streamImg} alt="" />
+                                <p className='type'>{project.projectType2}</p>
+                                <img src={project.streamLogo} alt="" />
                             </div>
                             <div className='project-text'>
-                                <p>{project.text}</p>
+                                <p>{project.textSlider}</p>
                             </div>
                             <button onClick={() => setActiveProject(index)}>Ver Projeto</button>
                         </SwiperSlide>
