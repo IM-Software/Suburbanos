@@ -73,7 +73,7 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                 </div>
                 <div className="texts">
                     <div className="text">
-                        <p><span>{projects[projectActiveIndex]?.textOne}</span> <span className='text-secondary'>{projects[projectActiveIndex]?.texTwo}</span></p>
+                        <p><span>{projects[projectActiveIndex]?.textOne}</span> <span className='text-secondary'>{projects[projectActiveIndex]?.textTwo}</span></p>
                     </div>
                     <div className="people">
                         <div className='names'>

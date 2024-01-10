@@ -122,6 +122,67 @@
     }
 }
 
+@media(min-width: 3800px){
+    .citation-container{
+        z-index: 2;
+        .citation{
+            margin-left: 50%;
+            scale: 1.5;
+            margin-top: 200px;
+            margin-bottom: 200px;
+            .photo{
+                margin-left: 13%;
+                .text{
+                    p {
+                        font-size: 27px;
+                        max-width: 25%;
+                    }
+                }
+            }
+            .line {
+                width: 68% !important;
+            }
+            .background{
+                width: 70% !important;
+            }
+        }
+        .controls {
+            .arrow-left {
+                min-width: 80px;
+                height: 80px;
+                rotate: 180deg;
+            }
+    
+            .arrow {
+                width: 81px;
+                height: 81px;
+            }
+        }
+    }
+}
+
+@media(min-width: 2560px) and (max-width: 3800px){
+    .citation-container{
+        .citation{
+            margin-left: 10%;
+            .photo{
+                margin-left: 13%;
+                .text{
+                    p {
+                        max-width: 30%;
+                    }
+                }
+            }
+            .line {
+                width: 88% !important;
+            }
+            .background{
+                width: 90% !important;
+            }
+        }
+    }
+}
+
 @media(max-width: 1500px) {
     .citation-container {
         .citation {

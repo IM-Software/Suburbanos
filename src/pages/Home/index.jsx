@@ -42,9 +42,6 @@ export const Home = () => {
 
     const [showSecondPart, setShowSecondPart] = useState(false)
 
-    const projects = [
-    ]
-
 
     const closeModals = () => {
         setOpenAbout(false)
@@ -155,7 +152,7 @@ export const Home = () => {
 
     const componentList = [
         <About section={section} prevSection={prevSection} nextSection={nextSection} data={data.about}/>,
-        <Projects section={section} projects={data.allProjects} prevSection={prevSection} nextSection={nextSection} setActiveProject={setActiveProject} />,
+        <Projects data={data.sectionProject} section={section} projects={data.allProjects} prevSection={prevSection} nextSection={nextSection} setActiveProject={setActiveProject} />,
         <FinalPage data={data.pageFinal} prevSection={prevSection} nextSection={nextSection} navigation={navigation} />
     ]
 

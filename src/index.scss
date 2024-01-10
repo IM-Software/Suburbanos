@@ -54,6 +54,11 @@ table {
   --color-three: #06080B;
 }
 
+body{
+	max-height: 100vh;
+	overflow: hidden;
+}
+
 html{
 	max-width: 100vw;
 	max-height: 100vh;
@@ -68,6 +73,9 @@ html ::-webkit-scrollbar {
 }
 
 @media(max-width: 765px){
+	body{
+		max-height: none;
+	}
 	html{
 		max-height: none;
 	}

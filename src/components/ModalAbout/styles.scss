@@ -272,6 +272,48 @@
     }
 }
 
+
+@media(max-width: 2560px){
+    .modal-about{
+        .text-primary{
+            .line-low{
+                max-height: 864px;
+                margin-left: 55px;
+                margin-top: 395px;
+            }
+            .line-top{
+                margin-left: 300px;
+                max-width: 768px;
+            }
+            .image{
+                max-width: 1085px;
+                max-height: 1285px;
+            }
+
+            .text{
+                h2{
+                    max-width: 300px;
+                }
+            }
+        }
+
+        .text-secondary{
+            margin-top: 200px;
+            .text{
+                width: 60%;
+            }
+            .image{
+                .path{
+                    margin-left: 890px;
+                }
+                img{
+                    max-width: 921px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1600px) {
     .modal-about {
         .text-primary {
@@ -324,6 +366,7 @@
         }
     }
 }
+
 
 @media(max-width: 1200px) {
     .modal-about {

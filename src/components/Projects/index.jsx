@@ -10,7 +10,7 @@ import Path from '../../assets/path-parte1.png'
 import Triangle from '../../assets/projetos-triangulo.png'
 import { useEffect, useState } from 'react'
 
-export const Projects = ({ section, projects, nextSection, prevSection, setActiveProject }) => {
+export const Projects = ({ data, section, projects, nextSection, prevSection, setActiveProject }) => {
     const [animation, setAnimation] = useState(false)
 
     useEffect(() => {
@@ -19,12 +19,21 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
                 setAnimation(true)
             }, 1000)
         }
+        playAllVideos()
     }, [section])
+
+    const playAllVideos = () => {
+        const videos = document.querySelectorAll('.background-video')
+        videos.forEach((video) => {
+            video.play()
+        })
+    }
 
 
     return (
         <div className='projects' id='projects'>
-            <video className='background-video' loop autoPlay src='https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4' />
+            <img src={data.backgroundImg} className='background-img-projects' alt="" />
+            <video className='background-video' playsInline muted loop src={data.videoBackground} />
             <div className='content'>
                 <span className='about-text'>Projetos</span>
                 <div className="controls">

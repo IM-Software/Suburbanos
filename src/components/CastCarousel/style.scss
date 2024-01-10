@@ -172,6 +172,35 @@
     }
 }
 
+@media(min-width: 3000px){
+    .cast{
+        .controls{
+            gap: 50px;
+            align-items: center;
+            h2{
+                font-size: 120px;
+            }
+            .line {
+                height: 144px;
+            }
+
+            .seasons{
+                gap: 50px;
+                button{
+                    font-size: 40px;
+                }
+            }
+        }
+
+        .images{
+            margin-top: 250px;
+            margin-bottom: 200px;
+            margin-left: 50%;
+            scale: 2;
+        }
+    }
+}
+
 @media(max-width: 765px){
     .cast{
         margin-left: 16px;
