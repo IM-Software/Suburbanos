@@ -275,3 +275,56 @@
     }
   }
 }
+
+@media(max-height: 820px) and (max-width: 765px){
+  .final-page{
+    .container-line{
+      .line-one{
+        min-height: 15vh;
+      }
+      .control{
+        margin-top: 15vh;
+      }
+
+      .line-two{
+        margin-top: 23vh;
+        height: 11vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 780px) and (max-width: 765px){
+  .final-page{
+    .container-line{
+      .line-two{
+        margin-top: 24vh;
+        height: 10vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 700px) and (max-width: 765px){
+  .final-page{
+    .container-line{
+
+      .line-two{
+        margin-top: 25vh;
+        height: 9vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 620px) and (max-width: 765px){
+  .final-page{
+    .container-line{
+
+      .line-two{
+        margin-top: 26vh;
+        height: 8vh;
+      }
+    }
+  }
+}
