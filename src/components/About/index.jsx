@@ -5,15 +5,11 @@ import './styles.scss'
 import { ReactComponent as Ball } from '../../assets/ball.svg'
 import { ReactComponent as Next } from '../../assets/next.svg'
 import { ReactComponent as Prev } from '../../assets/prev.svg'
-import ImageUp from '../../assets/produtora.png'
-import ImageBelow from '../../assets/sobreimagem.png'
 import { useEffect, useState } from 'react'
-import ImageBackground from '../../assets/background-sobre.png'
-import ImageBackgroundMobile from '../../assets/sobre-background-mobile.png'
 
 import { useWindowSize } from "@uidotdev/usehooks"
 
-export const About = ({ section, nextSection, prevSection }) => {
+export const About = ({ section, nextSection, prevSection, data }) => {
     const [animation, setAnimation] = useState(false)
 
     useEffect(() => {
@@ -27,8 +23,8 @@ export const About = ({ section, nextSection, prevSection }) => {
 
     return (
         <div className='about' id='producer'>
-            <img src={ImageBackground} alt="" className='background-img' />
-            <img src={ImageBackgroundMobile} alt="" className='background-img-mobile' />
+            <img src={data.background} alt="" className='background-img' />
+            <img src={data.backgroundMobile} alt="" className='background-img-mobile' />
             <div className='content'>
                 <span className='about-text'>Sobre</span>
                 <div className="controls">
@@ -51,15 +47,15 @@ export const About = ({ section, nextSection, prevSection }) => {
             <div className='container'>
                 <div className="up">
                     <div className="img-container">
-                        <img src={ImageUp} alt="" className={`${animation ? 'animation' : ''}`} />
+                        <img src={data.imageUp} alt="" className={`${animation ? 'animation' : ''}`} />
                     </div>
                 </div>
                 <div className='low'>
-                    <img src={ImageBelow} alt="" className={`${animation ? 'animation' : ''}`} />
+                    <img src={data.imageLow} alt="" className={`${animation ? 'animation' : ''}`} />
                     <div className={`text ${animation ? 'animation' : ''}`}>
-                        <h2 className={`${animation ? 'animation' : ''}`} >A Produtora</h2>
+                        <h2 className={`${animation ? 'animation' : ''}`} >{data.title}</h2>
                         <div className="text-container">
-                            <p className={`${animation ? 'animation' : ''}`}>Rodrigo Sant'Anna foi criado na favela carioca Morro dos Macacos, em Vila Isabel, Zona Norte do Rio de Janeiro. Após se formar pela Casa das Artes de Laranjeiras, aos 24 anos, Rodrigo estreou, ao lado da atriz Thalita Carauta, o espetáculo Os Suburbanos, em que tanto dirigiu, escreveu e atuou. O espetáculo que atingiu o sucesso de crítica e público ficou cinco anos em cartaz.</p>
+                            <p className={`${animation ? 'animation' : ''}`}>{data.text}</p>
                         </div>
                     </div>
                 </div>

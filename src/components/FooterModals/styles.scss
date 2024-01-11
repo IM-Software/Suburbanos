@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    max-width: 1920px;
     min-height: 1200px;
 
     .balls{
@@ -97,6 +98,10 @@
                     margin-left: -30px;
                     transition: 0.2s ease-in;
                 }
+                a{
+                    z-index: 1;
+                    text-decoration: none;
+                }
                 p {
                     color: #FFF;
                     font-family: Anton;
@@ -139,6 +144,26 @@
             }
         }
 
+    }
+}
+
+@media(min-width: 3700px){
+    .footer-modals{
+        min-height: 2700px;
+        .text{
+            margin-left: 10%;
+            scale: 2;
+        }
+    }
+}
+
+@media(max-width: 2560px){
+    .footer-modals{
+        min-height: 1600px;
+
+        .balls{
+            height: 80%;
+        }
     }
 }
 

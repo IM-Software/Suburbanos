@@ -10,7 +10,7 @@ import Path from '../../assets/path-parte1.png'
 import Triangle from '../../assets/projetos-triangulo.png'
 import { useEffect, useState } from 'react'
 
-export const Projects = ({ section, projects, nextSection, prevSection, setActiveProject }) => {
+export const Projects = ({ data, section, projects, nextSection, prevSection, setActiveProject }) => {
     const [animation, setAnimation] = useState(false)
 
     useEffect(() => {
@@ -19,12 +19,21 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
                 setAnimation(true)
             }, 1000)
         }
+        playAllVideos()
     }, [section])
+
+    const playAllVideos = () => {
+        const videos = document.querySelectorAll('.background-video')
+        videos.forEach((video) => {
+            video.play()
+        })
+    }
 
 
     return (
         <div className='projects' id='projects'>
-            <video className='background-video' loop autoPlay src='https://projects-temp.s3.sa-east-1.amazonaws.com/train.mp4' />
+            <img src={data.backgroundImg} className='background-img-projects' alt="" />
+            <video className='background-video' playsInline muted loop src={data.videoBackground} />
             <div className='content'>
                 <span className='about-text'>Projetos</span>
                 <div className="controls">
@@ -46,17 +55,17 @@ export const Projects = ({ section, projects, nextSection, prevSection, setActiv
                     {projects.map((project, index) => (
                         <SwiperSlide className='project'>
                             <div className="image" onClick={() => setActiveProject(index)}>
-                                <img src={project.signature} alt="" className='signature' />
-                                <div style={{ background: `linear-gradient(360deg, #000 0.26%, rgba(0, 0, 0, 0.00) 39.58%), url(${project.img})` }} alt='' className='img-main' />
+                                <img src={project.logoSlider} alt="" className='signature' />
+                                <div style={{ background: `linear-gradient(360deg, #000 0.26%, rgba(0, 0, 0, 0.00) 39.58%), url(${project.imageSlider})`, backgroundSize: 'cover', backgroundPosition: 'center' }} alt='' className='img-main' />
                             </div>
                             <div className='stream'>
-                                <p>{project.style}</p>
+                                <p>{project.projectType}</p>
                                 <div className="line-stream"></div>
-                                <p className='type'>{project.type}</p>
-                                <img src={project.streamImg} alt="" />
+                                <p className='type'>{project.projectType2}</p>
+                                <img src={project.streamLogo} alt="" />
                             </div>
                             <div className='project-text'>
-                                <p>{project.text}</p>
+                                <p>{project.textSlider}</p>
                             </div>
                             <button onClick={() => setActiveProject(index)}>Ver Projeto</button>
                         </SwiperSlide>

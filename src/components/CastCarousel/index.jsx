@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 
-export const CastCarousel = ({ carousel, title }) => {
+export const CastCarousel = ({ carousel, title, quotationMarks }) => {
     const [seasonActive, setSeasonActive] = useState(0)
 
     return (
@@ -20,18 +20,18 @@ export const CastCarousel = ({ carousel, title }) => {
                 </div>
             </div>
             <Swiper className='images' pagination={{ clickable: true }} direction={'horizontal'} slidesPerView={'auto'}>
-                {carousel[seasonActive].map((actor) => (
+                {carousel[seasonActive].photo.map((photo) => (
                     <SwiperSlide className="actor">
                         <div className='photo'>
                             <div className='border-top'></div>
                             <BorderLow className='border-low' />
-                            <img src={actor.photo} alt="Foto Ator" />
+                            <img src={photo.photoUrl} alt="Foto Ator" />
                         </div>
                         <div className='name'>
-                            <h2>{actor.name}</h2>
-                            {(title === "Convidados") ? 
-                                <h3>{actor.character}</h3>
-                            : <h3>"{actor.character}"</h3>
+                            <h2>{photo.name}</h2>
+                            {(quotationMarks) ? 
+                                <h3>"{photo.subTitle}"</h3>
+                            : <h3>{photo.subTitle}</h3>
                             }
                         </div>
                     </SwiperSlide>

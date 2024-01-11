@@ -56,6 +56,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        min-height: 100vh;
         height: 100vh;
         margin-top: -50px;
         z-index: 1;
@@ -450,6 +451,126 @@
 
                     img {
                         transition: 0.5s ease-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 3800px){
+    .modal-project{
+        .main{
+            .signature{
+                width: 1300px;
+            }
+        }
+        .infos{
+            h2{
+                font-size: 160px;
+            }                    
+
+            .stream{
+                gap: 40px;
+                p{
+                    font-size: 40px;
+                }
+                
+                .line{
+                    width: 5px;
+                }
+                img{
+                    max-width: 190px;
+                    max-height: 50px;
+                }
+            }
+            .texts{
+                gap: 80px;
+                .text{
+                    max-width: 1300px !important;
+                    p{
+                        font-size: 40px;
+                        line-height: 80px;
+                    }
+                }
+                .people{
+                    row-gap: 70px;
+                    .names{
+                        h3 {
+                            font-size: 36px;
+                            line-height: 34px;
+                        }
+    
+                        p {
+                            margin-top: 50px;
+                            font-size: 40px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gallery{
+            .imgs-35-65 {
+                height: 1023px;
+            }
+            .imgs-50-50{
+                height: 740px;
+            }
+            .imgs-65-35{
+                height: 1023px;  
+            }
+        }
+        .outher-projects{
+            .projectOne{
+                height: 1200px;
+                .image{
+                    .background{
+                        height: 1200px;
+                    }
+                }
+                .name{
+                    h3.hover{
+                        margin-right: 30%;
+                    }
+                }
+            }
+            .projectTwo{
+                height: 1200px;
+                .image{
+                    .background{
+                        height: 1200px;
+                    }
+                }
+                .name{
+                    margin-left: 55vw !important;
+
+                    &.hover{
+                        margin-left: 58vw !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 2560px){
+    .modal-project{
+        .infos{
+            .texts{
+                .text{
+                    max-width: 800px;
+                }
+            }
+        }
+        .outher-projects{
+            .projectTwo{
+                .name{
+                    margin-left: 46vw;
+
+                    &.hover{
+                        margin-left: 53vw;
                     }
                 }
             }

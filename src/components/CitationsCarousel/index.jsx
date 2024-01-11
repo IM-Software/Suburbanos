@@ -41,11 +41,11 @@ export const CitationsCarousel = ({citations}) => {
                     <div className='background-photo'></div>
                     <div className='image'>
                         {animationCitation &&
-                            <img src={citations[citationIndex].photo} alt={citations[citationIndex].name} />
+                            <img src={citations[citationIndex].photoUrl} alt={citations[citationIndex].name} />
                         }
                     </div>
                     <div className='text'>
-                        <p>“{citations[citationIndex].text}”</p>
+                        <p>“{citations[citationIndex].phrase}”</p>
                         <p className='name'>{citations[citationIndex].name}</p>
                     </div>
                 </div>

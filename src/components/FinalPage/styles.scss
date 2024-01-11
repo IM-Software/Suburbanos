@@ -157,6 +157,44 @@
   }
 }
 
+@media(min-width: 3000px) {
+  .final-page {
+    .container-line {
+      .control {
+        .ball-container {
+          .ball {
+            margin-top: 25px;
+            width: 80px;
+            height: 90px;
+            margin-bottom: -10px;
+          }
+
+          button {
+            svg {
+              width: 70px;
+              height: 70px;
+            }
+          }
+        }
+      }
+    }
+    .container{
+      .ball {
+        width: 80px;
+        height: 90px;
+        margin-bottom: -10px;
+      }
+      .line-container{
+        span{
+          margin-left: 80px;
+          margin-bottom: 230px;
+          font-size: 80px;
+        }
+      }
+    }
+  }
+}
+
 @media(max-width: 756px) {
   .final-page {
     max-height: 101vh;
@@ -255,7 +293,7 @@
         height: 22.5vh;
         object-position: 25% 15%;
         object-fit: cover;
-  
+
         &:hover {
           opacity: 1;
         }
@@ -271,6 +309,60 @@
         height: 80px;
         rotate: 270deg;
         transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+@media(max-height: 820px) and (max-width: 765px) {
+  .final-page {
+    .container-line {
+      .line-one {
+        min-height: 15vh;
+      }
+
+      .control {
+        margin-top: 15vh;
+      }
+
+      .line-two {
+        margin-top: 23vh;
+        height: 11vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 780px) and (max-width: 765px) {
+  .final-page {
+    .container-line {
+      .line-two {
+        margin-top: 24vh;
+        height: 10vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 700px) and (max-width: 765px) {
+  .final-page {
+    .container-line {
+
+      .line-two {
+        margin-top: 25vh;
+        height: 9vh;
+      }
+    }
+  }
+}
+
+@media(max-height: 620px) and (max-width: 765px) {
+  .final-page {
+    .container-line {
+
+      .line-two {
+        margin-top: 26vh;
+        height: 8vh;
       }
     }
   }

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import Balls from '../../assets/reticula.png'
 
-export const ModalProject = ({ projectActiveIndex, openModal, closeModal, navigation, setVideoUrl, projects, setActiveProject }) => {
+export const ModalProject = ({ projectActiveIndex, openModal, closeModal, navigation, setVideoUrl, projects, setActiveProject, footer }) => {
     const [nextProject, setNextProject] = useState(0)
     const [prevProject, setPrevProject] = useState(0)
     const [nextHover, setNextHover] = useState(false)
@@ -53,27 +53,27 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
     return (
         <div className={`modal-project ${openModal ? 'active' : ''}`} ref={modalRef}>
             <div className="main">
-                <img src={projects[projectActiveIndex]?.modal.imgMain} alt="" className='img-main' />
-                <img src={projects[projectActiveIndex]?.signature} alt="" className='signature' />
+                <img src={projects[projectActiveIndex]?.imageMain} alt="" className='img-main' />
+                <img src={projects[projectActiveIndex]?.logoModal} alt="" className='signature' />
                 <div className="shadow"></div>
             </div>
-            <div className='video' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
+            <div className='video' onClick={() => setVideoUrl(`${projects[projectActiveIndex]?.trailerUrl}`)}>
                 <div className="image">
-                    <img src={projects[projectActiveIndex]?.modal.videoBackground} alt="" />
+                    <img src={projects[projectActiveIndex]?.trailerThumb} alt="" />
                 </div>
                 <PlayButton className='playButton' />
             </div>
             <div className='infos'>
                 <h2>{projects[projectActiveIndex]?.name}</h2>
                 <div className='stream'>
-                    <img src={projects[projectActiveIndex]?.streamImg} alt="" />
-                    <p>{projects[projectActiveIndex]?.style}</p>
+                    <img src={projects[projectActiveIndex]?.streamLogo} alt="" />
+                    <p>{projects[projectActiveIndex]?.projectType}</p>
                     <div className="line"></div>
-                    <p className='type'>{projects[projectActiveIndex]?.type}</p>
+                    <p className='type'>{projects[projectActiveIndex]?.projectType2}</p>
                 </div>
                 <div className="texts">
                     <div className="text">
-                        <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span className='text-secondary'> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
+                        <p><span>{projects[projectActiveIndex]?.textOne}</span> <span className='text-secondary'>{projects[projectActiveIndex]?.textTwo}</span></p>
                     </div>
                     <div className="people">
                         <div className='names'>
@@ -106,84 +106,84 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                     </div>
                 </div>
             </div>
-            {projectActiveIndex !== null && <CastCarousel carousel={projects[projectActiveIndex]?.carousel} title={projects[projectActiveIndex]?.carouselTitle} />}
+            {projectActiveIndex !== null && <CastCarousel carousel={projects[projectActiveIndex]?.seasons} title={projects[projectActiveIndex]?.sliderTitle} quotationMarks={projects[projectActiveIndex]?.quotationMarks} />}
             <div className="second-part">
                 <div className='gallery'>
                     <div className='imgs-35-65'>
-                        {projects[projectActiveIndex]?.modal.gallery[0].type === 'img' ? (
-                            <img src={projects[projectActiveIndex].modal.gallery[0].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.assetType1 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl1} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[0].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery one' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl1}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo1} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {projects[projectActiveIndex]?.modal.gallery[1].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[1].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.assetType2 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl2} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[1].imgBackground} alt="" className='videoBackground' />
-                                <PlayButton className='playButton' />
-                            </div>
-                        )}
-                    </div>
-                    <div className='imgs-50-50'>
-                        {projects[projectActiveIndex]?.modal.gallery[2].type === 'img' ? (
-                            <img src={projects[projectActiveIndex].modal.gallery[2].url} alt="" className='one' />
-                        ) : (
-                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[2].imgBackground} alt="" className='videoBackground' />
-                                <PlayButton className='playButton' />
-                            </div>
-                        )}
-                        {projects[projectActiveIndex]?.modal.gallery[3].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[3].url} alt="" className='two' />
-                        ) : (
-                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[3].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery two' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl2}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo2} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                     </div>
                     <div className='imgs-50-50'>
-                        {projects[projectActiveIndex]?.modal.gallery[4].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[4].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.assetType3 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl3} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[4].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery one' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl3}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo3} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {projects[projectActiveIndex]?.modal.gallery[5].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[5].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.assetType4 === false  ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl4} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[5].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery two' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl4}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo4} alt="" className='videoBackground' />
+                                <PlayButton className='playButton' />
+                            </div>
+                        )}
+                    </div>
+                    <div className='imgs-50-50'>
+                        {projects[projectActiveIndex]?.assetType5 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl5} alt="" className='one' />
+                        ) : (
+                            <div className='video-gallery one' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl5}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo5} alt="" className='videoBackground' />
+                                <PlayButton className='playButton' />
+                            </div>
+                        )}
+                        {projects[projectActiveIndex]?.assetType6 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl6} alt="" className='two' />
+                        ) : (
+                            <div className='video-gallery two' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl6}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo6} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                     </div>
                     <div className='imgs-65-35'>
-                        {projects[projectActiveIndex]?.modal.gallery[6].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[6].url} alt="" className='one' />
+                        {projects[projectActiveIndex]?.assetType7 === false ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl7} alt="" className='one' />
                         ) : (
-                            <div className='video-gallery one' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[6].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery one' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl7}`)}>
+                                <img src={projects[projectActiveIndex]?.thumbVideo7} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
-                        {projects[projectActiveIndex]?.modal.gallery[7].type === 'img' ? (
-                            <img src={projects[projectActiveIndex]?.modal.gallery[7].url} alt="" className='two' />
+                        {projects[projectActiveIndex]?.assetType7 === false  ? (
+                            <img src={projects[projectActiveIndex]?.galleryUrl8} alt="" className='two' />
                         ) : (
-                            <div className='video-gallery two' onClick={() => setVideoUrl('https://www.youtube.com/watch?v=fFrGoNDCnMM')}>
-                                <img src={projects[projectActiveIndex]?.modal.gallery[7].imgBackground} alt="" className='videoBackground' />
+                            <div className='video-gallery two' onClick={() => setVideoUrl(`${projects[projectActiveIndex].galleryUrl8}`)}>
+                                <img src={projects[projectActiveIndex]?.galleryUrl8} alt="" className='videoBackground' />
                                 <PlayButton className='playButton' />
                             </div>
                         )}
                         <img src={Balls} alt="" className='balls' />
                     </div>
                 </div>
-                {projectActiveIndex !== null && <CitationsCarousel citations={projects[projectActiveIndex].citations} />}
+                {projectActiveIndex !== null && <CitationsCarousel citations={projects[projectActiveIndex]?.deposition} />}
                 <div className='outher-projects'>
                     {projects[nextProject] &&
                         <div className='projectOne'>
@@ -193,7 +193,7 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                             <div className="image" onClick={() => setActiveProject(nextProject)} onMouseEnter={() => setNextHover(true)} onMouseLeave={() => setNextHover(false)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                    <img src={projects[nextProject]?.thumb} alt="" />
+                                    <img src={projects[nextProject]?.imageSlider} alt="" />
                                 </div>
                             </div>
                         </div>
@@ -206,13 +206,13 @@ export const ModalProject = ({ projectActiveIndex, openModal, closeModal, naviga
                             <div className="image" onClick={() => setActiveProject(prevProject)} onMouseEnter={() => setPrevHover(true)} onMouseLeave={() => setPrevHover(false)}>
                                 <div className='background'></div>
                                 <div className="img-container">
-                                    <img src={projects[prevProject]?.thumb} alt="" />
+                                    <img src={projects[prevProject]?.imageSlider} alt="" />
                                 </div>
                             </div>
                         </div>
                     }
                 </div>
-                <FooterModals toggleModal={closeModal} navigation={navigation} />
+                <FooterModals toggleModal={closeModal} navigation={navigation} data={footer} />
             </div>
         </div>
     )

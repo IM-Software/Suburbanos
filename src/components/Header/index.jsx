@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
 
-import Logo from '../../assets/LogoSuburbanos.png';
+
 import { ReactComponent as MenuBtn } from '../../assets/btn-menu.svg'
 import { ReactComponent as MenuBtnClose } from '../../assets/menu-close.svg'
 
-export const Header = ({ section, headerFunction, navigation, headerbackground, showScroll }) => {
+export const Header = ({ section, headerFunction, navigation, headerbackground, showScroll, logoUrl }) => {
   const [open, setOpen] = useState(false)
   const [iconClose, setIconClose] = useState(false)
   const [styleNav, setStyleNav] = useState(null)
@@ -33,7 +33,7 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
   return (
     <>
       <header className={`header ${section > 0 ? 'animation' : ''}`} >
-        <img className={`header-logo ${open || headerbackground ? 'active' : ''} `} src={Logo} alt="" />
+        <img className={`header-logo ${open || headerbackground ? 'active' : ''} `} src={logoUrl} alt="" />
         <div className={`btns ${open ? 'active' : ''} ${headerbackground ? 'background' : ''}`}>
           {!iconClose ? (
             <MenuBtn className='menu-btn' onClick={headerFunction ? headerFunction : clickButton} />
