@@ -460,6 +460,11 @@
 
 @media(min-width: 3800px){
     .modal-project{
+        .main{
+            .signature{
+                width: 1300px;
+            }
+        }
         .infos{
             h2{
                 font-size: 160px;
@@ -519,10 +524,10 @@
         }
         .outher-projects{
             .projectOne{
-                height: 1000px;
+                height: 1200px;
                 .image{
                     .background{
-                        height: 1000px;
+                        height: 1200px;
                     }
                 }
                 .name{
@@ -532,10 +537,10 @@
                 }
             }
             .projectTwo{
-                height: 1000px;
+                height: 1200px;
                 .image{
                     .background{
-                        height: 1000px;
+                        height: 1200px;
                     }
                 }
                 .name{

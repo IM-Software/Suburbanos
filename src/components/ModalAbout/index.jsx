@@ -56,7 +56,7 @@ export const ModalAbout = ({data, openAbout, setOpenAbout,  navigation, footer})
                             </div>
                             <div className="infos">
                                 <h4>{card.name}</h4>
-                                <p className='profession'>{card.profession}</p>
+                                <p className='profession'>{card.role}</p>
                                 <p>{card.textOne} <span>{card.textTwo}</span></p>
                             </div>
                         </div>

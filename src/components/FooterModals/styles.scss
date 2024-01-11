@@ -150,7 +150,10 @@
 @media(min-width: 3700px){
     .footer-modals{
         min-height: 2700px;
-        
+        .text{
+            margin-left: 10%;
+            scale: 2;
+        }
     }
 }
 

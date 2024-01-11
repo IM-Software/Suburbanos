@@ -129,6 +129,43 @@
     }
 }
 
+@media(min-width: 3800px){
+    .contact-modal{
+        .contact-container{
+            padding-top: 300px;
+            h2{
+                font-size: 256px;
+                line-height: 280px;
+            }
+
+            .secondary{
+                font-size: 150px;
+                line-height: 200px;
+            }
+
+            .three{
+                font-size: 150px;
+                line-height: 200px;
+            }
+
+            .flex{
+                svg{
+                    margin-top: 20px;
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+            .club{
+                img{
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1700px) {
     .contact-modal {
         .contact-container {
