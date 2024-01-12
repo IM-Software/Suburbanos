@@ -326,6 +326,22 @@
     }
 }
 
+@media(max-height: 750px) and (max-width: 756px) {
+    .projects {
+        .triangle{
+            margin-top: 43vh !important;
+        }
+    }
+}
+
+@media(max-height: 667px) and (max-width: 756px) {
+    .projects {
+        .triangle{
+            margin-top: 46vh !important;
+        }
+    }
+}
+
 @media(max-width: 756px) {
     .projects {
         min-height: 101vh;
