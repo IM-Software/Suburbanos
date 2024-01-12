@@ -206,7 +206,6 @@ export const Home = () => {
             try {
                 const response = await axios.get(process.env.REACT_APP_URL_JSON)
                 setData(response.data)
-                console.log(response.data)
                 setLoading(false)
             } catch (error) {
                 console.error('Erro ao obter dados:', error)
