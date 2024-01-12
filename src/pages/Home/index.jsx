@@ -48,6 +48,7 @@ export const Home = () => {
         setOpenContact(false)
         setOpenProject(false)
         setOpenModalProject(false)
+        showScroll(true)
         setTimeout(function () {
             setActiveProject(null)
         }, 1000)
@@ -85,7 +86,6 @@ export const Home = () => {
     const [section, setSection] = useState(0)
 
     const nextSection = () => {
-        console.log(componentList.length)
         if (section >= componentList.length) return
         setSection(section + 1)
     }
