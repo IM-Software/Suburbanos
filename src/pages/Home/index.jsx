@@ -48,7 +48,6 @@ export const Home = () => {
         setOpenContact(false)
         setOpenProject(false)
         setOpenModalProject(false)
-        showScroll(true)
         setTimeout(function () {
             setActiveProject(null)
         }, 1000)
