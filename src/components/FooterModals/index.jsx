@@ -14,9 +14,6 @@ export const FooterModals = ({ navigation, toggleModal, data }) => {
         }, 500)
     }
 
-    console.log(data)
-
-
     return (
         <div className="footer-modals">
             <img src={Balls} alt="Balls" className='balls' />

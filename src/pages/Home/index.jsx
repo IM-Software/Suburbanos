@@ -85,7 +85,6 @@ export const Home = () => {
     const [section, setSection] = useState(0)
 
     const nextSection = () => {
-        console.log(componentList.length)
         if (section >= componentList.length) return
         setSection(section + 1)
     }
@@ -206,7 +205,6 @@ export const Home = () => {
             try {
                 const response = await axios.get(process.env.REACT_APP_URL_JSON)
                 setData(response.data)
-                console.log(response.data)
                 setLoading(false)
             } catch (error) {
                 console.error('Erro ao obter dados:', error)

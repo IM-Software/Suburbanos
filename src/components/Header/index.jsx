@@ -13,13 +13,14 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
 
   const clickButton = () => {
     setOpen(!open)
-    showScroll(false)
   }
 
   useEffect(() => {
     if (open === true || (typeof headerFunction === 'function')) {
       setIconClose(true)
+      showScroll(false)
     } else {
+      showScroll(true)
       setIconClose(false)
     }
   }, [headerFunction, open])
@@ -27,7 +28,6 @@ export const Header = ({ section, headerFunction, navigation, headerbackground, 
   const navigationTo = (navTo) => {
     navigation(navTo)
     setOpen(false)
-    showScroll(true)
   }
 
   return (
