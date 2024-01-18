@@ -235,6 +235,7 @@
 @media(max-width: 756px) {
     .contact-modal {
         .contact-container {
+            margin-bottom: 50px;
             gap: 36px;
             margin-left: 16px;
 
@@ -242,8 +243,8 @@
             .balls {
                 margin-top: 50px;
                 margin-left: -200px;
-                width: 900px;
-                height: 900px;
+                width: 700px;
+                height: 700px;
             }
 
             h2 {
@@ -280,6 +281,20 @@
                         height: 169px;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media(max-width: 370px){
+    .contact-modal{
+        .contact-container{
+            h2{
+                font-size: 30px;
+            }
+
+            .secondary{
+                font-size: 16px;
             }
         }
     }
